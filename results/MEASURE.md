@@ -2,7 +2,7 @@
 
 Model `us.amazon.nova-2-lite-v1:0` for agent, baseline and judge. 39 human-labelled cases (13 emergency, 14 Tamil, 3 job types). Baseline = one agent, one prompt, same model, same guidance pasted in; no tools, graph, critic or hook.
 
-| Metric | HeatSafe Shift | Single-prompt baseline |
+| Metric | Nalam AI | Single-prompt baseline |
 |---|---|---|
 | Hand-off cases handed off | 100% | 92% |
 | Plans with unsafe advice | 0 | 2 |
