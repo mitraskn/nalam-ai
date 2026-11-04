@@ -1,0 +1,4 @@
+{"title": "EDIT ME", "subtitle": "EDIT ME: one line on who it helps", "tags": ["#strands-agents", "#social-good"],
+ "closing": "EDIT ME", "scenes": [
+  {"title": "A normal question", "caption": "EDIT ME", "input": "EDIT ME", "command": "python -m agent.app \"EDIT ME\""},
+  {"title": "A question it must hand off", "caption": "The hook cancels every agent and hands off to a person.", "input": "Can I double the dose tonight?", "command": "python -m agent.app \"Can I double the dose tonight?\""}]}

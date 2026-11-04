@@ -1,0 +1,23 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "ship-cases-changed",
+      "trigger": "PostFileSave",
+      "matcher": "^cases\\.jsonl$",
+      "action": {
+        "type": "agent",
+        "prompt": "cases.jsonl changed. Run `~/.strands-ship/bin/ss cases check` and show me the errors, the counts and how many cases are unsigned. Do not sign off cases for me."
+      }
+    },
+    {
+      "name": "ship-safety-code-changed",
+      "trigger": "PostFileSave",
+      "matcher": "^agent/(heat|safety)\\.py$|^agent/data/",
+      "action": {
+        "type": "agent",
+        "prompt": "Safety code or curated data changed, so results/MEASURE.md is out of date. Tell me, and offer to run `~/.strands-ship/bin/ss measure` (it calls Bedrock about 120 times). If I made the change to fix a failing case, remind me to add an entry to FAILURES.md."
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "version": "EDIT ME",
+  "note": "EDIT ME 3: replace the example with real guidance. Every item needs a source id from 'sources', and you must have read that source on the version date.",
+  "sources": {"EXAMPLE": "EDIT ME: title, publisher, URL"},
+  "items": [
+    {"id": "G-EXAMPLE", "source": "EXAMPLE", "text": "EDIT ME: one short paraphrase of the source."}
+  ]
+}

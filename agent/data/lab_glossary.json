@@ -1,0 +1,398 @@
+{
+ "_about": {
+  "purpose": "Fixed, plain-language explanations of common lab tests for Nalam AI. The model never writes medical explanations; it only picks entries from here.",
+  "source": "General patient-education content, to be checked against MedlinePlus lab test pages https://medlineplus.gov/lab-tests/",
+  "review": "DRAFT 2026-11-04: verify facts with MedlinePlus and Tamil wording with a fluent reader before release."
+ },
+ "status_words": {
+  "HIGH": {
+   "en": "high",
+   "ta": "அதிகமாக உள்ளது"
+  },
+  "LOW": {
+   "en": "low",
+   "ta": "குறைவாக உள்ளது"
+  },
+  "NORMAL": {
+   "en": "within the normal range",
+   "ta": "இயல்பான அளவில் உள்ளது"
+  },
+  "UNKNOWN": {
+   "en": "not sure, ask your doctor",
+   "ta": "உறுதியாகத் தெரியவில்லை, மருத்துவரிடம் கேளுங்கள்"
+  }
+ },
+ "default_question": {
+  "en": "This value is outside the range. What does it mean for me?",
+  "ta": "இந்த அளவு வரம்புக்கு வெளியே உள்ளது. இது எனக்கு என்ன அர்த்தம்?"
+ },
+ "general_questions": [
+  {
+   "en": "Which of these results should I worry about most?",
+   "ta": "இந்த முடிவுகளில் எதைப் பற்றி நான் அதிகம் கவனிக்க வேண்டும்?"
+  },
+  {
+   "en": "When should I repeat these tests?",
+   "ta": "இந்தப் பரிசோதனைகளை மீண்டும் எப்போது செய்ய வேண்டும்?"
+  }
+ ],
+ "tests": [
+  {
+   "key": "fasting_glucose",
+   "aliases": [
+    "fasting blood glucose",
+    "fasting blood sugar",
+    "fbs",
+    "fasting glucose",
+    "fasting plasma glucose"
+   ],
+   "en": "Blood sugar after not eating for 8-10 hours. It shows how well your body controls sugar.",
+   "ta": "8-10 மணி நேரம் சாப்பிடாமல் இருந்த பிறகு இரத்தத்தில் உள்ள சர்க்கரையின் அளவு. உடல் சர்க்கரையை எவ்வளவு நன்றாகக் கட்டுப்படுத்துகிறது என்பதைக் காட்டுகிறது.",
+   "q_high": {
+    "en": "My fasting sugar is high. Do I need more tests or a change in food or medicine?",
+    "ta": "என் வெறும் வயிற்று சர்க்கரை அதிகமாக உள்ளது. கூடுதல் பரிசோதனை அல்லது உணவு / மருந்தில் மாற்றம் தேவையா?"
+   },
+   "q_low": {
+    "en": "My fasting sugar is low. Could this be from my medicines or from skipping meals?",
+    "ta": "என் வெறும் வயிற்று சர்க்கரை குறைவாக உள்ளது. இது என் மருந்துகளாலோ, உணவு தவறியதாலோ இருக்குமா?"
+   }
+  },
+  {
+   "key": "random_glucose",
+   "aliases": [
+    "random blood sugar",
+    "random blood glucose",
+    "rbs",
+    "random glucose"
+   ],
+   "en": "Blood sugar at any time of the day, without fasting.",
+   "ta": "சாப்பிட்டதைப் பொருட்படுத்தாமல், நாளின் எந்த நேரத்திலும் இரத்தத்தில் உள்ள சர்க்கரையின் அளவு.",
+   "q_high": {
+    "en": "My random sugar is high. Should I do a fasting sugar or HbA1c test?",
+    "ta": "என் சாதாரண நேர சர்க்கரை அதிகமாக உள்ளது. வெறும் வயிற்று சர்க்கரை அல்லது HbA1c பரிசோதனை செய்ய வேண்டுமா?"
+   },
+   "q_low": {
+    "en": "My sugar is low. Could this be from my medicines or from skipping meals?",
+    "ta": "என் சர்க்கரை குறைவாக உள்ளது. இது என் மருந்துகளாலோ, உணவு தவறியதாலோ இருக்குமா?"
+   }
+  },
+  {
+   "key": "pp_glucose",
+   "aliases": [
+    "post prandial",
+    "postprandial",
+    "ppbs",
+    "pp blood sugar",
+    "post-prandial"
+   ],
+   "en": "Blood sugar about 2 hours after a meal.",
+   "ta": "சாப்பிட்டு சுமார் 2 மணி நேரம் கழித்து இரத்தத்தில் உள்ள சர்க்கரையின் அளவு.",
+   "q_high": {
+    "en": "My after-food sugar is high. Should my food or medicine timing change?",
+    "ta": "என் சாப்பிட்ட பின் சர்க்கரை அதிகமாக உள்ளது. உணவு அல்லது மருந்து நேரத்தை மாற்ற வேண்டுமா?"
+   }
+  },
+  {
+   "key": "hba1c",
+   "aliases": [
+    "hba1c",
+    "glycated haemoglobin",
+    "glycated hemoglobin",
+    "glycosylated",
+    "a1c"
+   ],
+   "en": "Your average blood sugar over the last 2-3 months.",
+   "ta": "கடந்த 2-3 மாதங்களில் உங்கள் இரத்த சர்க்கரையின் சராசரி அளவு.",
+   "q_high": {
+    "en": "My HbA1c is high. What target should I aim for, and when should I test again?",
+    "ta": "என் HbA1c அதிகமாக உள்ளது. எனக்கான இலக்கு அளவு என்ன? மீண்டும் எப்போது பரிசோதிக்க வேண்டும்?"
+   },
+   "q_low": {
+    "en": "My HbA1c is below the range. Is that a concern for me?",
+    "ta": "என் HbA1c குறைவாக உள்ளது. இது எனக்குக் கவலைக்குரியதா?"
+   }
+  },
+  {
+   "key": "haemoglobin",
+   "aliases": [
+    "haemoglobin",
+    "hemoglobin",
+    "hb",
+    "hgb"
+   ],
+   "en": "The protein in red blood cells that carries oxygen. When it is low you may feel tired.",
+   "ta": "இரத்த சிவப்பணுக்களில் ஆக்ஸிஜனைக் கொண்டு செல்லும் புரதம். இது குறைவாக இருந்தால் சோர்வாக உணரலாம்.",
+   "q_low": {
+    "en": "My haemoglobin is low. What could be the reason, and do I need iron or other tests?",
+    "ta": "என் ஹீமோகுளோபின் குறைவாக உள்ளது. இதற்கு என்ன காரணம் இருக்கலாம்? இரும்புச்சத்து அல்லது வேறு பரிசோதனை தேவையா?"
+   },
+   "q_high": {
+    "en": "My haemoglobin is high. Does this need any follow-up?",
+    "ta": "என் ஹீமோகுளோபின் அதிகமாக உள்ளது. இதற்கு மேலும் கவனிப்பு தேவையா?"
+   }
+  },
+  {
+   "key": "total_cholesterol",
+   "aliases": [
+    "total cholesterol",
+    "serum cholesterol",
+    "cholesterol total"
+   ],
+   "en": "The total cholesterol (a fat-like substance) in your blood. If it stays high for a long time it can affect the heart.",
+   "ta": "இரத்தத்தில் உள்ள மொத்த கொலஸ்ட்ரால் (கொழுப்பு போன்ற பொருள்) அளவு. நீண்ட காலம் அதிகமாக இருந்தால் இதயத்தைப் பாதிக்கலாம்.",
+   "q_high": {
+    "en": "My cholesterol is high. Should I change my diet, or do I need a full lipid profile?",
+    "ta": "என் கொலஸ்ட்ரால் அதிகமாக உள்ளது. உணவை மாற்ற வேண்டுமா, அல்லது முழு கொழுப்புப் பரிசோதனை (Lipid profile) தேவையா?"
+   }
+  },
+  {
+   "key": "ldl",
+   "aliases": [
+    "ldl",
+    "ldl cholesterol",
+    "low density"
+   ],
+   "en": "'Bad' cholesterol that can build up inside blood vessels.",
+   "ta": "இரத்த நாளங்களுக்குள் படியக்கூடிய 'கெட்ட' கொலஸ்ட்ரால்.",
+   "q_high": {
+    "en": "My LDL is high. How can I bring it down?",
+    "ta": "என் LDL (கெட்ட கொலஸ்ட்ரால்) அதிகமாக உள்ளது. இதை எப்படிக் குறைப்பது?"
+   }
+  },
+  {
+   "key": "hdl",
+   "aliases": [
+    "hdl",
+    "hdl cholesterol",
+    "high density"
+   ],
+   "en": "'Good' cholesterol that helps remove extra cholesterol from the blood.",
+   "ta": "இரத்தத்திலிருந்து அதிகப்படியான கொலஸ்ட்ராலை நீக்க உதவும் 'நல்ல' கொலஸ்ட்ரால்.",
+   "q_low": {
+    "en": "My HDL is low. What can I do to improve it?",
+    "ta": "என் HDL (நல்ல கொலஸ்ட்ரால்) குறைவாக உள்ளது. இதை உயர்த்த என்ன செய்யலாம்?"
+   }
+  },
+  {
+   "key": "triglycerides",
+   "aliases": [
+    "triglyceride",
+    "triglycerides",
+    "tg"
+   ],
+   "en": "A type of fat in the blood. Food, sugar and oil affect it.",
+   "ta": "இரத்தத்தில் உள்ள ஒரு வகை கொழுப்பு. உணவு, சர்க்கரை, எண்ணெய் இதைப் பாதிக்கும்.",
+   "q_high": {
+    "en": "My triglycerides are high. Which foods should I reduce?",
+    "ta": "என் ட்ரைகிளிசரைடு அதிகமாக உள்ளது. எந்த உணவுகளைக் குறைக்க வேண்டும்?"
+   }
+  },
+  {
+   "key": "creatinine",
+   "aliases": [
+    "creatinine",
+    "serum creatinine",
+    "s. creatinine"
+   ],
+   "en": "A waste product that the kidneys remove. It shows how well the kidneys are working.",
+   "ta": "சிறுநீரகங்கள் வெளியேற்றும் ஒரு கழிவுப் பொருள். சிறுநீரகங்கள் எவ்வளவு நன்றாக வேலை செய்கின்றன என்பதைக் காட்டுகிறது.",
+   "q_high": {
+    "en": "My creatinine is high. Do I need a kidney check, and should my medicines be reviewed?",
+    "ta": "என் கிரியேட்டினின் அதிகமாக உள்ளது. சிறுநீரகப் பரிசோதனை தேவையா? என் மருந்துகளைச் சரிபார்க்க வேண்டுமா?"
+   }
+  },
+  {
+   "key": "urea",
+   "aliases": [
+    "urea",
+    "blood urea",
+    "bun",
+    "blood urea nitrogen"
+   ],
+   "en": "Another waste product that the kidneys remove.",
+   "ta": "சிறுநீரகங்கள் வெளியேற்றும் மற்றொரு கழிவுப் பொருள்.",
+   "q_high": {
+    "en": "My urea is high. Is my kidney function okay?",
+    "ta": "என் யூரியா அதிகமாக உள்ளது. என் சிறுநீரகச் செயல்பாடு சரியாக உள்ளதா?"
+   }
+  },
+  {
+   "key": "tsh",
+   "aliases": [
+    "tsh",
+    "thyroid stimulating hormone"
+   ],
+   "en": "A hormone that controls the thyroid gland. It shows whether the thyroid is working too slowly or too fast.",
+   "ta": "தைராய்டு சுரப்பியைக் கட்டுப்படுத்தும் ஹார்மோன். தைராய்டு மெதுவாக அல்லது வேகமாக வேலை செய்கிறதா என்பதைக் காட்டுகிறது.",
+   "q_high": {
+    "en": "My TSH is high. Do I need more thyroid tests (T3, T4)?",
+    "ta": "என் TSH அதிகமாக உள்ளது. கூடுதல் தைராய்டு பரிசோதனை (T3, T4) தேவையா?"
+   },
+   "q_low": {
+    "en": "My TSH is low. Do I need more thyroid tests (T3, T4)?",
+    "ta": "என் TSH குறைவாக உள்ளது. கூடுதல் தைராய்டு பரிசோதனை (T3, T4) தேவையா?"
+   }
+  },
+  {
+   "key": "vitamin_d",
+   "aliases": [
+    "vitamin d",
+    "25-oh",
+    "25 oh",
+    "25-hydroxy",
+    "vit d"
+   ],
+   "en": "A vitamin needed for strong bones. The skin makes it in sunlight.",
+   "ta": "எலும்புகள் வலுவாக இருக்கத் தேவையான வைட்டமின். சூரிய ஒளியில் தோல் இதை உருவாக்குகிறது.",
+   "q_low": {
+    "en": "My vitamin D is low. Do I need a supplement, and how much sunlight is good for me?",
+    "ta": "என் வைட்டமின் D குறைவாக உள்ளது. சப்ளிமென்ட் தேவையா? எனக்கு எவ்வளவு சூரிய ஒளி நல்லது?"
+   }
+  },
+  {
+   "key": "vitamin_b12",
+   "aliases": [
+    "vitamin b12",
+    "b12",
+    "cobalamin"
+   ],
+   "en": "A vitamin needed for the nerves and for making blood.",
+   "ta": "நரம்புகளுக்கும் இரத்த உற்பத்திக்கும் தேவையான வைட்டமின்.",
+   "q_low": {
+    "en": "My B12 is low. Do I need a supplement or an injection?",
+    "ta": "என் B12 குறைவாக உள்ளது. சப்ளிமென்ட் அல்லது ஊசி தேவையா?"
+   }
+  },
+  {
+   "key": "platelets",
+   "aliases": [
+    "platelet",
+    "platelets",
+    "plt",
+    "platelet count"
+   ],
+   "en": "Cells that help blood clot and stop bleeding.",
+   "ta": "இரத்தம் உறைந்து, இரத்தப்போக்கை நிறுத்த உதவும் அணுக்கள் (தட்டணுக்கள்).",
+   "q_low": {
+    "en": "My platelet count is low. Should I watch for bleeding or bruising?",
+    "ta": "என் தட்டணுக்கள் குறைவாக உள்ளன. இரத்தப்போக்கு அல்லது சிராய்ப்புகளைக் கவனிக்க வேண்டுமா?"
+   },
+   "q_high": {
+    "en": "My platelet count is high. Does this need follow-up?",
+    "ta": "என் தட்டணுக்கள் அதிகமாக உள்ளன. இதற்கு மேலும் கவனிப்பு தேவையா?"
+   }
+  },
+  {
+   "key": "wbc",
+   "aliases": [
+    "wbc",
+    "white blood cell",
+    "total leucocyte",
+    "total leukocyte",
+    "tlc",
+    "total count"
+   ],
+   "en": "White blood cells, which fight infection.",
+   "ta": "நோய்த்தொற்றை எதிர்த்துப் போராடும் வெள்ளை இரத்த அணுக்கள்.",
+   "q_high": {
+    "en": "My white cell count is high. Could I have an infection?",
+    "ta": "என் வெள்ளை அணுக்கள் அதிகமாக உள்ளன. எனக்கு ஏதேனும் தொற்று இருக்குமா?"
+   },
+   "q_low": {
+    "en": "My white cell count is low. What should I be careful about?",
+    "ta": "என் வெள்ளை அணுக்கள் குறைவாக உள்ளன. நான் எதில் கவனமாக இருக்க வேண்டும்?"
+   }
+  },
+  {
+   "key": "sodium",
+   "aliases": [
+    "sodium",
+    "serum sodium",
+    "na+"
+   ],
+   "en": "A salt (electrolyte) that keeps the body's water balance and helps the nerves work.",
+   "ta": "உடலின் நீர்ச் சமநிலையைப் பராமரித்து, நரம்புகள் வேலை செய்ய உதவும் உப்பு (எலக்ட்ரோலைட்).",
+   "q_low": {
+    "en": "My sodium is low. Could any of my medicines cause this? How much water and salt should I take?",
+    "ta": "என் சோடியம் குறைவாக உள்ளது. என் மருந்துகள் ஏதேனும் இதற்குக் காரணமா? நான் எவ்வளவு தண்ணீர், உப்பு எடுக்க வேண்டும்?"
+   },
+   "q_high": {
+    "en": "My sodium is high. Am I drinking enough water?",
+    "ta": "என் சோடியம் அதிகமாக உள்ளது. நான் போதுமான தண்ணீர் குடிக்கிறேனா?"
+   }
+  },
+  {
+   "key": "potassium",
+   "aliases": [
+    "potassium",
+    "serum potassium",
+    "k+"
+   ],
+   "en": "A mineral that helps the heart and muscles work properly.",
+   "ta": "இதயமும் தசைகளும் சரியாக வேலை செய்ய உதவும் தாது.",
+   "q_high": {
+    "en": "My potassium is high. Is this safe for my heart, and should my medicines or diet change?",
+    "ta": "என் பொட்டாசியம் அதிகமாக உள்ளது. இது என் இதயத்திற்குப் பாதுகாப்பானதா? மருந்து அல்லது உணவில் மாற்றம் தேவையா?"
+   },
+   "q_low": {
+    "en": "My potassium is low. Is this safe for my heart, and should my medicines or diet change?",
+    "ta": "என் பொட்டாசியம் குறைவாக உள்ளது. இது என் இதயத்திற்குப் பாதுகாப்பானதா? மருந்து அல்லது உணவில் மாற்றம் தேவையா?"
+   }
+  },
+  {
+   "key": "sgpt",
+   "aliases": [
+    "sgpt",
+    "alt",
+    "alanine aminotransferase"
+   ],
+   "en": "A liver enzyme. A high value can mean the liver is under stress.",
+   "ta": "கல்லீரல் நொதி. அதிகமாக இருந்தால் கல்லீரல் சிரமத்தில் இருக்கலாம்.",
+   "q_high": {
+    "en": "My liver enzyme (SGPT) is high. Do I need a scan or more tests?",
+    "ta": "என் கல்லீரல் நொதி (SGPT) அதிகமாக உள்ளது. ஸ்கேன் அல்லது கூடுதல் பரிசோதனை தேவையா?"
+   }
+  },
+  {
+   "key": "sgot",
+   "aliases": [
+    "sgot",
+    "ast",
+    "aspartate aminotransferase"
+   ],
+   "en": "Another liver enzyme, also found in the heart and muscles.",
+   "ta": "மற்றொரு கல்லீரல் நொதி. இது இதயம், தசைகளிலும் காணப்படுகிறது.",
+   "q_high": {
+    "en": "My SGOT is high. Do I need more liver tests?",
+    "ta": "என் SGOT அதிகமாக உள்ளது. கூடுதல் கல்லீரல் பரிசோதனை தேவையா?"
+   }
+  },
+  {
+   "key": "uric_acid",
+   "aliases": [
+    "uric acid",
+    "serum uric acid"
+   ],
+   "en": "A waste product. When it is high it can cause joint pain (gout).",
+   "ta": "ஒரு கழிவுப் பொருள். அதிகமாக இருந்தால் மூட்டு வலி (கீல்வாதம்) ஏற்படலாம்.",
+   "q_high": {
+    "en": "My uric acid is high. Which foods should I avoid?",
+    "ta": "என் யூரிக் அமிலம் அதிகமாக உள்ளது. எந்த உணவுகளைத் தவிர்க்க வேண்டும்?"
+   }
+  },
+  {
+   "key": "bilirubin",
+   "aliases": [
+    "bilirubin",
+    "total bilirubin",
+    "serum bilirubin"
+   ],
+   "en": "A yellow substance that the liver processes.",
+   "ta": "கல்லீரல் செயல்படுத்தும் ஒரு மஞ்சள் நிறப் பொருள்.",
+   "q_high": {
+    "en": "My bilirubin is high. Do I need liver tests?",
+    "ta": "என் பிலிரூபின் அதிகமாக உள்ளது. கல்லீரல் பரிசோதனை தேவையா?"
+   }
+  }
+ ]
+}

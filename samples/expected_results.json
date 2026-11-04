@@ -1,0 +1,69 @@
+{
+  "description": "Expected results for lab report testing",
+  "rows": [
+    {
+      "test": "Hemoglobin",
+      "value": 11.5,
+      "unit": "g/dL",
+      "range_text": "12.0 - 15.5",
+      "expect_status": "LOW",
+      "reason": "11.5 < 12.0"
+    },
+    {
+      "test": "Blood Glucose",
+      "value": 180,
+      "unit": "mg/dL",
+      "range_text": "70 - 100",
+      "expect_status": "HIGH",
+      "reason": "180 > 100"
+    },
+    {
+      "test": "Cholesterol",
+      "value": 150,
+      "unit": "mg/dL",
+      "range_text": "< 200",
+      "expect_status": "NORMAL",
+      "reason": "150 < 200"
+    },
+    {
+      "test": "Potassium",
+      "value": 4.2,
+      "unit": "mmol/L",
+      "range_text": "3.5 - 5.0",
+      "expect_status": "NORMAL",
+      "reason": "3.5 < 4.2 < 5.0"
+    },
+    {
+      "test": "TSH",
+      "value": 2.5,
+      "unit": "mIU/L",
+      "range_text": "0.4 - 4.0",
+      "expect_status": "NORMAL",
+      "reason": "0.4 < 2.5 < 4.0"
+    },
+    {
+      "test": "Creatinine",
+      "value": 1.5,
+      "unit": "mg/dL",
+      "range_text": "0.6 - 1.2",
+      "expect_status": "HIGH",
+      "reason": "1.5 > 1.2"
+    },
+    {
+      "test": "Unknown Test",
+      "value": 42,
+      "unit": "units",
+      "range_text": "",
+      "expect_status": "UNKNOWN - ask doctor",
+      "reason": "No range in report, not in fallback table"
+    },
+    {
+      "test": "Hemoglobin (fallback)",
+      "value": 13.5,
+      "unit": "g/dL",
+      "range_text": "",
+      "expect_status": "NORMAL",
+      "reason": "Fallback used: 12.0-15.5 for female"
+    }
+  ]
+}
