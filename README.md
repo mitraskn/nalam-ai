@@ -11,7 +11,7 @@ Built for the AWS Builder Center **Strands SDK: Workshop to Ship** hackathon (AW
 | | Link |
 |---|---|
 | **Live app** (open it on your phone) | https://sio5kbdhxqtguxay6f3xshiehm0metgc.lambda-url.ap-southeast-2.on.aws/ |
-| **Demo video** | added after upload |
+| **Demo video** (2:33) | https://youtu.be/cj84PMTIg3w |
 | **Article / project page** (AWS Builder Center) | added after publishing |
 | **Hosting** | AWS Lambda Function URL (ap-southeast-2), Amazon Bedrock in us-east-1 |
 

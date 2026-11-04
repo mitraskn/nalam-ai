@@ -6,3 +6,5 @@ results/_raw/
 .env
 agent/data/family/
 deploy/deps.zip
+results/_video/
+results/demo.mp4
