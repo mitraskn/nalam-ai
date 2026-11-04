@@ -1,8 +1,9 @@
 {
  "_about": {
   "purpose": "Fixed, plain-language explanations of common lab tests for Nalam AI. The model never writes medical explanations; it only picks entries from here.",
-  "source": "General patient-education content, to be checked against MedlinePlus lab test pages https://medlineplus.gov/lab-tests/",
-  "review": "DRAFT 2026-11-04: verify facts with MedlinePlus and Tamil wording with a fluent reader before release."
+  "source": "MedlinePlus (U.S. National Library of Medicine) lab test pages; each test has its own source link.",
+  "review": "Checked against MedlinePlus on 2026-11-04. Tamil wording still needs a fluent reader.",
+  "warning_signs": "warn_high / warn_low: 'see a doctor / go to hospital if...' signs, taken from the symptoms listed on the same MedlinePlus pages."
  },
  "status_words": {
   "HIGH": {
@@ -46,8 +47,8 @@
     "fasting glucose",
     "fasting plasma glucose"
    ],
-   "en": "Blood sugar after not eating for 8-10 hours. It shows how well your body controls sugar.",
-   "ta": "8-10 மணி நேரம் சாப்பிடாமல் இருந்த பிறகு இரத்தத்தில் உள்ள சர்க்கரையின் அளவு. உடல் சர்க்கரையை எவ்வளவு நன்றாகக் கட்டுப்படுத்துகிறது என்பதைக் காட்டுகிறது.",
+   "en": "Blood sugar after not eating (water is allowed) for at least 8 hours. It is used to check for and follow diabetes.",
+   "ta": "குறைந்தது 8 மணி நேரம் சாப்பிடாமல் (தண்ணீர் மட்டும் குடிக்கலாம்) இருந்த பிறகு இரத்தத்தில் உள்ள சர்க்கரையின் அளவு. சர்க்கரை நோயைக் கண்டறியவும் கண்காணிக்கவும் பயன்படுகிறது.",
    "q_high": {
     "en": "My fasting sugar is high. Do I need more tests or a change in food or medicine?",
     "ta": "என் வெறும் வயிற்று சர்க்கரை அதிகமாக உள்ளது. கூடுதல் பரிசோதனை அல்லது உணவு / மருந்தில் மாற்றம் தேவையா?"
@@ -55,7 +56,16 @@
    "q_low": {
     "en": "My fasting sugar is low. Could this be from my medicines or from skipping meals?",
     "ta": "என் வெறும் வயிற்று சர்க்கரை குறைவாக உள்ளது. இது என் மருந்துகளாலோ, உணவு தவறியதாலோ இருக்குமா?"
-   }
+   },
+   "warn_high": {
+    "en": "If there is extreme thirst, confusion, vomiting or heavy drowsiness, go to the hospital now.",
+    "ta": "அதிக தாகம், குழப்பம், வாந்தி அல்லது கடும் தூக்கக் கலக்கம் இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "warn_low": {
+    "en": "If there is sweating, shaking, confusion or fainting, get medical help now.",
+    "ta": "வியர்வை, நடுக்கம், குழப்பம் அல்லது மயக்கம் இருந்தால் உடனே மருத்துவ உதவி பெறுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/blood-glucose-test/"
   },
   {
    "key": "random_glucose",
@@ -74,7 +84,16 @@
    "q_low": {
     "en": "My sugar is low. Could this be from my medicines or from skipping meals?",
     "ta": "என் சர்க்கரை குறைவாக உள்ளது. இது என் மருந்துகளாலோ, உணவு தவறியதாலோ இருக்குமா?"
-   }
+   },
+   "warn_high": {
+    "en": "If there is extreme thirst, confusion, vomiting or heavy drowsiness, go to the hospital now.",
+    "ta": "அதிக தாகம், குழப்பம், வாந்தி அல்லது கடும் தூக்கக் கலக்கம் இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "warn_low": {
+    "en": "If there is sweating, shaking, confusion or fainting, get medical help now.",
+    "ta": "வியர்வை, நடுக்கம், குழப்பம் அல்லது மயக்கம் இருந்தால் உடனே மருத்துவ உதவி பெறுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/blood-glucose-test/"
   },
   {
    "key": "pp_glucose",
@@ -85,12 +104,21 @@
     "pp blood sugar",
     "post-prandial"
    ],
-   "en": "Blood sugar about 2 hours after a meal.",
-   "ta": "சாப்பிட்டு சுமார் 2 மணி நேரம் கழித்து இரத்தத்தில் உள்ள சர்க்கரையின் அளவு.",
+   "en": "Blood sugar measured 2 hours after eating.",
+   "ta": "சாப்பிட்டு 2 மணி நேரம் கழித்து அளக்கப்படும் இரத்தச் சர்க்கரை.",
    "q_high": {
     "en": "My after-food sugar is high. Should my food or medicine timing change?",
     "ta": "என் சாப்பிட்ட பின் சர்க்கரை அதிகமாக உள்ளது. உணவு அல்லது மருந்து நேரத்தை மாற்ற வேண்டுமா?"
-   }
+   },
+   "warn_high": {
+    "en": "If there is extreme thirst, confusion, vomiting or heavy drowsiness, go to the hospital now.",
+    "ta": "அதிக தாகம், குழப்பம், வாந்தி அல்லது கடும் தூக்கக் கலக்கம் இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "warn_low": {
+    "en": "If there is sweating, shaking, confusion or fainting, get medical help now.",
+    "ta": "வியர்வை, நடுக்கம், குழப்பம் அல்லது மயக்கம் இருந்தால் உடனே மருத்துவ உதவி பெறுங்கள்."
+   },
+   "source": "https://medlineplus.gov/ency/article/003482.htm"
   },
   {
    "key": "hba1c",
@@ -110,7 +138,12 @@
    "q_low": {
     "en": "My HbA1c is below the range. Is that a concern for me?",
     "ta": "என் HbA1c குறைவாக உள்ளது. இது எனக்குக் கவலைக்குரியதா?"
-   }
+   },
+   "warn_high": {
+    "en": "If there is extreme thirst, confusion, vomiting or heavy drowsiness, go to the hospital now.",
+    "ta": "அதிக தாகம், குழப்பம், வாந்தி அல்லது கடும் தூக்கக் கலக்கம் இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/"
   },
   {
    "key": "haemoglobin",
@@ -120,8 +153,8 @@
     "hb",
     "hgb"
    ],
-   "en": "The protein in red blood cells that carries oxygen. When it is low you may feel tired.",
-   "ta": "இரத்த சிவப்பணுக்களில் ஆக்ஸிஜனைக் கொண்டு செல்லும் புரதம். இது குறைவாக இருந்தால் சோர்வாக உணரலாம்.",
+   "en": "The iron-rich protein in red blood cells that carries oxygen. A low level can be a sign of anaemia (weakness, dizziness).",
+   "ta": "ஆக்ஸிஜனை எடுத்துச் செல்லும், இரும்புச்சத்து உள்ள சிவப்பு இரத்த அணுக்களின் புரதம். குறைவாக இருந்தால் இரத்தசோகையின் அறிகுறியாக இருக்கலாம் (சோர்வு, தலைசுற்றல்).",
    "q_low": {
     "en": "My haemoglobin is low. What could be the reason, and do I need iron or other tests?",
     "ta": "என் ஹீமோகுளோபின் குறைவாக உள்ளது. இதற்கு என்ன காரணம் இருக்கலாம்? இரும்புச்சத்து அல்லது வேறு பரிசோதனை தேவையா?"
@@ -129,7 +162,12 @@
    "q_high": {
     "en": "My haemoglobin is high. Does this need any follow-up?",
     "ta": "என் ஹீமோகுளோபின் அதிகமாக உள்ளது. இதற்கு மேலும் கவனிப்பு தேவையா?"
-   }
+   },
+   "warn_low": {
+    "en": "If you feel very weak or dizzy, see your doctor soon. If there is chest pain or breathlessness, call 108.",
+    "ta": "மிகவும் சோர்வாகவோ தலைசுற்றலாகவோ இருந்தால் விரைவில் மருத்துவரைப் பாருங்கள். நெஞ்சு வலி அல்லது மூச்சுத் திணறல் இருந்தால் 108-ஐ அழையுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/hemoglobin-test/"
   },
   {
    "key": "total_cholesterol",
@@ -138,12 +176,17 @@
     "serum cholesterol",
     "cholesterol total"
    ],
-   "en": "The total cholesterol (a fat-like substance) in your blood. If it stays high for a long time it can affect the heart.",
-   "ta": "இரத்தத்தில் உள்ள மொத்த கொலஸ்ட்ரால் (கொழுப்பு போன்ற பொருள்) அளவு. நீண்ட காலம் அதிகமாக இருந்தால் இதயத்தைப் பாதிக்கலாம்.",
+   "en": "The total cholesterol (a waxy, fat-like substance) in your blood. Too much can build up in blood vessels and raise the risk of heart disease.",
+   "ta": "இரத்தத்தில் உள்ள மொத்த கொலஸ்ட்ரால் (மெழுகு போன்ற கொழுப்புப் பொருள்). அதிகமானால் இரத்தக் குழாய்களில் படிந்து இதய நோய் அபாயத்தை அதிகரிக்கலாம்.",
    "q_high": {
     "en": "My cholesterol is high. Should I change my diet, or do I need a full lipid profile?",
     "ta": "என் கொலஸ்ட்ரால் அதிகமாக உள்ளது. உணவை மாற்ற வேண்டுமா, அல்லது முழு கொழுப்புப் பரிசோதனை (Lipid profile) தேவையா?"
-   }
+   },
+   "warn_high": {
+    "en": "High cholesterol itself has no symptoms. But if there is ever chest pain, sweating or breathlessness, call 108 at once.",
+    "ta": "அதிக கொலஸ்ட்ராலுக்குத் தனியாக அறிகுறி இருக்காது. ஆனால் நெஞ்சு வலி, வியர்வை அல்லது மூச்சுத் திணறல் வந்தால் உடனே 108-ஐ அழைக்கவும்."
+   },
+   "source": "https://medlineplus.gov/cholesterol.html"
   },
   {
    "key": "ldl",
@@ -157,7 +200,12 @@
    "q_high": {
     "en": "My LDL is high. How can I bring it down?",
     "ta": "என் LDL (கெட்ட கொலஸ்ட்ரால்) அதிகமாக உள்ளது. இதை எப்படிக் குறைப்பது?"
-   }
+   },
+   "warn_high": {
+    "en": "High cholesterol itself has no symptoms. But if there is ever chest pain, sweating or breathlessness, call 108 at once.",
+    "ta": "அதிக கொலஸ்ட்ராலுக்குத் தனியாக அறிகுறி இருக்காது. ஆனால் நெஞ்சு வலி, வியர்வை அல்லது மூச்சுத் திணறல் வந்தால் உடனே 108-ஐ அழைக்கவும்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
   },
   {
    "key": "hdl",
@@ -171,7 +219,8 @@
    "q_low": {
     "en": "My HDL is low. What can I do to improve it?",
     "ta": "என் HDL (நல்ல கொலஸ்ட்ரால்) குறைவாக உள்ளது. இதை உயர்த்த என்ன செய்யலாம்?"
-   }
+   },
+   "source": "https://medlineplus.gov/lab-tests/cholesterol-levels/"
   },
   {
    "key": "triglycerides",
@@ -180,12 +229,13 @@
     "triglycerides",
     "tg"
    ],
-   "en": "A type of fat in the blood. Food, sugar and oil affect it.",
-   "ta": "இரத்தத்தில் உள்ள ஒரு வகை கொழுப்பு. உணவு, சர்க்கரை, எண்ணெய் இதைப் பாதிக்கும்.",
+   "en": "A type of fat in the blood. High levels may raise the risk of heart disease. High levels usually cause no symptoms.",
+   "ta": "இரத்தத்தில் உள்ள ஒரு வகை கொழுப்பு. அதிகமானால் இதய நோய் அபாயம் கூடலாம். பொதுவாக எந்த அறிகுறியும் இருக்காது.",
    "q_high": {
     "en": "My triglycerides are high. Which foods should I reduce?",
     "ta": "என் ட்ரைகிளிசரைடு அதிகமாக உள்ளது. எந்த உணவுகளைக் குறைக்க வேண்டும்?"
-   }
+   },
+   "source": "https://medlineplus.gov/lab-tests/triglycerides-test/"
   },
   {
    "key": "creatinine",
@@ -199,7 +249,12 @@
    "q_high": {
     "en": "My creatinine is high. Do I need a kidney check, and should my medicines be reviewed?",
     "ta": "என் கிரியேட்டினின் அதிகமாக உள்ளது. சிறுநீரகப் பரிசோதனை தேவையா? என் மருந்துகளைச் சரிபார்க்க வேண்டுமா?"
-   }
+   },
+   "warn_high": {
+    "en": "If very little urine is passed, or the legs, feet or eyelids swell, see your doctor today. If there is breathlessness, go to the hospital now.",
+    "ta": "சிறுநீர் மிகக் குறைவாகப் போனால், அல்லது கால், பாதம், கண் இமைகள் வீங்கினால் இன்றே மருத்துவரைப் பாருங்கள். மூச்சுத் திணறல் இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/creatinine-test/"
   },
   {
    "key": "urea",
@@ -209,12 +264,17 @@
     "bun",
     "blood urea nitrogen"
    ],
-   "en": "Another waste product that the kidneys remove.",
-   "ta": "சிறுநீரகங்கள் வெளியேற்றும் மற்றொரு கழிவுப் பொருள்.",
+   "en": "Urea (BUN) is a waste product that the kidneys remove. A high value may mean the kidneys are not working well.",
+   "ta": "யூரியா (BUN) சிறுநீரகங்கள் வெளியேற்றும் ஒரு கழிவுப் பொருள். அதிகமாக இருந்தால் சிறுநீரகங்கள் சரியாக வேலை செய்யவில்லை என்று அர்த்தமாகலாம்.",
    "q_high": {
     "en": "My urea is high. Is my kidney function okay?",
     "ta": "என் யூரியா அதிகமாக உள்ளது. என் சிறுநீரகச் செயல்பாடு சரியாக உள்ளதா?"
-   }
+   },
+   "warn_high": {
+    "en": "If very little urine is passed, or the legs, feet or eyelids swell, see your doctor today. If there is breathlessness, go to the hospital now.",
+    "ta": "சிறுநீர் மிகக் குறைவாகப் போனால், அல்லது கால், பாதம், கண் இமைகள் வீங்கினால் இன்றே மருத்துவரைப் பாருங்கள். மூச்சுத் திணறல் இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/bun-blood-urea-nitrogen/"
   },
   {
    "key": "tsh",
@@ -231,7 +291,8 @@
    "q_low": {
     "en": "My TSH is low. Do I need more thyroid tests (T3, T4)?",
     "ta": "என் TSH குறைவாக உள்ளது. கூடுதல் தைராய்டு பரிசோதனை (T3, T4) தேவையா?"
-   }
+   },
+   "source": "https://medlineplus.gov/lab-tests/tsh-thyroid-stimulating-hormone-test/"
   },
   {
    "key": "vitamin_d",
@@ -242,12 +303,13 @@
     "25-hydroxy",
     "vit d"
    ],
-   "en": "A vitamin needed for strong bones. The skin makes it in sunlight.",
-   "ta": "எலும்புகள் வலுவாக இருக்கத் தேவையான வைட்டமின். சூரிய ஒளியில் தோல் இதை உருவாக்குகிறது.",
+   "en": "A vitamin that helps the body take in calcium for strong bones and teeth. Very low levels can make bones weak.",
+   "ta": "எலும்பு, பல் வலிமைக்கு கால்சியத்தை உடல் உறிஞ்ச உதவும் வைட்டமின். மிகக் குறைவாக இருந்தால் எலும்புகள் பலவீனமாகலாம்.",
    "q_low": {
     "en": "My vitamin D is low. Do I need a supplement, and how much sunlight is good for me?",
     "ta": "என் வைட்டமின் D குறைவாக உள்ளது. சப்ளிமென்ட் தேவையா? எனக்கு எவ்வளவு சூரிய ஒளி நல்லது?"
-   }
+   },
+   "source": "https://medlineplus.gov/lab-tests/vitamin-d-test/"
   },
   {
    "key": "vitamin_b12",
@@ -256,12 +318,13 @@
     "b12",
     "cobalamin"
    ],
-   "en": "A vitamin needed for the nerves and for making blood.",
-   "ta": "நரம்புகளுக்கும் இரத்த உற்பத்திக்கும் தேவையான வைட்டமின்.",
+   "en": "A vitamin that keeps nerves and blood cells healthy. Low levels can cause tingling or numbness in hands and feet.",
+   "ta": "நரம்புகளையும் இரத்த அணுக்களையும் ஆரோக்கியமாக வைக்கும் வைட்டமின். குறைவாக இருந்தால் கை, கால்களில் கூச்சம் அல்லது மரத்துப்போதல் வரலாம்.",
    "q_low": {
     "en": "My B12 is low. Do I need a supplement or an injection?",
     "ta": "என் B12 குறைவாக உள்ளது. சப்ளிமென்ட் அல்லது ஊசி தேவையா?"
-   }
+   },
+   "source": "https://medlineplus.gov/ency/article/003705.htm"
   },
   {
    "key": "platelets",
@@ -280,7 +343,12 @@
    "q_high": {
     "en": "My platelet count is high. Does this need follow-up?",
     "ta": "என் தட்டணுக்கள் அதிகமாக உள்ளன. இதற்கு மேலும் கவனிப்பு தேவையா?"
-   }
+   },
+   "warn_low": {
+    "en": "If bleeding does not stop, or there are many unexplained bruises or small red spots on the skin, go to the hospital now.",
+    "ta": "இரத்தப்போக்கு நிற்கவில்லை என்றால், அல்லது காரணம் இல்லாமல் பல சிராய்ப்புகள் / தோலில் சிறு சிவப்புப் புள்ளிகள் இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/platelet-tests/"
   },
   {
    "key": "wbc",
@@ -290,7 +358,14 @@
     "total leucocyte",
     "total leukocyte",
     "tlc",
-    "total count"
+    "total count",
+    "w.b.c",
+    "w.b.cs",
+    "wbc count",
+    "total wbc",
+    "total leucocyte count",
+    "total leukocyte count",
+    "white cell count"
    ],
    "en": "White blood cells, which fight infection.",
    "ta": "நோய்த்தொற்றை எதிர்த்துப் போராடும் வெள்ளை இரத்த அணுக்கள்.",
@@ -301,7 +376,16 @@
    "q_low": {
     "en": "My white cell count is low. What should I be careful about?",
     "ta": "என் வெள்ளை அணுக்கள் குறைவாக உள்ளன. நான் எதில் கவனமாக இருக்க வேண்டும்?"
-   }
+   },
+   "warn_high": {
+    "en": "If there is fever with chills, see your doctor today.",
+    "ta": "குளிருடன் காய்ச்சல் இருந்தால் இன்றே மருத்துவரைப் பாருங்கள்."
+   },
+   "warn_low": {
+    "en": "If you get a fever, chills or other signs of infection, contact your doctor the same day.",
+    "ta": "காய்ச்சல், குளிர் நடுக்கம் அல்லது தொற்றின் வேறு அறிகுறி வந்தால் அன்றே மருத்துவரைத் தொடர்பு கொள்ளுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/white-blood-count-wbc/"
   },
   {
    "key": "sodium",
@@ -319,7 +403,16 @@
    "q_high": {
     "en": "My sodium is high. Am I drinking enough water?",
     "ta": "என் சோடியம் அதிகமாக உள்ளது. நான் போதுமான தண்ணீர் குடிக்கிறேனா?"
-   }
+   },
+   "warn_high": {
+    "en": "If there is confusion, muscle twitching or fits, go to the hospital now.",
+    "ta": "குழப்பம், தசை துடிப்பு அல்லது வலிப்பு இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "warn_low": {
+    "en": "If there is confusion, muscle twitching or fits, go to the hospital now.",
+    "ta": "குழப்பம், தசை துடிப்பு அல்லது வலிப்பு இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/sodium-blood-test/"
   },
   {
    "key": "potassium",
@@ -337,7 +430,16 @@
    "q_low": {
     "en": "My potassium is low. Is this safe for my heart, and should my medicines or diet change?",
     "ta": "என் பொட்டாசியம் குறைவாக உள்ளது. இது என் இதயத்திற்குப் பாதுகாப்பானதா? மருந்து அல்லது உணவில் மாற்றம் தேவையா?"
-   }
+   },
+   "warn_high": {
+    "en": "If there is muscle weakness, an irregular heartbeat, chest pain or difficulty breathing, go to the hospital now.",
+    "ta": "தசை பலவீனம், சீரற்ற இதயத் துடிப்பு, நெஞ்சு வலி அல்லது மூச்சுத் திணறல் இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "warn_low": {
+    "en": "If there is an irregular heartbeat, muscle weakness or cramps, go to the hospital now.",
+    "ta": "சீரற்ற இதயத் துடிப்பு, தசை பலவீனம் அல்லது தசைப் பிடிப்பு இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/potassium-blood-test/"
   },
   {
    "key": "sgpt",
@@ -346,12 +448,17 @@
     "alt",
     "alanine aminotransferase"
    ],
-   "en": "A liver enzyme. A high value can mean the liver is under stress.",
-   "ta": "கல்லீரல் நொதி. அதிகமாக இருந்தால் கல்லீரல் சிரமத்தில் இருக்கலாம்.",
+   "en": "ALT (SGPT), an enzyme found mainly in the liver. A high value may be a sign of liver injury.",
+   "ta": "ALT (SGPT) - பெரும்பாலும் கல்லீரலில் உள்ள ஒரு நொதி. அதிகமாக இருந்தால் கல்லீரல் பாதிப்பின் அறிகுறியாக இருக்கலாம்.",
    "q_high": {
     "en": "My liver enzyme (SGPT) is high. Do I need a scan or more tests?",
     "ta": "என் கல்லீரல் நொதி (SGPT) அதிகமாக உள்ளது. ஸ்கேன் அல்லது கூடுதல் பரிசோதனை தேவையா?"
-   }
+   },
+   "warn_high": {
+    "en": "If the eyes or skin turn yellow, or urine becomes dark, see your doctor soon.",
+    "ta": "கண்கள் அல்லது தோல் மஞ்சளானால், அல்லது சிறுநீர் அடர் நிறமானால் விரைவில் மருத்துவரைப் பாருங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/alt-blood-test/"
   },
   {
    "key": "sgot",
@@ -365,7 +472,12 @@
    "q_high": {
     "en": "My SGOT is high. Do I need more liver tests?",
     "ta": "என் SGOT அதிகமாக உள்ளது. கூடுதல் கல்லீரல் பரிசோதனை தேவையா?"
-   }
+   },
+   "warn_high": {
+    "en": "If the eyes or skin turn yellow, or urine becomes dark, see your doctor soon.",
+    "ta": "கண்கள் அல்லது தோல் மஞ்சளானால், அல்லது சிறுநீர் அடர் நிறமானால் விரைவில் மருத்துவரைப் பாருங்கள்."
+   },
+   "source": "https://medlineplus.gov/ency/article/003472.htm"
   },
   {
    "key": "uric_acid",
@@ -373,12 +485,13 @@
     "uric acid",
     "serum uric acid"
    ],
-   "en": "A waste product. When it is high it can cause joint pain (gout).",
-   "ta": "ஒரு கழிவுப் பொருள். அதிகமாக இருந்தால் மூட்டு வலி (கீல்வாதம்) ஏற்படலாம்.",
+   "en": "A normal waste product that the kidneys remove. When it is high it can cause gout (painful, swollen joints) or kidney stones.",
+   "ta": "சிறுநீரகங்கள் வெளியேற்றும் ஒரு சாதாரண கழிவுப் பொருள். அதிகமானால் கீல்வாதம் (மூட்டு வலி, வீக்கம்) அல்லது சிறுநீரகக் கல் வரலாம்.",
    "q_high": {
     "en": "My uric acid is high. Which foods should I avoid?",
     "ta": "என் யூரிக் அமிலம் அதிகமாக உள்ளது. எந்த உணவுகளைத் தவிர்க்க வேண்டும்?"
-   }
+   },
+   "source": "https://medlineplus.gov/lab-tests/uric-acid-test/"
   },
   {
    "key": "bilirubin",
@@ -387,12 +500,416 @@
     "total bilirubin",
     "serum bilirubin"
    ],
-   "en": "A yellow substance that the liver processes.",
-   "ta": "கல்லீரல் செயல்படுத்தும் ஒரு மஞ்சள் நிறப் பொருள்.",
+   "en": "A yellowish substance made when old red blood cells break down. The liver removes it. Too much can make skin and eyes yellow (jaundice).",
+   "ta": "பழைய சிவப்பு இரத்த அணுக்கள் உடையும்போது உருவாகும் மஞ்சள் நிறப் பொருள். கல்லீரல் இதை வெளியேற்றுகிறது. அதிகமானால் தோலும் கண்ணும் மஞ்சளாகலாம் (மஞ்சள் காமாலை).",
    "q_high": {
     "en": "My bilirubin is high. Do I need liver tests?",
     "ta": "என் பிலிரூபின் அதிகமாக உள்ளது. கல்லீரல் பரிசோதனை தேவையா?"
+   },
+   "warn_high": {
+    "en": "If the eyes or skin turn yellow, or urine becomes dark, see your doctor soon.",
+    "ta": "கண்கள் அல்லது தோல் மஞ்சளானால், அல்லது சிறுநீர் அடர் நிறமானால் விரைவில் மருத்துவரைப் பாருங்கள்."
+   },
+   "source": "https://medlineplus.gov/lab-tests/bilirubin-blood-test/"
+  },
+  {
+   "key": "esr",
+   "aliases": [
+    "esr",
+    "erythrocyte sedimentation",
+    "sed rate",
+    "sedimentation rate"
+   ],
+   "en": "ESR checks for inflammation in the body: how fast red blood cells settle in a tube. A high value can mean inflammation, but it cannot tell the cause.",
+   "ta": "ESR உடலில் வீக்கம் (inflammation) உள்ளதா என்று பார்க்கும் பரிசோதனை: சிவப்பு இரத்த அணுக்கள் குழாயில் எவ்வளவு வேகமாக படிகின்றன என்பது. அதிகமாக இருந்தால் வீக்கம் இருக்கலாம், ஆனால் காரணத்தைச் சொல்லாது.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/erythrocyte-sedimentation-rate-esr/"
+  },
+  {
+   "key": "crp",
+   "aliases": [
+    "crp",
+    "c-reactive protein",
+    "c reactive protein",
+    "hs-crp",
+    "hscrp"
+   ],
+   "en": "CRP is a protein the liver makes when there is inflammation. A high value can mean infection or inflammation somewhere in the body.",
+   "ta": "CRP என்பது உடலில் வீக்கம் இருக்கும்போது கல்லீரல் உருவாக்கும் புரதம். அதிகமாக இருந்தால் உடலில் எங்காவது தொற்று அல்லது வீக்கம் இருக்கலாம்.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/"
+  },
+  {
+   "key": "neutrophils",
+   "aliases": [
+    "neutrophil",
+    "neutrophils",
+    "polymorph",
+    "polymorphs",
+    "polymorphonuclear"
+   ],
+   "en": "Neutrophils (also called polymorphs) are white blood cells that mostly fight bacterial infections.",
+   "ta": "நியூட்ரோஃபில்கள் (பாலிமார்ஃப்கள்) பெரும்பாலும் பாக்டீரியா தொற்றுகளை எதிர்க்கும் வெள்ளை இரத்த அணுக்கள்.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/blood-differential/"
+  },
+  {
+   "key": "lymphocytes",
+   "aliases": [
+    "lymphocyte",
+    "lymphocytes"
+   ],
+   "en": "Lymphocytes are white blood cells that mostly fight viral infections.",
+   "ta": "லிம்போசைட்டுகள் பெரும்பாலும் வைரஸ் தொற்றுகளை எதிர்க்கும் வெள்ளை இரத்த அணுக்கள்.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/blood-differential/"
+  },
+  {
+   "key": "eosinophils",
+   "aliases": [
+    "eosinophil",
+    "eosinophils"
+   ],
+   "en": "Eosinophils are white blood cells that become active in allergies and some infections, such as parasites.",
+   "ta": "இயோசினோஃபில்கள் ஒவ்வாமை மற்றும் சில தொற்றுகளில் (உதாரணம்: ஒட்டுண்ணி) செயல்படும் வெள்ளை இரத்த அணுக்கள்.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/blood-differential/"
+  },
+  {
+   "key": "abs_eosinophils",
+   "aliases": [
+    "abs.eosinophil",
+    "abs. eosinophil",
+    "absolute eosinophil",
+    "abs eosinophil",
+    "aec"
+   ],
+   "en": "Absolute eosinophil count: the number of eosinophils, white blood cells that become active in allergies and some infections, such as parasites.",
+   "ta": "மொத்த இயோசினோஃபில் எண்ணிக்கை: ஒவ்வாமை மற்றும் சில தொற்றுகளில் (உதாரணம்: ஒட்டுண்ணி) செயல்படும் வெள்ளை இரத்த அணுக்களின் எண்ணிக்கை.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/ency/article/003649.htm"
+  },
+  {
+   "key": "monocytes",
+   "aliases": [
+    "monocyte",
+    "monocytes"
+   ],
+   "en": "Monocytes are one of the five types of white blood cells, which help the body fight infections and other diseases.",
+   "ta": "மோனோசைட்டுகள் ஐந்து வகை வெள்ளை இரத்த அணுக்களில் ஒன்று; தொற்றுகளையும் நோய்களையும் எதிர்க்க உதவுகின்றன.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/blood-differential/"
+  },
+  {
+   "key": "basophils",
+   "aliases": [
+    "basophil",
+    "basophils"
+   ],
+   "en": "Basophils are one of the five types of white blood cells, which help the body fight infections and other diseases.",
+   "ta": "பேசோஃபில்கள் ஐந்து வகை வெள்ளை இரத்த அணுக்களில் ஒன்று; தொற்றுகளையும் நோய்களையும் எதிர்க்க உதவுகின்றன.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/blood-differential/"
+  },
+  {
+   "key": "rbc",
+   "aliases": [
+    "rbc",
+    "red blood cell count",
+    "red cell count",
+    "erythrocyte count",
+    "r.b.c"
+   ],
+   "en": "The number of red blood cells, which carry oxygen around the body. A low count can be a sign of anaemia.",
+   "ta": "உடல் முழுவதும் ஆக்ஸிஜனை எடுத்துச் செல்லும் சிவப்பு இரத்த அணுக்களின் எண்ணிக்கை. குறைவாக இருந்தால் இரத்தசோகையின் அறிகுறியாக இருக்கலாம்.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/red-blood-cell-rbc-count/"
+  },
+  {
+   "key": "pcv",
+   "aliases": [
+    "pcv",
+    "hematocrit",
+    "haematocrit",
+    "hct",
+    "packed cell volume"
+   ],
+   "en": "PCV (hematocrit) is the percentage of your blood made up of red blood cells. Too low can be a sign of anaemia; too high is most often from dehydration.",
+   "ta": "PCV (ஹீமாடோக்ரிட்) என்பது இரத்தத்தில் சிவப்பு அணுக்கள் எத்தனை சதவீதம் என்பது. குறைவாக இருந்தால் இரத்தசோகை இருக்கலாம்; அதிகமாக இருப்பது பெரும்பாலும் நீரிழப்பால்.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/hematocrit-test/"
+  },
+  {
+   "key": "mcv",
+   "aliases": [
+    "mcv",
+    "mean corpuscular volume",
+    "mean cell volume"
+   ],
+   "en": "MCV is the average size of your red blood cells.",
+   "ta": "MCV என்பது உங்கள் சிவப்பு இரத்த அணுக்களின் சராசரி அளவு.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/ency/article/003642.htm"
+  },
+  {
+   "key": "mch",
+   "aliases": [
+    "mch",
+    "mean corpuscular hemoglobin",
+    "mean corpuscular haemoglobin"
+   ],
+   "en": "MCH is the average amount of hemoglobin in each red blood cell.",
+   "ta": "MCH என்பது ஒவ்வொரு சிவப்பு இரத்த அணுவிலும் உள்ள ஹீமோகுளோபினின் சராசரி அளவு.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/ency/article/003642.htm"
+  },
+  {
+   "key": "mchc",
+   "aliases": [
+    "mchc",
+    "mean corpuscular hemoglobin concentration",
+    "mean corpuscular haemoglobin concentration"
+   ],
+   "en": "MCHC is the average amount of hemoglobin compared with the size of each red blood cell.",
+   "ta": "MCHC என்பது ஒவ்வொரு சிவப்பு இரத்த அணுவின் அளவுக்கு ஏற்ப உள்ள ஹீமோகுளோபினின் சராசரி அடர்த்தி.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/ency/article/003642.htm"
+  },
+  {
+   "key": "t4",
+   "aliases": [
+    "t4",
+    "thyroxine",
+    "free t4",
+    "ft4",
+    "total t4"
+   ],
+   "en": "T4 (thyroxine) is a hormone made by the thyroid gland. Too much or too little can be a sign of a thyroid problem. It is usually read together with TSH.",
+   "ta": "T4 (தைராக்சின்) தைராய்டு சுரப்பி உருவாக்கும் ஹார்மோன். அதிகமோ குறைவோ தைராய்டு பிரச்சினையின் அறிகுறியாக இருக்கலாம். பொதுவாக TSH-உடன் சேர்த்துப் பார்க்கப்படும்.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/"
+  },
+  {
+   "key": "t3",
+   "aliases": [
+    "t3",
+    "triiodothyronine",
+    "free t3",
+    "ft3",
+    "total t3"
+   ],
+   "en": "T3 is a thyroid hormone. It is mainly used to check for an overactive thyroid, together with TSH and T4.",
+   "ta": "T3 ஒரு தைராய்டு ஹார்மோன். தைராய்டு அதிகமாக வேலை செய்கிறதா என்று பார்க்க, TSH, T4-உடன் சேர்த்துப் பயன்படுகிறது.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/"
+  },
+  {
+   "key": "alp",
+   "aliases": [
+    "alkaline phosphatase",
+    "alp",
+    "alk phos",
+    "alk. phos"
+   ],
+   "en": "ALP is an enzyme found mostly in the liver, bile ducts and bones. Abnormal levels can be a sign of a liver or bone problem.",
+   "ta": "ALP என்பது பெரும்பாலும் கல்லீரல், பித்தநாளங்கள், எலும்புகளில் உள்ள நொதி. அளவு மாறினால் கல்லீரல் அல்லது எலும்புப் பிரச்சினையின் அறிகுறியாக இருக்கலாம்.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/alkaline-phosphatase/"
+  },
+  {
+   "key": "albumin",
+   "aliases": [
+    "albumin",
+    "serum albumin"
+   ],
+   "en": "Albumin is the main protein in the blood, made mainly by the liver.",
+   "ta": "அல்புமின் இரத்தத்தில் உள்ள முக்கிய புரதம்; பெரும்பாலும் கல்லீரலால் உருவாக்கப்படுகிறது.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/comprehensive-metabolic-panel-cmp/"
+  },
+  {
+   "key": "total_protein",
+   "aliases": [
+    "total protein",
+    "serum protein",
+    "protein total"
+   ],
+   "en": "The total amount of protein in your blood, including albumin and globulins, mainly made in the liver.",
+   "ta": "இரத்தத்தில் உள்ள மொத்த புரதம் (அல்புமின், குளோபுலின் உட்பட); பெரும்பாலும் கல்லீரலில் உருவாகிறது.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/comprehensive-metabolic-panel-cmp/"
+  },
+  {
+   "key": "calcium",
+   "aliases": [
+    "calcium",
+    "serum calcium",
+    "total calcium",
+    "ionized calcium",
+    "ionised calcium"
+   ],
+   "en": "Calcium is a mineral needed for bones, teeth, nerves, muscles and the heart.",
+   "ta": "கால்சியம் எலும்பு, பல், நரம்பு, தசை, இதயம் சரியாக வேலை செய்யத் தேவையான தாது.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/calcium-blood-test/",
+   "warn_low": {
+    "en": "If there are muscle spasms, tingling around the lips or fingers, an irregular heartbeat or fits, go to the hospital now.",
+    "ta": "தசைப் பிடிப்பு, உதடு அல்லது விரல்களில் கூச்சம், சீரற்ற இதயத் துடிப்பு அல்லது வலிப்பு இருந்தால் உடனே மருத்துவமனைக்குச் செல்லுங்கள்."
    }
+  },
+  {
+   "key": "microalbumin",
+   "aliases": [
+    "microalbumin",
+    "urine albumin",
+    "uacr",
+    "albumin creatinine ratio",
+    "albumin/creatinine"
+   ],
+   "en": "Checks for albumin (a protein) in the urine. Normally the kidneys let through only a trace; more can be a sign of kidney damage.",
+   "ta": "சிறுநீரில் அல்புமின் (புரதம்) உள்ளதா என்று பார்க்கும் பரிசோதனை. சாதாரணமாக மிகக் குறைவாகவே இருக்கும்; அதிகமாக இருந்தால் சிறுநீரக பாதிப்பின் அறிகுறியாக இருக்கலாம்.",
+   "q_high": {
+    "en": "This value is high. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு அதிகமாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "q_low": {
+    "en": "This value is low. What does it mean for me, and do I need more tests?",
+    "ta": "இந்த அளவு குறைவாக உள்ளது. இது எனக்கு என்ன அர்த்தம்? கூடுதல் பரிசோதனை தேவையா?"
+   },
+   "source": "https://medlineplus.gov/lab-tests/creatinine-test/"
   }
  ]
 }

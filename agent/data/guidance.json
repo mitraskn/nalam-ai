@@ -1,8 +1,705 @@
 {
-  "version": "EDIT ME",
-  "note": "EDIT ME 3: replace the example with real guidance. Every item needs a source id from 'sources', and you must have read that source on the version date.",
-  "sources": {"EXAMPLE": "EDIT ME: title, publisher, URL"},
-  "items": [
-    {"id": "G-EXAMPLE", "source": "EXAMPLE", "text": "EDIT ME: one short paraphrase of the source."}
-  ]
+ "version": "2026-11-04",
+ "note": "Built from Nalam AI's fixed content files. Draft: verify against sources.",
+ "sources": {
+  "MEDLINEPLUS": "MedlinePlus (U.S. National Library of Medicine) lab test and drug pages; NHS UK; European Medicines Agency",
+  "PUBHEALTH": "WHO and MoHFW India public health guidance",
+  "NALAM": "Nalam AI safety rules",
+  "OFFICIAL": "Official health sites: MedlinePlus, WHO, NHS UK, Diabetes UK, Government of India (myScheme, NHA, Tele-MANAS)"
+ },
+ "items": [
+  {
+   "id": "LAB-fasting_glucose",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+   "text": "Blood sugar after not eating (water is allowed) for at least 8 hours. It is used to check for and follow diabetes."
+  },
+  {
+   "id": "LAB-random_glucose",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/blood-glucose-test/",
+   "text": "Blood sugar at any time of the day, without fasting."
+  },
+  {
+   "id": "LAB-pp_glucose",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/ency/article/003482.htm",
+   "text": "Blood sugar measured 2 hours after eating."
+  },
+  {
+   "id": "LAB-hba1c",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/hemoglobin-a1c-hba1c-test/",
+   "text": "Your average blood sugar over the last 2-3 months."
+  },
+  {
+   "id": "LAB-haemoglobin",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/hemoglobin-test/",
+   "text": "The iron-rich protein in red blood cells that carries oxygen. A low level can be a sign of anaemia (weakness, dizziness)."
+  },
+  {
+   "id": "LAB-total_cholesterol",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/cholesterol.html",
+   "text": "The total cholesterol (a waxy, fat-like substance) in your blood. Too much can build up in blood vessels and raise the risk of heart disease."
+  },
+  {
+   "id": "LAB-ldl",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+   "text": "'Bad' cholesterol that can build up inside blood vessels."
+  },
+  {
+   "id": "LAB-hdl",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/cholesterol-levels/",
+   "text": "'Good' cholesterol that helps remove extra cholesterol from the blood."
+  },
+  {
+   "id": "LAB-triglycerides",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/triglycerides-test/",
+   "text": "A type of fat in the blood. High levels may raise the risk of heart disease. High levels usually cause no symptoms."
+  },
+  {
+   "id": "LAB-creatinine",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/creatinine-test/",
+   "text": "A waste product that the kidneys remove. It shows how well the kidneys are working."
+  },
+  {
+   "id": "LAB-urea",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/bun-blood-urea-nitrogen/",
+   "text": "Urea (BUN) is a waste product that the kidneys remove. A high value may mean the kidneys are not working well."
+  },
+  {
+   "id": "LAB-tsh",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/tsh-thyroid-stimulating-hormone-test/",
+   "text": "A hormone that controls the thyroid gland. It shows whether the thyroid is working too slowly or too fast."
+  },
+  {
+   "id": "LAB-vitamin_d",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/vitamin-d-test/",
+   "text": "A vitamin that helps the body take in calcium for strong bones and teeth. Very low levels can make bones weak."
+  },
+  {
+   "id": "LAB-vitamin_b12",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/ency/article/003705.htm",
+   "text": "A vitamin that keeps nerves and blood cells healthy. Low levels can cause tingling or numbness in hands and feet."
+  },
+  {
+   "id": "LAB-platelets",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/platelet-tests/",
+   "text": "Cells that help blood clot and stop bleeding."
+  },
+  {
+   "id": "LAB-wbc",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/white-blood-count-wbc/",
+   "text": "White blood cells, which fight infection."
+  },
+  {
+   "id": "LAB-sodium",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/sodium-blood-test/",
+   "text": "A salt (electrolyte) that keeps the body's water balance and helps the nerves work."
+  },
+  {
+   "id": "LAB-potassium",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/potassium-blood-test/",
+   "text": "A mineral that helps the heart and muscles work properly."
+  },
+  {
+   "id": "LAB-sgpt",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/alt-blood-test/",
+   "text": "ALT (SGPT), an enzyme found mainly in the liver. A high value may be a sign of liver injury."
+  },
+  {
+   "id": "LAB-sgot",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/ency/article/003472.htm",
+   "text": "Another liver enzyme, also found in the heart and muscles."
+  },
+  {
+   "id": "LAB-uric_acid",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/uric-acid-test/",
+   "text": "A normal waste product that the kidneys remove. When it is high it can cause gout (painful, swollen joints) or kidney stones."
+  },
+  {
+   "id": "LAB-bilirubin",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/bilirubin-blood-test/",
+   "text": "A yellowish substance made when old red blood cells break down. The liver removes it. Too much can make skin and eyes yellow (jaundice)."
+  },
+  {
+   "id": "MYTH-m1",
+   "source": "OFFICIAL",
+   "url": "https://medlineplus.gov/ency/patientinstructions/000964.htm",
+   "text": "Only eating sweets causes diabetes. PARTLY FALSE: Diabetes happens when the body does not make enough insulin or does not use it well. Family history, age, extra weight and less activity all raise the risk. Sweets alone are not the cause."
+  },
+  {
+   "id": "MYTH-m2",
+   "source": "OFFICIAL",
+   "url": "https://www.who.int/europe/news-room/fact-sheets/item/antimicrobial-resistance",
+   "text": "Every fever needs antibiotics. FALSE: Antibiotics work only on bacteria. They do not work on viruses, such as colds and flu. Take antibiotics only when a doctor prescribes them, and finish the full course."
+  },
+  {
+   "id": "MYTH-m3",
+   "source": "OFFICIAL",
+   "url": "https://medlineplus.gov/druginfo/meds/a692044.html",
+   "text": "Once my BP or sugar is normal, I can stop the tablet. FALSE: These tablets control BP or sugar but do not cure it. Keep taking them even if you feel well. Never stop a medicine without asking your doctor."
+  },
+  {
+   "id": "MYTH-m4",
+   "source": "OFFICIAL",
+   "url": "https://www.nhs.uk/conditions/common-cold/",
+   "text": "Drinking cold water gives you a cold. FALSE: Colds are caused by viruses that spread from person to person. Washing hands with soap is one of the best ways to avoid catching a cold."
+  },
+  {
+   "id": "MYTH-m5",
+   "source": "OFFICIAL",
+   "url": "https://medlineplus.gov/ency/patientinstructions/000964.htm",
+   "text": "People with diabetes cannot eat any fruit. FALSE: People with diabetes can eat whole fruit. Eat a small portion at a time and spread it through the day. Limit fruit juice, which raises sugar fast. Ask your doctor or dietitian what suits you."
+  },
+  {
+   "id": "MYTH-m6",
+   "source": "OFFICIAL",
+   "url": "https://www.who.int/news-room/fact-sheets/detail/hypertension",
+   "text": "If I feel fine, I don't need check-ups. FALSE: Most people with high BP feel no symptoms. High cholesterol also usually has no signs. The only way to know is to get checked."
+  },
+  {
+   "id": "MYTH-m7",
+   "source": "OFFICIAL",
+   "url": "https://medlineplus.gov/druginfo/meds/a682277.html",
+   "text": "Herbal or home remedies are always safe with my tablets. FALSE: Some herbal products can change how medicines work. Always tell your doctor and pharmacist about any herbal product you take."
+  },
+  {
+   "id": "MYTH-m8",
+   "source": "OFFICIAL",
+   "url": "https://www.nhs.uk/vaccinations/",
+   "text": "Vaccines are only for children. FALSE: Adults and elders may also need vaccines, such as flu and pneumococcal (pneumonia) vaccines for people aged 65 and over. Ask your doctor which ones are right for you."
+  },
+  {
+   "id": "MYTH-m9",
+   "source": "OFFICIAL",
+   "url": "https://www.diabetes.org.uk/living-with-diabetes/eating/healthy-swaps/healthy-swaps-snacks",
+   "text": "Sugar-free or 'diabetic' sweets can be eaten freely. FALSE: Sweets labelled 'diabetic' or 'sugar-free' can have just as much fat and calories as normal sweets, and some can still raise blood sugar. Eat them only in small amounts."
+  },
+  {
+   "id": "MYTH-m10",
+   "source": "OFFICIAL",
+   "url": "https://medlineplus.gov/druginfo/meds/a693050.html",
+   "text": "If I miss a dose, I should take two next time. FALSE: Do not take a double dose to make up for a missed one. Ask your doctor or pharmacist what to do for that medicine."
+  },
+  {
+   "id": "TIP-1",
+   "source": "NALAM",
+   "text": "Take your medicines at the same time every day. A phone alarm helps."
+  },
+  {
+   "id": "TIP-2",
+   "source": "OFFICIAL",
+   "text": "Aim for at least 150 minutes of moderate activity, like brisk walking, every week (for example 30 minutes on 5 days)."
+  },
+  {
+   "id": "TIP-3",
+   "source": "OFFICIAL",
+   "text": "Use less salt in cooking and avoid extra salt at the table. It helps control BP."
+  },
+  {
+   "id": "TIP-4",
+   "source": "NALAM",
+   "text": "Keep a written list of all your medicines and show it at every doctor visit."
+  },
+  {
+   "id": "TIP-5",
+   "source": "NALAM",
+   "text": "Check the expiry date before taking any medicine."
+  },
+  {
+   "id": "TIP-6",
+   "source": "OFFICIAL",
+   "text": "Do not share your medicines with others, even if their problem looks the same."
+  },
+  {
+   "id": "TIP-7",
+   "source": "OFFICIAL",
+   "text": "Wash hands with soap before eating and after using the toilet."
+  },
+  {
+   "id": "TIP-8",
+   "source": "OFFICIAL",
+   "text": "Fill half your plate with vegetables."
+  },
+  {
+   "id": "TIP-9",
+   "source": "OFFICIAL",
+   "text": "If you have diabetes, check your feet daily for cuts or wounds."
+  },
+  {
+   "id": "TIP-10",
+   "source": "OFFICIAL",
+   "text": "If you have diabetes, get your eyes checked once a year."
+  },
+  {
+   "id": "TIP-11",
+   "source": "NALAM",
+   "text": "Save 108 and 112 in your phone and teach elders how to call them."
+  },
+  {
+   "id": "TIP-12",
+   "source": "NALAM",
+   "text": "Keep your old reports in one file. Doctors use them to compare."
+  },
+  {
+   "id": "SAFE-DOSE",
+   "source": "NALAM",
+   "text": "Never start, stop or change a medicine dose without asking a doctor or pharmacist."
+  },
+  {
+   "id": "SAFE-DIAG",
+   "source": "NALAM",
+   "text": "This assistant explains general health information only. It cannot diagnose; a doctor must examine the person."
+  },
+  {
+   "id": "SAFE-EMERG",
+   "source": "NALAM",
+   "text": "Chest pain, breathlessness, fainting, stroke signs or heavy bleeding need emergency care: call 108 or 112."
+  },
+  {
+   "id": "MED-metformin",
+   "source": "MEDLINEPLUS",
+   "text": "Metformin: For type 2 diabetes: lowers high blood sugar."
+  },
+  {
+   "id": "MED-glimepiride",
+   "source": "MEDLINEPLUS",
+   "text": "Glimepiride: For type 2 diabetes: lowers high blood sugar."
+  },
+  {
+   "id": "MED-gliclazide",
+   "source": "MEDLINEPLUS",
+   "text": "Gliclazide: For type 2 diabetes: lowers high blood sugar."
+  },
+  {
+   "id": "MED-sitagliptin",
+   "source": "MEDLINEPLUS",
+   "text": "Sitagliptin: For type 2 diabetes: lowers high blood sugar."
+  },
+  {
+   "id": "MED-vildagliptin",
+   "source": "MEDLINEPLUS",
+   "text": "Vildagliptin: For type 2 diabetes: lowers high blood sugar."
+  },
+  {
+   "id": "MED-dapagliflozin",
+   "source": "MEDLINEPLUS",
+   "text": "Dapagliflozin: For type 2 diabetes: lowers high blood sugar."
+  },
+  {
+   "id": "MED-empagliflozin",
+   "source": "MEDLINEPLUS",
+   "text": "Empagliflozin: For type 2 diabetes: lowers high blood sugar."
+  },
+  {
+   "id": "MED-amlodipine",
+   "source": "MEDLINEPLUS",
+   "text": "Amlodipine: For high blood pressure and heart-related chest pain (angina)."
+  },
+  {
+   "id": "MED-telmisartan",
+   "source": "MEDLINEPLUS",
+   "text": "Telmisartan: For high blood pressure (BP)."
+  },
+  {
+   "id": "MED-losartan",
+   "source": "MEDLINEPLUS",
+   "text": "Losartan: For high blood pressure (BP)."
+  },
+  {
+   "id": "MED-olmesartan",
+   "source": "MEDLINEPLUS",
+   "text": "Olmesartan: For high blood pressure (BP)."
+  },
+  {
+   "id": "MED-ramipril",
+   "source": "MEDLINEPLUS",
+   "text": "Ramipril: For high blood pressure and heart failure."
+  },
+  {
+   "id": "MED-atenolol",
+   "source": "MEDLINEPLUS",
+   "text": "Atenolol: For high blood pressure and heart-related chest pain."
+  },
+  {
+   "id": "MED-metoprolol",
+   "source": "MEDLINEPLUS",
+   "text": "Metoprolol: For high blood pressure, heart-related chest pain and heart failure."
+  },
+  {
+   "id": "MED-hydrochlorothiazide",
+   "source": "MEDLINEPLUS",
+   "text": "Hydrochlorothiazide: A 'water pill': for high BP and swelling. It removes extra water and salt (you will pass more urine)."
+  },
+  {
+   "id": "MED-chlorthalidone",
+   "source": "MEDLINEPLUS",
+   "text": "Chlorthalidone: A 'water pill': for high BP and swelling. It removes extra water and salt (you will pass more urine)."
+  },
+  {
+   "id": "MED-furosemide",
+   "source": "MEDLINEPLUS",
+   "text": "Furosemide: A 'water pill': for high BP and swelling. It removes extra water and salt (you will pass more urine)."
+  },
+  {
+   "id": "MED-atorvastatin",
+   "source": "MEDLINEPLUS",
+   "text": "Atorvastatin: To lower cholesterol and reduce the risk of heart attack and stroke."
+  },
+  {
+   "id": "MED-rosuvastatin",
+   "source": "MEDLINEPLUS",
+   "text": "Rosuvastatin: To lower cholesterol and reduce the risk of heart attack and stroke."
+  },
+  {
+   "id": "MED-aspirin",
+   "source": "MEDLINEPLUS",
+   "text": "Aspirin: For fever and pain. If the doctor advises, also used to help prevent heart attack and stroke."
+  },
+  {
+   "id": "MED-clopidogrel",
+   "source": "MEDLINEPLUS",
+   "text": "Clopidogrel: To prevent another heart attack or stroke (it stops blood clots from forming)."
+  },
+  {
+   "id": "MED-levothyroxine",
+   "source": "MEDLINEPLUS",
+   "text": "Levothyroxine: For low thyroid (when the thyroid gland does not make enough hormone)."
+  },
+  {
+   "id": "MED-pantoprazole",
+   "source": "MEDLINEPLUS",
+   "text": "Pantoprazole: For acidity and heartburn (too much stomach acid)."
+  },
+  {
+   "id": "MED-omeprazole",
+   "source": "MEDLINEPLUS",
+   "text": "Omeprazole: For acidity and heartburn (too much stomach acid)."
+  },
+  {
+   "id": "MED-rabeprazole",
+   "source": "MEDLINEPLUS",
+   "text": "Rabeprazole: For acidity and heartburn (too much stomach acid)."
+  },
+  {
+   "id": "MED-paracetamol",
+   "source": "MEDLINEPLUS",
+   "text": "Paracetamol: For fever and mild to moderate pain."
+  },
+  {
+   "id": "MED-cetirizine",
+   "source": "MEDLINEPLUS",
+   "text": "Cetirizine: For allergy: sneezing, runny nose, itching, watery eyes and hives."
+  },
+  {
+   "id": "MED-montelukast",
+   "source": "MEDLINEPLUS",
+   "text": "Montelukast: For asthma, and for allergy with sneezing and runny nose."
+  },
+  {
+   "id": "MED-vitamin-b12",
+   "source": "MEDLINEPLUS",
+   "text": "Vitamin B12: For lack of vitamin B12 (needed for the nerves and to make blood)."
+  },
+  {
+   "id": "MED-vitamin-d3",
+   "source": "MEDLINEPLUS",
+   "text": "Vitamin D3: A vitamin D supplement, for low vitamin D and bone health."
+  },
+  {
+   "id": "MED-calcium-plus-vitamin-d3",
+   "source": "MEDLINEPLUS",
+   "text": "Calcium + Vitamin D3: Calcium with vitamin D, for low calcium and vitamin D, and for the bones."
+  },
+  {
+   "id": "MED-iron",
+   "source": "MEDLINEPLUS",
+   "text": "Iron: Iron, to treat or prevent anaemia (low haemoglobin)."
+  },
+  {
+   "id": "ABBR-OD",
+   "source": "NALAM",
+   "text": "OD = 1 time a day, usually in the morning."
+  },
+  {
+   "id": "ABBR-BD",
+   "source": "NALAM",
+   "text": "BD = 2 times a day, morning and night."
+  },
+  {
+   "id": "ABBR-TDS",
+   "source": "NALAM",
+   "text": "TDS = 3 times a day, morning, afternoon and night."
+  },
+  {
+   "id": "ABBR-QID",
+   "source": "NALAM",
+   "text": "QID = 4 times a day."
+  },
+  {
+   "id": "ABBR-HS",
+   "source": "NALAM",
+   "text": "HS = 1 time, at night before sleeping."
+  },
+  {
+   "id": "ABBR-SOS",
+   "source": "NALAM",
+   "text": "SOS = Only when needed, for example when there is fever. Not every day."
+  },
+  {
+   "id": "ABBR-AC",
+   "source": "NALAM",
+   "text": "AC = Take it before eating."
+  },
+  {
+   "id": "ABBR-PC",
+   "source": "NALAM",
+   "text": "PC = Take it after eating."
+  },
+  {
+   "id": "ABBR-STAT",
+   "source": "NALAM",
+   "text": "STAT = 1 time, right now."
+  },
+  {
+   "id": "ABBR-1-0-1",
+   "source": "NALAM",
+   "text": "1-0-1 = 2 times a day: 1 in the morning, 1 at night."
+  },
+  {
+   "id": "ABBR-1-1-1",
+   "source": "NALAM",
+   "text": "1-1-1 = 3 times a day: morning, afternoon and night."
+  },
+  {
+   "id": "ABBR-1-0-0",
+   "source": "NALAM",
+   "text": "1-0-0 = 1 time a day, in the morning."
+  },
+  {
+   "id": "ABBR-0-0-1",
+   "source": "NALAM",
+   "text": "0-0-1 = 1 time a day, at night."
+  },
+  {
+   "id": "ABBR-TAB",
+   "source": "NALAM",
+   "text": "Tab = Tablet"
+  },
+  {
+   "id": "ABBR-CAP",
+   "source": "NALAM",
+   "text": "Cap = Capsule"
+  },
+  {
+   "id": "ABBR-SYP",
+   "source": "NALAM",
+   "text": "Syp = Syrup"
+  },
+  {
+   "id": "ABBR-INJ",
+   "source": "NALAM",
+   "text": "Inj = Injection"
+  },
+  {
+   "id": "ABBR-X_5_DAYS",
+   "source": "NALAM",
+   "text": "x 5 days = Take it for 5 days."
+  },
+  {
+   "id": "SAFE-MIND",
+   "source": "OFFICIAL",
+   "text": "For stress, loneliness, sadness or thoughts of self-harm, call Tele-MANAS 14416 (free, 24x7). In danger now, call 112."
+  },
+  {
+   "id": "SCHEME-RULES",
+   "source": "OFFICIAL",
+   "text": "Nalam AI explains scheme rules (CMCHIS, Ayushman Vay Vandana) only. It never says a person is eligible; the official office confirms."
+  },
+  {
+   "id": "CARE-FIND",
+   "source": "NALAM",
+   "text": "Use the Hospitals page (Google Maps) to find a hospital, PHC or pharmacy near you. In an emergency call 108."
+  },
+  {
+   "id": "SAFE-WARN",
+   "source": "NALAM",
+   "text": "Warning signs mentioned in a chat (vomiting, high fever, dizziness, swelling, yellow eyes...): see a doctor today or go to hospital, tell family; if severe (breathing trouble, fainting, chest pain) call 108."
+  },
+  {
+   "id": "LIFE-BP-FOOD",
+   "source": "OFFICIAL",
+   "url": "https://www.who.int/news-room/fact-sheets/detail/hypertension",
+   "text": "High blood pressure (BP) care, food: eat more vegetables and fruits; eat less salty food (WHO: under 5 g of salt a day, about one teaspoon); avoid foods high in saturated or trans fats."
+  },
+  {
+   "id": "LIFE-BP-ACTIVE",
+   "source": "OFFICIAL",
+   "url": "https://www.who.int/news-room/fact-sheets/detail/hypertension",
+   "text": "High blood pressure (BP) care, activity: sit less; get at least 150 minutes a week of moderate activity such as brisk walking; do strength exercises 2 or more days a week."
+  },
+  {
+   "id": "LIFE-BP-HABITS",
+   "source": "OFFICIAL",
+   "url": "https://www.who.int/news-room/fact-sheets/detail/hypertension",
+   "text": "High blood pressure (BP) care, habits: do not smoke or use tobacco; limit alcohol; lose weight if overweight."
+  },
+  {
+   "id": "LIFE-BP-CARE",
+   "source": "OFFICIAL",
+   "url": "https://www.who.int/news-room/fact-sheets/detail/hypertension",
+   "text": "High blood pressure (BP) care, medicines and checks: take BP medicines as prescribed, do not miss or share them, check blood pressure regularly and keep doctor appointments."
+  },
+  {
+   "id": "LIFE-SUGAR-HABITS",
+   "source": "OFFICIAL",
+   "url": "https://www.who.int/news-room/fact-sheets/detail/diabetes",
+   "text": "Diabetes / blood sugar care: keep a healthy body weight; be active at least 150 minutes a week; eat a healthy diet and avoid sugar and saturated fat; do not smoke."
+  },
+  {
+   "id": "LIFE-SUGAR-CARE",
+   "source": "OFFICIAL",
+   "url": "https://medlineplus.gov/ency/patientinstructions/000328.htm",
+   "text": "Diabetes / blood sugar care: take diabetes medicines as prescribed, check your feet every day, see your eye doctor once a year, and test HbA1c every 3 to 6 months as your doctor advises."
+  },
+  {
+   "id": "LAB-esr",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/erythrocyte-sedimentation-rate-esr/",
+   "text": "ESR checks for inflammation in the body: how fast red blood cells settle in a tube. A high value can mean inflammation, but it cannot tell the cause."
+  },
+  {
+   "id": "LAB-crp",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/",
+   "text": "CRP is a protein the liver makes when there is inflammation. A high value can mean infection or inflammation somewhere in the body."
+  },
+  {
+   "id": "LAB-neutrophils",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/blood-differential/",
+   "text": "Neutrophils (also called polymorphs) are white blood cells that mostly fight bacterial infections."
+  },
+  {
+   "id": "LAB-lymphocytes",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/blood-differential/",
+   "text": "Lymphocytes are white blood cells that mostly fight viral infections."
+  },
+  {
+   "id": "LAB-eosinophils",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/blood-differential/",
+   "text": "Eosinophils are white blood cells that become active in allergies and some infections, such as parasites."
+  },
+  {
+   "id": "LAB-abs_eosinophils",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/ency/article/003649.htm",
+   "text": "Absolute eosinophil count: the number of eosinophils, white blood cells that become active in allergies and some infections, such as parasites."
+  },
+  {
+   "id": "LAB-monocytes",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/blood-differential/",
+   "text": "Monocytes are one of the five types of white blood cells, which help the body fight infections and other diseases."
+  },
+  {
+   "id": "LAB-basophils",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/blood-differential/",
+   "text": "Basophils are one of the five types of white blood cells, which help the body fight infections and other diseases."
+  },
+  {
+   "id": "LAB-rbc",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/red-blood-cell-rbc-count/",
+   "text": "The number of red blood cells, which carry oxygen around the body. A low count can be a sign of anaemia."
+  },
+  {
+   "id": "LAB-pcv",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/hematocrit-test/",
+   "text": "PCV (hematocrit) is the percentage of your blood made up of red blood cells. Too low can be a sign of anaemia; too high is most often from dehydration."
+  },
+  {
+   "id": "LAB-mcv",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/ency/article/003642.htm",
+   "text": "MCV is the average size of your red blood cells."
+  },
+  {
+   "id": "LAB-mch",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/ency/article/003642.htm",
+   "text": "MCH is the average amount of hemoglobin in each red blood cell."
+  },
+  {
+   "id": "LAB-mchc",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/ency/article/003642.htm",
+   "text": "MCHC is the average amount of hemoglobin compared with the size of each red blood cell."
+  },
+  {
+   "id": "LAB-t4",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/thyroxine-t4-test/",
+   "text": "T4 (thyroxine) is a hormone made by the thyroid gland. Too much or too little can be a sign of a thyroid problem. It is usually read together with TSH."
+  },
+  {
+   "id": "LAB-t3",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/triiodothyronine-t3-tests/",
+   "text": "T3 is a thyroid hormone. It is mainly used to check for an overactive thyroid, together with TSH and T4."
+  },
+  {
+   "id": "LAB-alp",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/alkaline-phosphatase/",
+   "text": "ALP is an enzyme found mostly in the liver, bile ducts and bones. Abnormal levels can be a sign of a liver or bone problem."
+  },
+  {
+   "id": "LAB-albumin",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/comprehensive-metabolic-panel-cmp/",
+   "text": "Albumin is the main protein in the blood, made mainly by the liver."
+  },
+  {
+   "id": "LAB-total_protein",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/comprehensive-metabolic-panel-cmp/",
+   "text": "The total amount of protein in your blood, including albumin and globulins, mainly made in the liver."
+  },
+  {
+   "id": "LAB-calcium",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/calcium-blood-test/",
+   "text": "Calcium is a mineral needed for bones, teeth, nerves, muscles and the heart."
+  },
+  {
+   "id": "LAB-microalbumin",
+   "source": "MEDLINEPLUS",
+   "url": "https://medlineplus.gov/lab-tests/creatinine-test/",
+   "text": "Checks for albumin (a protein) in the urine. Normally the kidneys let through only a trace; more can be a sign of kidney damage."
+  }
+ ]
 }

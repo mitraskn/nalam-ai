@@ -1,0 +1,369 @@
+{
+ "_about": {
+  "purpose": "One-line 'what it is for' for common medicines. NEVER a dose or how often: that comes only from the person's own saved prescription.",
+  "rule": "Only medicines whose use was checked on an official source are listed: MedlinePlus (U.S. National Library of Medicine), NHS UK, European Medicines Agency. Brand names only if the maker's official website confirms the medicine inside.",
+  "checked": "2026-11-04"
+ },
+ "not_saved": {
+  "en": "How many times a day: as written on your prescription. Ask your doctor or pharmacist if unsure.",
+  "ta": "ஒரு நாளைக்கு எத்தனை முறை என்பது உங்கள் மருந்துச் சீட்டில் உள்ளபடி. சந்தேகம் இருந்தால் மருத்துவர் அல்லது மருந்தாளரிடம் கேளுங்கள்."
+ },
+ "medicines": [
+  {
+   "name": "Metformin",
+   "aliases": [
+    "metformin"
+   ],
+   "en": "For type 2 diabetes: lowers high blood sugar.",
+   "ta": "டைப் 2 சர்க்கரை நோய்க்கான மருந்து: இரத்தத்தில் அதிக சர்க்கரையைக் குறைக்கும்.",
+   "source": "https://medlineplus.gov/druginfo/meds/a696005.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Glimepiride",
+   "aliases": [
+    "glimepiride"
+   ],
+   "en": "For type 2 diabetes: lowers high blood sugar.",
+   "ta": "டைப் 2 சர்க்கரை நோய்க்கான மருந்து: இரத்தத்தில் அதிக சர்க்கரையைக் குறைக்கும்.",
+   "source": "https://medlineplus.gov/druginfo/meds/a696016.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Gliclazide",
+   "aliases": [
+    "gliclazide"
+   ],
+   "en": "For type 2 diabetes: lowers high blood sugar.",
+   "ta": "டைப் 2 சர்க்கரை நோய்க்கான மருந்து: இரத்தத்தில் அதிக சர்க்கரையைக் குறைக்கும்.",
+   "source": "https://www.nhs.uk/medicines/gliclazide/",
+   "brand_sources": {}
+  },
+  {
+   "name": "Sitagliptin",
+   "aliases": [
+    "sitagliptin"
+   ],
+   "en": "For type 2 diabetes: lowers high blood sugar.",
+   "ta": "டைப் 2 சர்க்கரை நோய்க்கான மருந்து: இரத்தத்தில் அதிக சர்க்கரையைக் குறைக்கும்.",
+   "source": "https://medlineplus.gov/druginfo/meds/a606023.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Vildagliptin",
+   "aliases": [
+    "vildagliptin",
+    "jalra",
+    "galvus"
+   ],
+   "en": "For type 2 diabetes: lowers high blood sugar.",
+   "ta": "டைப் 2 சர்க்கரை நோய்க்கான மருந்து: இரத்தத்தில் அதிக சர்க்கரையைக் குறைக்கும்.",
+   "source": "https://www.ema.europa.eu/en/documents/product-information/galvus-epar-product-information_en.pdf",
+   "brand_sources": {
+    "jalra": "https://www.ema.europa.eu/en/documents/product-information/jalra-epar-product-information_en.pdf",
+    "galvus": "https://www.ema.europa.eu/en/documents/product-information/galvus-epar-product-information_en.pdf"
+   }
+  },
+  {
+   "name": "Dapagliflozin",
+   "aliases": [
+    "dapagliflozin"
+   ],
+   "en": "For type 2 diabetes: lowers high blood sugar.",
+   "ta": "டைப் 2 சர்க்கரை நோய்க்கான மருந்து: இரத்தத்தில் அதிக சர்க்கரையைக் குறைக்கும்.",
+   "source": "https://medlineplus.gov/druginfo/meds/a614015.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Empagliflozin",
+   "aliases": [
+    "empagliflozin"
+   ],
+   "en": "For type 2 diabetes: lowers high blood sugar.",
+   "ta": "டைப் 2 சர்க்கரை நோய்க்கான மருந்து: இரத்தத்தில் அதிக சர்க்கரையைக் குறைக்கும்.",
+   "source": "https://medlineplus.gov/druginfo/meds/a614043.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Amlodipine",
+   "aliases": [
+    "amlodipine"
+   ],
+   "en": "For high blood pressure and heart-related chest pain (angina).",
+   "ta": "அதிக இரத்த அழுத்தம் (BP) மற்றும் இதயம் சார்ந்த நெஞ்சு வலிக்கான (ஆஞ்சைனா) மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a692044.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Telmisartan",
+   "aliases": [
+    "telmisartan",
+    "telma"
+   ],
+   "en": "For high blood pressure (BP).",
+   "ta": "அதிக இரத்த அழுத்தத்துக்கான (BP) மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a601249.html",
+   "brand_sources": {
+    "telma": "https://pqr.glenmarkpharma.com/formulations/therapy-areas"
+   }
+  },
+  {
+   "name": "Losartan",
+   "aliases": [
+    "losartan"
+   ],
+   "en": "For high blood pressure (BP).",
+   "ta": "அதிக இரத்த அழுத்தத்துக்கான (BP) மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a695008.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Olmesartan",
+   "aliases": [
+    "olmesartan"
+   ],
+   "en": "For high blood pressure (BP).",
+   "ta": "அதிக இரத்த அழுத்தத்துக்கான (BP) மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a603006.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Ramipril",
+   "aliases": [
+    "ramipril"
+   ],
+   "en": "For high blood pressure and heart failure.",
+   "ta": "அதிக இரத்த அழுத்தம் மற்றும் இதய செயலிழப்புக்கான மருந்து.",
+   "source": "https://www.nlm.nih.gov/medlineplus/druginfo/medmaster/a692027.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Atenolol",
+   "aliases": [
+    "atenolol"
+   ],
+   "en": "For high blood pressure and heart-related chest pain.",
+   "ta": "அதிக இரத்த அழுத்தம் மற்றும் இதயம் சார்ந்த நெஞ்சு வலிக்கான மருந்து.",
+   "source": "https://www.nlm.nih.gov/medlineplus/druginfo/meds/a684031.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Metoprolol",
+   "aliases": [
+    "metoprolol"
+   ],
+   "en": "For high blood pressure, heart-related chest pain and heart failure.",
+   "ta": "அதிக இரத்த அழுத்தம், இதயம் சார்ந்த நெஞ்சு வலி மற்றும் இதய செயலிழப்புக்கான மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a682864.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Hydrochlorothiazide",
+   "aliases": [
+    "hydrochlorothiazide",
+    "hctz"
+   ],
+   "en": "A 'water pill': for high BP and swelling. It removes extra water and salt (you will pass more urine).",
+   "ta": "'நீர் மாத்திரை': அதிக BP மற்றும் வீக்கத்துக்கானது. உடலில் உள்ள அதிக நீரையும் உப்பையும் வெளியேற்றும் (சிறுநீர் அதிகம் வரும்).",
+   "source": "https://medlineplus.gov/druginfo/meds/a682571.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Chlorthalidone",
+   "aliases": [
+    "chlorthalidone",
+    "chlortalidone"
+   ],
+   "en": "A 'water pill': for high BP and swelling. It removes extra water and salt (you will pass more urine).",
+   "ta": "'நீர் மாத்திரை': அதிக BP மற்றும் வீக்கத்துக்கானது. உடலில் உள்ள அதிக நீரையும் உப்பையும் வெளியேற்றும் (சிறுநீர் அதிகம் வரும்).",
+   "source": "https://www.nlm.nih.gov/medlineplus/druginfo/meds/a682342.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Furosemide",
+   "aliases": [
+    "furosemide",
+    "frusemide"
+   ],
+   "en": "A 'water pill': for high BP and swelling. It removes extra water and salt (you will pass more urine).",
+   "ta": "'நீர் மாத்திரை': அதிக BP மற்றும் வீக்கத்துக்கானது. உடலில் உள்ள அதிக நீரையும் உப்பையும் வெளியேற்றும் (சிறுநீர் அதிகம் வரும்).",
+   "source": "https://medlineplus.gov/druginfo/meds/a682858.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Atorvastatin",
+   "aliases": [
+    "atorvastatin"
+   ],
+   "en": "To lower cholesterol and reduce the risk of heart attack and stroke.",
+   "ta": "கொலஸ்ட்ராலைக் குறைத்து, மாரடைப்பு மற்றும் பக்கவாத அபாயத்தைக் குறைக்கும் மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a600045.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Rosuvastatin",
+   "aliases": [
+    "rosuvastatin"
+   ],
+   "en": "To lower cholesterol and reduce the risk of heart attack and stroke.",
+   "ta": "கொலஸ்ட்ராலைக் குறைத்து, மாரடைப்பு மற்றும் பக்கவாத அபாயத்தைக் குறைக்கும் மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a603033.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Aspirin",
+   "aliases": [
+    "aspirin"
+   ],
+   "en": "For fever and pain. If the doctor advises, also used to help prevent heart attack and stroke.",
+   "ta": "காய்ச்சல் மற்றும் வலிக்கான மருந்து. மருத்துவர் சொன்னால், மாரடைப்பு மற்றும் பக்கவாதத்தைத் தடுக்கவும் பயன்படும்.",
+   "source": "https://medlineplus.gov/druginfo/meds/a682878.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Clopidogrel",
+   "aliases": [
+    "clopidogrel"
+   ],
+   "en": "To prevent another heart attack or stroke (it stops blood clots from forming).",
+   "ta": "மீண்டும் மாரடைப்பு அல்லது பக்கவாதம் வராமல் தடுக்கும் மருந்து (இரத்தக் கட்டி உருவாவதைத் தடுக்கும்).",
+   "source": "https://medlineplus.gov/druginfo/meds/a601040.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Levothyroxine",
+   "aliases": [
+    "levothyroxine",
+    "thyroxine",
+    "thyronorm"
+   ],
+   "en": "For low thyroid (when the thyroid gland does not make enough hormone).",
+   "ta": "தைராய்டு சுரப்பி போதுமான ஹார்மோன் உருவாக்காதபோது (தைராய்டு குறைவு) எடுக்கும் மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a682461.html",
+   "brand_sources": {
+    "thyronorm": "https://www.abbott.in/products/business-areas/pharmaceuticals-abbott-india-limited.html"
+   }
+  },
+  {
+   "name": "Pantoprazole",
+   "aliases": [
+    "pantoprazole"
+   ],
+   "en": "For acidity and heartburn (too much stomach acid).",
+   "ta": "அதிக வயிற்று அமிலம் மற்றும் நெஞ்செரிச்சலுக்கான மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a601246.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Omeprazole",
+   "aliases": [
+    "omeprazole"
+   ],
+   "en": "For acidity and heartburn (too much stomach acid).",
+   "ta": "அதிக வயிற்று அமிலம் மற்றும் நெஞ்செரிச்சலுக்கான மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a693050.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Rabeprazole",
+   "aliases": [
+    "rabeprazole"
+   ],
+   "en": "For acidity and heartburn (too much stomach acid).",
+   "ta": "அதிக வயிற்று அமிலம் மற்றும் நெஞ்செரிச்சலுக்கான மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a699060.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Paracetamol",
+   "aliases": [
+    "paracetamol",
+    "acetaminophen",
+    "dolo 650",
+    "dolo"
+   ],
+   "en": "For fever and mild to moderate pain.",
+   "ta": "காய்ச்சல் மற்றும் லேசான முதல் மிதமான வலிக்கான மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a681004.html",
+   "brand_sources": {
+    "dolo 650": "https://www.microlabsltd.com/therapy/fever-pain-management",
+    "dolo": "https://www.microlabsltd.com/therapy/fever-pain-management"
+   }
+  },
+  {
+   "name": "Cetirizine",
+   "aliases": [
+    "cetirizine"
+   ],
+   "en": "For allergy: sneezing, runny nose, itching, watery eyes and hives.",
+   "ta": "ஒவ்வாமைக்கான மருந்து: தும்மல், மூக்கு ஒழுகல், அரிப்பு, கண்ணில் நீர் வடிதல், தோல் தடிப்பு.",
+   "source": "https://medlineplus.gov/druginfo/meds/a623043.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Montelukast",
+   "aliases": [
+    "montelukast"
+   ],
+   "en": "For asthma, and for allergy with sneezing and runny nose.",
+   "ta": "ஆஸ்துமா மற்றும் தும்மல், மூக்கு ஒழுகல் போன்ற ஒவ்வாமைக்கான மருந்து.",
+   "source": "https://www.nlm.nih.gov/medlineplus/druginfo/meds/a600014.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Vitamin B12",
+   "aliases": [
+    "vitamin b12",
+    "cyanocobalamin"
+   ],
+   "en": "For lack of vitamin B12 (needed for the nerves and to make blood).",
+   "ta": "வைட்டமின் B12 குறைவுக்கான மருந்து (நரம்புகளுக்கும் இரத்த உற்பத்திக்கும் தேவை).",
+   "source": "https://medlineplus.gov/druginfo/meds/a625017.html",
+   "brand_sources": {}
+  },
+  {
+   "name": "Vitamin D3",
+   "aliases": [
+    "vitamin d3",
+    "cholecalciferol",
+    "d-360",
+    "d 360"
+   ],
+   "en": "A vitamin D supplement, for low vitamin D and bone health.",
+   "ta": "வைட்டமின் D குறைவுக்கும் எலும்பு ஆரோக்கியத்துக்கும் எடுக்கும் சத்து மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a620058.html",
+   "brand_sources": {
+    "d-360": "https://www.torrentpharma.com/docs/D_360_Sachets_4768a42322.pdf",
+    "d 360": "https://www.torrentpharma.com/docs/D_360_Sachets_4768a42322.pdf"
+   }
+  },
+  {
+   "name": "Calcium + Vitamin D3",
+   "aliases": [
+    "shelcal",
+    "calcium carbonate",
+    "calcium tablet"
+   ],
+   "en": "Calcium with vitamin D, for low calcium and vitamin D, and for the bones.",
+   "ta": "கால்சியம் மற்றும் வைட்டமின் D குறைவுக்கும் எலும்புகளுக்கும் எடுக்கும் மருந்து.",
+   "source": "https://www.torrentpharma.com/assets/2624_082b9f3ae0.pdf",
+   "brand_sources": {
+    "shelcal": "https://www.torrentpharma.com/assets/2624_082b9f3ae0.pdf"
+   }
+  },
+  {
+   "name": "Iron",
+   "aliases": [
+    "ferrous sulfate",
+    "ferrous sulphate",
+    "ferrous fumarate",
+    "ferrous gluconate",
+    "iron tablet"
+   ],
+   "en": "Iron, to treat or prevent anaemia (low haemoglobin).",
+   "ta": "ரத்தசோகை (ஹீமோகுளோபின் குறைவு) சிகிச்சைக்கும் தடுப்புக்கும் இரும்புச்சத்து மருந்து.",
+   "source": "https://medlineplus.gov/druginfo/meds/a682778.html",
+   "brand_sources": {}
+  }
+ ]
+}

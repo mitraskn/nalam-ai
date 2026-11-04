@@ -1,0 +1,60 @@
+{
+ "_about": {
+  "purpose": "Care finder. No phone numbers are stored except national emergency numbers. Each place opens Google Maps for live address, hours and phone.",
+  "verified": "Numbers checked on official sites 2026-11-04: 108 ambulance and 14416 Tele-MANAS (https://shamli.nic.in/helpline/ , https://en.vikaspedia.in/viewcontent/health/mental-health/tele-manas), 112 national emergency. Hospital entries open Google Maps for live details.",
+  "review": "Checked 2026-11-04."
+ },
+ "emergency": [
+  {
+   "number": "108",
+   "en": "Ambulance (Tamil Nadu)",
+   "ta": "ஆம்புலன்ஸ் (தமிழ்நாடு)"
+  },
+  {
+   "number": "112",
+   "en": "National emergency number",
+   "ta": "தேசிய அவசர எண்"
+  },
+  {
+   "number": "14416",
+   "en": "Tele-MANAS mental health helpline (free, 24x7)",
+   "ta": "டெலி-மனஸ் மனநல உதவி எண் (இலவசம், 24 மணி நேரமும்)"
+  }
+ ],
+ "places": [
+  {
+   "city": "Coimbatore",
+   "type": "Government hospital",
+   "name": "Coimbatore Medical College Hospital (CMCH)",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Coimbatore+Medical+College+Hospital"
+  },
+  {
+   "city": "Madurai",
+   "type": "Government hospital",
+   "name": "Government Rajaji Hospital, Madurai",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Government+Rajaji+Hospital+Madurai"
+  }
+ ],
+ "near_me": [
+  {
+   "en": "Primary Health Centre near me",
+   "ta": "அருகிலுள்ள ஆரம்ப சுகாதார நிலையம்",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Primary+Health+Centre+near+me"
+  },
+  {
+   "en": "Government hospital near me",
+   "ta": "அருகிலுள்ள அரசு மருத்துவமனை",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Government+hospital+near+me"
+  },
+  {
+   "en": "Jan Aushadhi Kendra (low-cost medicines) near me",
+   "ta": "அருகிலுள்ள ஜன் அவுஷதி கேந்திரா (குறைந்த விலை மருந்துகள்)",
+   "maps": "https://www.google.com/maps/search/?api=1&query=Jan+Aushadhi+Kendra+near+me"
+  },
+  {
+   "en": "Pharmacy near me",
+   "ta": "அருகிலுள்ள மருந்தகம்",
+   "maps": "https://www.google.com/maps/search/?api=1&query=pharmacy+near+me"
+  }
+ ]
+}

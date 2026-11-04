@@ -1,0 +1,158 @@
+{
+ "_about": {
+  "purpose": "Fixed labels and scheme rules. The app explains the rules; it never says 'you are eligible'.",
+  "sources": [
+   "https://www.myscheme.gov.in/schemes/cmchis",
+   "https://www.cmchistn.com",
+   "https://beneficiary.nha.gov.in",
+   "NHA FAQ on Ayushman Vay Vandana (launched 29 Oct 2024)"
+  ],
+  "checked": "2026-11-04 from the sources above; re-check before release."
+ },
+ "labels": {
+  "myth": {
+   "en": "Myth",
+   "ta": "தவறான நம்பிக்கை"
+  },
+  "verdict": {
+   "en": "Verdict",
+   "ta": "உண்மை நிலை"
+  },
+  "answer": {
+   "en": "Answer",
+   "ta": "பதில்"
+  },
+  "tip": {
+   "en": "Today's health tip",
+   "ta": "இன்றைய ஆரோக்கியக் குறிப்பு"
+  },
+  "todays_health_tip": {
+   "en": "Today's health tip",
+   "ta": "இன்றைய ஆரோக்கியக் குறிப்பு"
+  },
+  "FALSE": {
+   "en": "FALSE",
+   "ta": "தவறு"
+  },
+  "PARTLY FALSE": {
+   "en": "PARTLY FALSE",
+   "ta": "ஓரளவு தவறு"
+  },
+  "TRUE": {
+   "en": "TRUE",
+   "ta": "உண்மை"
+  },
+  "emergency": {
+   "en": "Emergency numbers",
+   "ta": "அவசர எண்கள்"
+  },
+  "emergency_numbers": {
+   "en": "Emergency numbers",
+   "ta": "அவசர எண்கள்"
+  },
+  "places": {
+   "en": "Care places",
+   "ta": "மருத்துவ இடங்கள்"
+  },
+  "care_places": {
+   "en": "Care places",
+   "ta": "மருத்துவ இடங்கள்"
+  },
+  "near_me": {
+   "en": "Near me",
+   "ta": "எனக்கு அருகில்"
+  },
+  "schemes": {
+   "en": "Health schemes",
+   "ta": "சுகாதாரத் திட்டங்கள்"
+  },
+  "health_schemes": {
+   "en": "Health schemes",
+   "ta": "சுகாதாரத் திட்டங்கள்"
+  }
+ },
+ "schemes": [
+  {
+   "id": "cmchis",
+   "name_en": "CMCHIS - Chief Minister's Comprehensive Health Insurance Scheme (Tamil Nadu)",
+   "name_ta": "முதலமைச்சரின் விரிவான மருத்துவக் காப்பீட்டுத் திட்டம் (தமிழ்நாடு)",
+   "en": "A Tamil Nadu government scheme for cashless treatment at government and listed private hospitals, up to Rs 5 lakh per family per year.",
+   "ta": "அரசு மற்றும் பட்டியலிடப்பட்ட தனியார் மருத்துவமனைகளில், ஒரு குடும்பத்துக்கு ஆண்டுக்கு ₹5 லட்சம் வரை பணமில்லா சிகிச்சை வழங்கும் தமிழ்நாடு அரசுத் திட்டம்.",
+   "rules": [
+    {
+     "en": "The family lives in Tamil Nadu.",
+     "ta": "குடும்பம் தமிழ்நாட்டில் வசிக்க வேண்டும்."
+    },
+    {
+     "en": "The person's name is on the family (ration) card.",
+     "ta": "அந்த நபரின் பெயர் குடும்ப (ரேஷன்) அட்டையில் இருக்க வேண்டும்."
+    },
+    {
+     "en": "Annual family income is Rs 1,20,000 or less (income certificate from the VAO).",
+     "ta": "குடும்பத்தின் ஆண்டு வருமானம் ₹1,20,000 அல்லது அதற்குக் குறைவாக இருக்க வேண்டும் (கிராம நிர்வாக அலுவலர் (VAO) வழங்கும் வருமானச் சான்றிதழ்)."
+    }
+   ],
+   "documents": [
+    {
+     "en": "Family (ration) card",
+     "ta": "குடும்ப (ரேஷன்) அட்டை"
+    },
+    {
+     "en": "Aadhaar card of each member",
+     "ta": "ஒவ்வொருவரின் ஆதார் அட்டை"
+    },
+    {
+     "en": "Income certificate",
+     "ta": "வருமானச் சான்றிதழ்"
+    }
+   ],
+   "where": {
+    "en": "CMCHIS enrolment counter at the District Collectorate, or the official website.",
+    "ta": "மாவட்ட ஆட்சியர் அலுவலகத்தில் உள்ள CMCHIS பதிவு மையம், அல்லது அதிகாரப்பூர்வ இணையதளம்."
+   },
+   "url": "https://www.cmchistn.com"
+  },
+  {
+   "id": "vayvandana",
+   "name_en": "Ayushman Vay Vandana card (PM-JAY, age 70+)",
+   "name_ta": "ஆயுஷ்மான் வய வந்தனா அட்டை (PM-JAY, 70 வயது மேல்)",
+   "en": "A central government health card for hospital treatment at listed hospitals, up to Rs 5 lakh per year.",
+   "ta": "பட்டியலிடப்பட்ட மருத்துவமனைகளில் ஆண்டுக்கு ₹5 லட்சம் வரை மருத்துவமனை சிகிச்சைக்கான மத்திய அரசின் சுகாதார அட்டை.",
+   "rules": [
+    {
+     "en": "The person is an Indian citizen aged 70 or above (age is checked on Aadhaar).",
+     "ta": "அந்த நபர் 70 வயது அல்லது அதற்கு மேற்பட்ட இந்தியக் குடிமகனாக இருக்க வேண்டும் (வயது ஆதாரில் சரிபார்க்கப்படும்)."
+    },
+    {
+     "en": "There is no income limit for this card.",
+     "ta": "இந்த அட்டைக்கு வருமான வரம்பு இல்லை."
+    },
+    {
+     "en": "People using CGHS or ECHS must choose one scheme; they cannot use both.",
+     "ta": "CGHS அல்லது ECHS பயன்படுத்துபவர்கள் ஒரு திட்டத்தை மட்டுமே தேர்வு செய்ய வேண்டும்."
+    }
+   ],
+   "documents": [
+    {
+     "en": "Aadhaar card (with correct birth year)",
+     "ta": "ஆதார் அட்டை (சரியான பிறந்த ஆண்டுடன்)"
+    },
+    {
+     "en": "Mobile number linked for OTP",
+     "ta": "OTP பெற இணைக்கப்பட்ட கைபேசி எண்"
+    }
+   ],
+   "where": {
+    "en": "Ayushman app, beneficiary.nha.gov.in, or a Common Service Centre (CSC).",
+    "ta": "ஆயுஷ்மான் செயலி, beneficiary.nha.gov.in இணையதளம், அல்லது பொது சேவை மையம் (CSC)."
+   },
+   "url": "https://beneficiary.nha.gov.in"
+  }
+ ],
+ "footer": {
+  "en": "These are the general rules only. Nalam AI does not decide eligibility. Please confirm on the official website or at the hospital help desk.",
+  "ta": "இவை பொதுவான விதிகள் மட்டுமே. தகுதியை நலம் AI முடிவு செய்யாது. அதிகாரப்பூர்வ இணையதளத்திலோ மருத்துவமனை உதவி மையத்திலோ உறுதிப்படுத்துங்கள்.",
+  "disclaimer_en": "These are the general rules only. Nalam AI does not decide eligibility. Please confirm on the official website or at the hospital help desk.",
+  "disclaimer_ta": "இவை பொதுவான விதிகள் மட்டுமே. தகுதியை நலம் AI முடிவு செய்யாது. அதிகாரப்பூர்வ இணையதளத்திலோ மருத்துவமனை உதவி மையத்திலோ உறுதிப்படுத்துங்கள்."
+ }
+}

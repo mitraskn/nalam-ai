@@ -1,0 +1,159 @@
+{
+ "_about": {
+  "purpose": "Fixed answers to common health myths. The model may only pick one of these; it never writes its own myth verdict.",
+  "source": "MedlinePlus, WHO, NHS and Diabetes UK; each myth has its own source link.",
+  "review": "Checked against the linked official pages on 2026-11-04. Tamil wording still needs a fluent reader."
+ },
+ "items": [
+  {
+   "id": "m1",
+   "keys": [
+    "sweet",
+    "sugar",
+    "inippu",
+    "இனிப்பு",
+    "diabetes"
+   ],
+   "myth_en": "Only eating sweets causes diabetes.",
+   "myth_ta": "இனிப்பு சாப்பிடுவதால் மட்டுமே சர்க்கரை நோய் வருகிறது.",
+   "verdict": "FALSE",
+   "en": "Diabetes happens when the body does not make enough insulin or does not use it well. Family history, age, extra weight and less activity all raise the risk. Sweets alone are not the cause.",
+   "ta": "உடல் போதுமான இன்சுலின் உருவாக்காதபோது அல்லது அதைச் சரியாகப் பயன்படுத்தாதபோது சர்க்கரை நோய் வருகிறது. குடும்ப வரலாறு, வயது, அதிக எடை, உடற்பயிற்சி குறைவு ஆகியவை அபாயத்தை அதிகரிக்கும். இனிப்பு மட்டுமே காரணம் அல்ல.",
+   "source": "https://medlineplus.gov/ency/patientinstructions/000964.htm"
+  },
+  {
+   "id": "m2",
+   "keys": [
+    "antibiotic",
+    "fever",
+    "kaichal",
+    "காய்ச்சல்"
+   ],
+   "myth_en": "Every fever needs antibiotics.",
+   "myth_ta": "ஒவ்வொரு காய்ச்சலுக்கும் ஆன்டிபயாடிக் தேவை.",
+   "verdict": "FALSE",
+   "en": "Antibiotics work only on bacteria. They do not work on viruses, such as colds and flu. Take antibiotics only when a doctor prescribes them, and finish the full course.",
+   "ta": "ஆன்டிபயாடிக் பாக்டீரியாவுக்கு மட்டுமே வேலை செய்யும். சளி, ஃப்ளூ போன்ற வைரஸுகளுக்கு வேலை செய்யாது. மருத்துவர் எழுதிக் கொடுத்தால் மட்டுமே எடுங்கள், முழு அளவையும் முடியுங்கள்.",
+   "source": "https://www.who.int/europe/news-room/fact-sheets/item/antimicrobial-resistance"
+  },
+  {
+   "id": "m3",
+   "keys": [
+    "stop",
+    "normal",
+    "nirutha",
+    "நிறுத்த"
+   ],
+   "myth_en": "Once my BP or sugar is normal, I can stop the tablet.",
+   "myth_ta": "BP அல்லது சர்க்கரை சரியானதும் மாத்திரையை நிறுத்தலாம்.",
+   "verdict": "FALSE",
+   "en": "These tablets control BP or sugar but do not cure it. Keep taking them even if you feel well. Never stop a medicine without asking your doctor.",
+   "ta": "இந்த மாத்திரைகள் BP அல்லது சர்க்கரையைக் கட்டுப்படுத்துகின்றன, ஆனால் குணப்படுத்துவதில்லை. நன்றாக உணர்ந்தாலும் தொடர்ந்து எடுங்கள். மருத்துவரிடம் கேட்காமல் எந்த மருந்தையும் நிறுத்தாதீர்கள்.",
+   "source": "https://medlineplus.gov/druginfo/meds/a692044.html"
+  },
+  {
+   "id": "m4",
+   "keys": [
+    "cold water",
+    "jalathosham",
+    "சளி",
+    "cold"
+   ],
+   "myth_en": "Drinking cold water gives you a cold.",
+   "myth_ta": "குளிர்ந்த நீர் குடித்தால் சளி பிடிக்கும்.",
+   "verdict": "FALSE",
+   "en": "Colds are caused by viruses that spread from person to person. Washing hands with soap is one of the best ways to avoid catching a cold.",
+   "ta": "சளி ஒருவரிடமிருந்து மற்றவருக்குப் பரவும் வைரஸால் வருகிறது. சோப்பால் கை கழுவுவது சளியைத் தடுக்கும் சிறந்த வழிகளில் ஒன்று.",
+   "source": "https://www.nhs.uk/conditions/common-cold/"
+  },
+  {
+   "id": "m5",
+   "keys": [
+    "fruit",
+    "pazham",
+    "பழம்"
+   ],
+   "myth_en": "People with diabetes cannot eat any fruit.",
+   "myth_ta": "சர்க்கரை நோய் உள்ளவர்கள் எந்தப் பழமும் சாப்பிடக் கூடாது.",
+   "verdict": "FALSE",
+   "en": "People with diabetes can eat whole fruit. Eat a small portion at a time and spread it through the day. Limit fruit juice, which raises sugar fast. Ask your doctor or dietitian what suits you.",
+   "ta": "சர்க்கரை நோய் உள்ளவர்களும் முழுப் பழங்களைச் சாப்பிடலாம். ஒரு முறைக்கு சிறிய அளவு, நாள் முழுவதும் பிரித்துச் சாப்பிடுங்கள். பழச்சாறு சர்க்கரையை வேகமாக உயர்த்தும், அதைக் குறையுங்கள். உங்களுக்கு எது ஏற்றது என்று மருத்துவர் அல்லது உணவியல் நிபுணரிடம் கேளுங்கள்.",
+   "source": "https://medlineplus.gov/ency/patientinstructions/000964.htm"
+  },
+  {
+   "id": "m6",
+   "keys": [
+    "feel fine",
+    "checkup",
+    "no need",
+    "பரிசோதனை"
+   ],
+   "myth_en": "If I feel fine, I don't need check-ups.",
+   "myth_ta": "நன்றாக இருந்தால் பரிசோதனை தேவையில்லை.",
+   "verdict": "FALSE",
+   "en": "Most people with high BP feel no symptoms. High cholesterol also usually has no signs. The only way to know is to get checked.",
+   "ta": "அதிக BP உள்ள பெரும்பாலானோருக்கு எந்த அறிகுறியும் இருக்காது. அதிக கொலஸ்ட்ராலுக்கும் பொதுவாக அறிகுறி இருக்காது. பரிசோதனை செய்வது மட்டுமே தெரிந்துகொள்ள ஒரே வழி.",
+   "source": "https://www.who.int/news-room/fact-sheets/detail/hypertension"
+  },
+  {
+   "id": "m7",
+   "keys": [
+    "herbal",
+    "natural",
+    "nattu marunthu",
+    "நாட்டு மருந்து",
+    "siddha",
+    "home remedy"
+   ],
+   "myth_en": "Herbal or home remedies are always safe with my tablets.",
+   "myth_ta": "நாட்டு மருந்துகள் என் மாத்திரைகளுடன் எப்போதும் பாதுகாப்பானவை.",
+   "verdict": "FALSE",
+   "en": "Some herbal products can change how medicines work. Always tell your doctor and pharmacist about any herbal product you take.",
+   "ta": "சில மூலிகைப் பொருட்கள் மருந்துகள் வேலை செய்வதை மாற்றக்கூடும். நீங்கள் எடுக்கும் எந்த மூலிகைப் பொருளையும் மருத்துவரிடமும் மருந்தாளரிடமும் சொல்லுங்கள்.",
+   "source": "https://medlineplus.gov/druginfo/meds/a682277.html"
+  },
+  {
+   "id": "m8",
+   "keys": [
+    "vaccine",
+    "thadupoosi",
+    "தடுப்பூசி"
+   ],
+   "myth_en": "Vaccines are only for children.",
+   "myth_ta": "தடுப்பூசி குழந்தைகளுக்கு மட்டுமே.",
+   "verdict": "FALSE",
+   "en": "Adults and elders may also need vaccines, such as flu and pneumococcal (pneumonia) vaccines for people aged 65 and over. Ask your doctor which ones are right for you.",
+   "ta": "பெரியவர்களுக்கும் முதியவர்களுக்கும் தடுப்பூசிகள் தேவைப்படலாம் (உதாரணம்: 65 வயதுக்கு மேற்பட்டோருக்கு ஃப்ளூ, நிமோனியா தடுப்பூசி). உங்களுக்கு எது தேவை என்று மருத்துவரிடம் கேளுங்கள்.",
+   "source": "https://www.nhs.uk/vaccinations/"
+  },
+  {
+   "id": "m9",
+   "keys": [
+    "sugar free",
+    "sugar-free",
+    "sugarless"
+   ],
+   "myth_en": "Sugar-free or 'diabetic' sweets can be eaten freely.",
+   "myth_ta": "சுகர் ஃப்ரீ / 'டயபெடிக்' இனிப்புகளை தாராளமாகச் சாப்பிடலாம்.",
+   "verdict": "FALSE",
+   "en": "Sweets labelled 'diabetic' or 'sugar-free' can have just as much fat and calories as normal sweets, and some can still raise blood sugar. Eat them only in small amounts.",
+   "ta": "'டயபெடிக்' அல்லது 'சுகர் ஃப்ரீ' இனிப்புகளில் சாதாரண இனிப்புகளைப் போலவே கொழுப்பும் கலோரியும் இருக்கலாம்; சில இன்னும் சர்க்கரையை உயர்த்தலாம். குறைவாக மட்டுமே சாப்பிடுங்கள்.",
+   "source": "https://www.diabetes.org.uk/living-with-diabetes/eating/healthy-swaps/healthy-swaps-snacks"
+  },
+  {
+   "id": "m10",
+   "keys": [
+    "missed",
+    "double",
+    "extra tablet",
+    "இரட்டிப்பு"
+   ],
+   "myth_en": "If I miss a dose, I should take two next time.",
+   "myth_ta": "ஒரு மாத்திரை தவறினால் அடுத்த முறை இரண்டு எடுக்கலாம்.",
+   "verdict": "FALSE",
+   "en": "Do not take a double dose to make up for a missed one. Ask your doctor or pharmacist what to do for that medicine.",
+   "ta": "தவறிய மாத்திரைக்கு ஈடாக இரட்டிப்பு அளவு எடுக்காதீர்கள். அந்த மருந்துக்கு என்ன செய்ய வேண்டும் என்று மருத்துவர் அல்லது மருந்தாளரிடம் கேளுங்கள்.",
+   "source": "https://medlineplus.gov/druginfo/meds/a693050.html"
+  }
+ ]
+}

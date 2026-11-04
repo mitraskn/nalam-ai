@@ -1,0 +1,69 @@
+{
+ "_about": {
+  "purpose": "Health tip of the day (one per day, rotate by day of year). Fixed text only.",
+  "source": "General public-health guidance (WHO, MoHFW India)",
+  "review": "Medical tips checked against the linked official pages on 2026-11-04; unverified tips removed."
+ },
+ "items": [
+  {
+   "en": "Take your medicines at the same time every day. A phone alarm helps.",
+   "ta": "தினமும் ஒரே நேரத்தில் மருந்துகளை எடுங்கள். போன் அலாரம் உதவும்.",
+   "source": "practical tip (no medical claim)"
+  },
+  {
+   "en": "Aim for at least 150 minutes of moderate activity, like brisk walking, every week (for example 30 minutes on 5 days).",
+   "ta": "வாரத்துக்கு குறைந்தது 150 நிமிடம் வேகமான நடை போன்ற மிதமான உடற்பயிற்சி செய்யுங்கள் (உதாரணம்: 5 நாட்கள், தினமும் 30 நிமிடம்).",
+   "source": "https://www.who.int/news-room/fact-sheets/detail/diabetes"
+  },
+  {
+   "en": "Use less salt in cooking and avoid extra salt at the table. It helps control BP.",
+   "ta": "சமையலில் உப்பைக் குறையுங்கள், சாப்பிடும்போது கூடுதல் உப்பு சேர்க்காதீர்கள். இது BP-ஐக் கட்டுப்படுத்த உதவும்.",
+   "source": "https://www.who.int/news-room/fact-sheets/detail/hypertension"
+  },
+  {
+   "en": "Keep a written list of all your medicines and show it at every doctor visit.",
+   "ta": "உங்கள் எல்லா மருந்துகளின் பட்டியலை எழுதி வைத்து, ஒவ்வொரு மருத்துவர் சந்திப்பிலும் காட்டுங்கள்.",
+   "source": "practical tip (no medical claim)"
+  },
+  {
+   "en": "Check the expiry date before taking any medicine.",
+   "ta": "எந்த மருந்தையும் எடுக்கும் முன் காலாவதி தேதியைப் பாருங்கள்.",
+   "source": "practical tip (no medical claim)"
+  },
+  {
+   "en": "Do not share your medicines with others, even if their problem looks the same.",
+   "ta": "பிரச்சினை ஒன்றாகத் தெரிந்தாலும், உங்கள் மருந்துகளை மற்றவர்களுடன் பகிர வேண்டாம்.",
+   "source": "https://www.who.int/news/item/16-11-2015-who-multi-country-survey-reveals-widespread-public-misunderstanding-about-antibiotic-resistance"
+  },
+  {
+   "en": "Wash hands with soap before eating and after using the toilet.",
+   "ta": "சாப்பிடும் முன்னும் கழிவறை பயன்படுத்திய பின்னும் சோப்பால் கை கழுவுங்கள்.",
+   "source": "https://medlineplus.gov/commoncold.html"
+  },
+  {
+   "en": "Fill half your plate with vegetables.",
+   "ta": "உங்கள் தட்டில் பாதியை காய்கறிகளால் நிரப்புங்கள்.",
+   "source": "https://www.royalwolverhampton.nhs.uk/wp-content/uploads/2025/05/Eating_Well_With_Diabetes.pdf"
+  },
+  {
+   "en": "If you have diabetes, check your feet daily for cuts or wounds.",
+   "ta": "சர்க்கரை நோய் இருந்தால், கால்களில் வெட்டு அல்லது காயம் உள்ளதா என்று தினமும் பாருங்கள்.",
+   "source": "https://medlineplus.gov/ency/patientinstructions/000328.htm"
+  },
+  {
+   "en": "If you have diabetes, get your eyes checked once a year.",
+   "ta": "சர்க்கரை நோய் இருந்தால், ஆண்டுக்கு ஒரு முறை கண் பரிசோதனை செய்யுங்கள்.",
+   "source": "https://medlineplus.gov/ency/patientinstructions/000328.htm"
+  },
+  {
+   "en": "Save 108 and 112 in your phone and teach elders how to call them.",
+   "ta": "108, 112 எண்களை போனில் சேமித்து, பெரியவர்களுக்கு அழைக்கக் கற்றுக் கொடுங்கள்.",
+   "source": "practical tip (no medical claim)"
+  },
+  {
+   "en": "Keep your old reports in one file. Doctors use them to compare.",
+   "ta": "பழைய அறிக்கைகளை ஒரே கோப்பில் வைத்திருங்கள். மருத்துவர்கள் ஒப்பிட அவற்றைப் பயன்படுத்துவார்கள்.",
+   "source": "practical tip (no medical claim)"
+  }
+ ]
+}

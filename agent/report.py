@@ -148,6 +148,11 @@ def flag_rows(rows: list[TestRow]) -> list[FlaggedRow]:
                 flagged_row["status"] = "HIGH"
             else:
                 flagged_row["status"] = "NORMAL"
+        elif row.get("sex_split"):
+            # The report gives different ranges for men and women, and the sex is not printed: do not guess.
+            flagged_row["range_source"] = "unknown"
+            flagged_row["status"] = "UNKNOWN"
+            flagged_row["note"] = "This range is different for men and women. Please ask your doctor."
         else:
             # No range in report; try fallback
             # Look for keyword matches, including "random" and "fasting" variants
@@ -207,7 +212,7 @@ def read_report_via_nova(image_bytes: bytes, path_str: str) -> list[TestRow]:
     import boto3
     import os
     
-    region = os.environ.get("AWS_REGION", "us-east-1")
+    region = os.environ.get("BEDROCK_REGION") or os.environ.get("AWS_REGION", "us-east-1")
     model_id = os.environ.get("REPORT_MODEL", "us.amazon.nova-lite-v1:0")
     
     # Determine content type from file extension
@@ -218,32 +223,81 @@ def read_report_via_nova(image_bytes: bytes, path_str: str) -> list[TestRow]:
     else:
         block = {"image": {"format": "jpeg" if ext in ("jpg", "jpeg") else ext, "source": {"bytes": image_bytes}}}
     
-    prompt = ("Read this lab report. Return ONLY a JSON array, no other text. One object per test row: "
-              '{"test": name, "value": number, "unit": unit, "range_text": reference range exactly as printed or ""}. '
-              "Do not judge or interpret anything.")
-    
+    prompt = ("Read this lab report. Return ONLY JSON, no other text, in this shape: "
+              '{"sex": "female" | "male" | "unknown" (from the patient Age/Sex field), '
+              '"rows": [{"test": name, "value": the result as printed, "unit": unit, '
+              '"range_text": reference range exactly as printed (all of it, e.g. men and women ranges) or ""}]}. '
+              "One object per test row that has a result. Do not judge or interpret anything.")
+
     client = boto3.client("bedrock-runtime", region_name=region)
-    
-    resp = client.converse(
-        modelId=model_id,
-        messages=[{"role": "user", "content": [block, {"text": prompt}]}],
-        inferenceConfig={"temperature": 0, "maxTokens": 2000}
-    )
-    
-    text = resp["output"]["message"]["content"][0]["text"]
-    
-    m = re.search(r"\[.*\]", text, re.S)
-    if not m:
+
+    def ask() -> str:
+        resp = client.converse(modelId=model_id, messages=[{"role": "user", "content": [block, {"text": prompt}]}],
+                               inferenceConfig={"temperature": 0, "maxTokens": 3000})
+        return resp["output"]["message"]["content"][0]["text"]
+
+    sex, raw_rows = _parse_reply(ask())
+    if not raw_rows:  # one retry: a reply that was not readable JSON
+        sex, raw_rows = _parse_reply(ask())
+    if not raw_rows:
         raise ValueError("Could not read the report. Please upload a clearer photo.")
-    
-    rows = json.loads(m.group(0))
-    
-    # Ensure values are numbers
-    for row in rows:
-        if isinstance(row.get("value"), str):
-            row["value"] = float(row["value"])
-    
+    rows = []
+    for row in raw_rows:
+        v = _number(row.get("value"))
+        if v is None:  # "--", "Nil", "Positive" ...: no number to compare, skip it
+            continue
+        rng = str(row.get("range_text") or "")
+        picked = _range_for_sex(rng, sex)
+        rows.append({"test": str(row.get("test", "")).strip(), "value": v, "unit": str(row.get("unit") or ""),
+                     "range_text": picked if picked is not None else rng, "sex_split": picked == ""})
     return rows
+
+
+def _parse_reply(text: str) -> tuple[str, list[dict]]:
+    """Accept {"sex":..,"rows":[..]} or a bare [..]; if the JSON is broken, keep every row object that parses."""
+    sex = "unknown"
+    m = re.search(r'"sex"\s*:\s*"(\w+)"', text)
+    if m:
+        sex = m.group(1).lower()
+    for pat in (r"\{.*\}", r"\[.*\]"):
+        mm = re.search(pat, text, re.S)
+        if not mm:
+            continue
+        try:
+            data = json.loads(mm.group(0))
+            rows = data.get("rows", []) if isinstance(data, dict) else data
+            if isinstance(rows, list) and rows:
+                return sex, [r for r in rows if isinstance(r, dict)]
+        except json.JSONDecodeError:
+            pass
+    rows = []
+    for obj in re.findall(r'\{[^{}]*"test"[^{}]*\}', text):
+        try:
+            rows.append(json.loads(obj))
+        except json.JSONDecodeError:
+            continue
+    return sex, rows
+
+
+def _number(v) -> float | None:
+    """12,400 -> 12400.0; '10.8 g/dL' -> 10.8; '--' -> None."""
+    if isinstance(v, (int, float)):
+        return float(v)
+    m = re.search(r"-?\d+(?:\.\d+)?", str(v or "").replace(",", ""))
+    return float(m.group(0)) if m else None
+
+
+def _range_for_sex(rng: str, sex: str) -> str | None:
+    """'Men : 13.5 - 18.0 Women : 12.5 - 15.5' -> '12.5 - 15.5' for a woman. None if the range is not split by sex.
+    Returns '' (no range: ask the doctor) when the range is split but the sex is not known."""
+    pat = r"(?P<who>women|woman|female|men|man|male)\s*[:\-]?\s*(?P<lo>\d+(?:\.\d+)?)\s*[-\u2013to]+\s*(?P<hi>\d+(?:\.\d+)?)"
+    found = {}
+    for m in re.finditer(pat, rng.lower()):
+        who = "female" if m.group("who").startswith(("wom", "fem")) else "male"
+        found.setdefault(who, f"{m.group('lo')} - {m.group('hi')}")
+    if not found:
+        return None
+    return found.get(sex, "")
 
 
 def get_glossary_entry(test_name: str) -> dict | None:

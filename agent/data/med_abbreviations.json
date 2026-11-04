@@ -1,0 +1,139 @@
+{
+ "_about": {
+  "purpose": "Prescription abbreviations explained in Tamil/English. Used by the word bridge and prescription reader.",
+  "source": "Standard prescription abbreviations (general pharmacy usage)",
+  "review": "DRAFT 2026-11-04: verify facts against the listed source and Tamil wording with a fluent reader."
+ },
+ "items": [
+  {
+   "abbr": "OD",
+   "en": "Once a day",
+   "ta": "ஒரு நாளைக்கு ஒரு முறை",
+   "how_en": "1 time a day, usually in the morning.",
+   "how_ta": "ஒரு நாளைக்கு 1 முறை, பொதுவாக காலையில்."
+  },
+  {
+   "abbr": "BD",
+   "alt": [
+    "BID"
+   ],
+   "en": "Twice a day",
+   "ta": "ஒரு நாளைக்கு இரண்டு முறை",
+   "how_en": "2 times a day, morning and night.",
+   "how_ta": "ஒரு நாளைக்கு 2 முறை, காலை மற்றும் இரவு."
+  },
+  {
+   "abbr": "TDS",
+   "alt": [
+    "TID"
+   ],
+   "en": "Three times a day",
+   "ta": "ஒரு நாளைக்கு மூன்று முறை",
+   "how_en": "3 times a day, morning, afternoon and night.",
+   "how_ta": "ஒரு நாளைக்கு 3 முறை, காலை, மதியம், இரவு."
+  },
+  {
+   "abbr": "QID",
+   "alt": [
+    "QDS"
+   ],
+   "en": "Four times a day",
+   "ta": "ஒரு நாளைக்கு நான்கு முறை",
+   "how_en": "4 times a day.",
+   "how_ta": "ஒரு நாளைக்கு 4 முறை."
+  },
+  {
+   "abbr": "HS",
+   "en": "At bedtime",
+   "ta": "இரவு தூங்கும் முன்",
+   "how_en": "1 time, at night before sleeping.",
+   "how_ta": "இரவு தூங்கும் முன் 1 முறை."
+  },
+  {
+   "abbr": "SOS",
+   "alt": [
+    "PRN"
+   ],
+   "en": "Only when needed",
+   "ta": "தேவைப்படும்போது மட்டும்",
+   "how_en": "Only when needed, for example when there is fever. Not every day.",
+   "how_ta": "தேவைப்படும்போது மட்டும், உதாரணமாக காய்ச்சல் இருக்கும்போது. தினமும் அல்ல."
+  },
+  {
+   "abbr": "AC",
+   "en": "Before food",
+   "ta": "சாப்பாட்டுக்கு முன்",
+   "how_en": "Take it before eating.",
+   "how_ta": "சாப்பிடுவதற்கு முன் எடுக்கவும்."
+  },
+  {
+   "abbr": "PC",
+   "en": "After food",
+   "ta": "சாப்பாட்டுக்குப் பின்",
+   "how_en": "Take it after eating.",
+   "how_ta": "சாப்பிட்ட பிறகு எடுக்கவும்."
+  },
+  {
+   "abbr": "STAT",
+   "en": "Immediately, one time",
+   "ta": "உடனே, ஒரு முறை மட்டும்",
+   "how_en": "1 time, right now.",
+   "how_ta": "இப்போதே 1 முறை."
+  },
+  {
+   "abbr": "1-0-1",
+   "en": "Morning 1, afternoon 0, night 1",
+   "ta": "காலை 1, மதியம் 0, இரவு 1",
+   "how_en": "2 times a day: 1 in the morning, 1 at night.",
+   "how_ta": "ஒரு நாளைக்கு 2 முறை: காலை 1, இரவு 1."
+  },
+  {
+   "abbr": "1-1-1",
+   "en": "Morning 1, afternoon 1, night 1",
+   "ta": "காலை 1, மதியம் 1, இரவு 1",
+   "how_en": "3 times a day: morning, afternoon and night.",
+   "how_ta": "ஒரு நாளைக்கு 3 முறை: காலை, மதியம், இரவு."
+  },
+  {
+   "abbr": "1-0-0",
+   "en": "Morning only",
+   "ta": "காலையில் மட்டும்",
+   "how_en": "1 time a day, in the morning.",
+   "how_ta": "ஒரு நாளைக்கு 1 முறை, காலையில்."
+  },
+  {
+   "abbr": "0-0-1",
+   "en": "Night only",
+   "ta": "இரவில் மட்டும்",
+   "how_en": "1 time a day, at night.",
+   "how_ta": "ஒரு நாளைக்கு 1 முறை, இரவில்."
+  },
+  {
+   "abbr": "Tab",
+   "en": "Tablet",
+   "ta": "மாத்திரை"
+  },
+  {
+   "abbr": "Cap",
+   "en": "Capsule",
+   "ta": "கேப்சூல்"
+  },
+  {
+   "abbr": "Syp",
+   "en": "Syrup",
+   "ta": "சிரப் (திரவ மருந்து)"
+  },
+  {
+   "abbr": "Inj",
+   "en": "Injection",
+   "ta": "ஊசி"
+  },
+  {
+   "abbr": "x 5 days",
+   "en": "For 5 days (the number changes)",
+   "ta": "5 நாட்களுக்கு (எண் மாறலாம்)",
+   "how_en": "Take it for 5 days.",
+   "how_ta": "5 நாட்கள் எடுக்கவும்."
+  }
+ ]
+}

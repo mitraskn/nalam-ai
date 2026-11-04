@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fbf6ee">
+<title>நலம் AI · Nalam AI</title>
+<link rel="manifest" href="/manifest.json">
+<style>
+:root{--teal:#c9562a;--teal-d:#a8441f;--teal-l:#fdeee4;--red:#c0392b;--red-d:#a12d22;--amber:#b45309;--amber-l:#fff3d6;
+--green:#2f855a;--green-l:#e3f4e8;--ink:#3b2a1a;--muted:#8a6a4a;--line:#f0e4d4;--bg:#fbf6ee;--card:#fff;--fs:16px;--tile:110px;
+--shadow:0 2px 10px rgba(120,80,40,.09)}
+body.elder{--fs:21px;--tile:150px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--fs)/1.5 "Noto Sans Tamil","Latha","Nirmala UI",system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.app{max-width:480px;margin:0 auto;min-height:100vh;padding-bottom:110px;position:relative}
+header{position:sticky;top:0;z-index:5;background:rgba(251,246,238,.96);backdrop-filter:blur(6px);color:var(--ink);padding:14px 18px 10px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
+header h1{font-size:1.3em;margin:0;flex:1;font-weight:800;letter-spacing:.2px}
+header small{display:block;font-size:.6em;color:var(--muted);font-weight:500}
+.iconbtn{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:14px;min-width:44px;height:44px;font-size:1.1em;cursor:pointer;box-shadow:var(--shadow)}
+main{padding:14px}
+.card{background:var(--card);border-radius:20px;padding:16px;margin:0 0 12px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.card h2{font-size:1.05em;margin:0 0 8px}
+.muted{color:var(--muted);font-size:.88em}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.tile{background:var(--card);border:1px solid var(--line);border-radius:22px;min-height:var(--tile);padding:16px;display:flex;flex-direction:column;
+ justify-content:flex-start;align-items:flex-start;gap:10px;font-weight:700;font-size:1em;line-height:1.35;cursor:pointer;text-align:left;color:var(--ink);box-shadow:var(--shadow)}
+.tile .ic{font-size:1.6em;line-height:1;width:52px;height:52px;border-radius:16px;display:grid;place-items:center;background:var(--teal-l);flex:none}
+body.elder .tile .ic{font-size:2em;width:64px;height:64px;border-radius:18px}
+.tiles .tile:nth-child(6n+1) .ic{background:#e8f1ff}.tiles .tile:nth-child(6n+2) .ic{background:#fff0e6}.tiles .tile:nth-child(6n+3) .ic{background:#eaf7ee}
+.tiles .tile:nth-child(6n+4) .ic{background:#fdeaea}.tiles .tile:nth-child(6n+5) .ic{background:#f3ecff}.tiles .tile:nth-child(6n) .ic{background:#fff6d6}
+.hello{padding:4px 4px 12px}.hello b{display:block;font-size:1.45em;font-weight:800;line-height:1.25}.hello span{color:var(--muted);font-size:.9em}
+.next{background:linear-gradient(135deg,#e07a3f,#c9562a);color:#fff;border-radius:24px;padding:18px;margin-bottom:14px;box-shadow:0 8px 22px rgba(201,86,42,.28)}
+.next small{opacity:.92;font-size:.85em;display:block}.next b{display:block;font-size:1.35em;margin:4px 0 12px;line-height:1.3}
+.next .row{flex-wrap:nowrap}.next button{flex:1;font-weight:800}.next .ok{background:#fff;color:#a8441f}.next .later{background:rgba(255,255,255,.22);color:#fff}
+.next.done{background:linear-gradient(135deg,#3f9a6b,#2f855a);box-shadow:0 8px 22px rgba(47,133,90,.25)}
+.tipcard{background:#fff3d6;border-color:#f6e2b0}
+.tile:active{transform:scale(.98)}
+.tile.wide{grid-column:1/-1;flex-direction:row;align-items:center;min-height:calc(var(--tile)*.7)}
+.tile.wide .ic{background:#f3ecff}
+button,.btn{font:inherit;border-radius:14px;border:0;padding:12px 16px;cursor:pointer;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none}
+body.elder button,body.elder .btn{padding:16px 18px}
+.primary{background:var(--teal);color:#fff}.primary:active{background:var(--teal-d)}
+.ghost{background:var(--teal-l);color:var(--teal-d)}
+.danger{background:var(--red);color:#fff}
+.plain{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.block{width:100%}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.listen{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.listen button{padding:8px 14px;font-size:.85em;background:var(--teal-l);color:var(--teal-d);border-radius:999px}
+body.elder .listen button{padding:12px 16px;font-size:.9em}
+input,select,textarea{font:inherit;width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:14px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal)}
+label{display:block;font-size:.88em;color:var(--muted);margin:10px 0 4px}
+.sosfab{position:fixed;right:max(16px,calc(50% - 224px));bottom:20px;z-index:20;background:var(--red);color:#fff;border:0;border-radius:999px;
+ height:64px;padding:0 24px;font-size:1.1em;font-weight:800;box-shadow:0 8px 20px rgba(192,57,43,.4)}
+body.elder .sosfab{height:80px;padding:0 30px;font-size:1.3em}
+.overlay{position:fixed;inset:0;background:rgba(17,24,39,.55);z-index:30;display:none;align-items:flex-end;justify-content:center}
+.overlay.on{display:flex}
+.sheet{background:#fff;width:100%;max-width:480px;border-radius:24px 24px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom));max-height:92vh;overflow:auto}
+.sheet h2{margin:0 0 4px;font-size:1.3em}
+.bigcall{width:100%;min-height:84px;font-size:1.25em;margin-top:12px;border-radius:18px}
+body.elder .bigcall{min-height:104px;font-size:1.4em}
+.midcall{width:100%;min-height:64px;margin-top:10px}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.8em;font-weight:700}
+.p-HIGH{background:#fee2e2;color:var(--red-d)}.p-LOW{background:#dbeafe;color:#1d4ed8}.p-NORMAL{background:var(--green-l);color:var(--green)}.p-UNKNOWN{background:#f3f4f6;color:var(--muted)}
+.res{border-left:5px solid var(--line)}
+.res.HIGH{border-left-color:var(--red)}.res.LOW{border-left-color:#2563eb}.res.NORMAL{border-left-color:var(--green)}
+.val{font-size:1.4em;font-weight:800}
+.warn{background:var(--amber-l);color:#78350f;border-radius:12px;padding:10px 12px;margin-top:8px;font-size:.92em}
+.alert{background:#fef2f2;border:2px solid #fecaca;color:#7f1d1d}
+.calm{background:#eef5ff;border:2px solid #cfe0fb}
+.chat{display:flex;flex-direction:column;gap:10px}
+.msg{max-width:88%;padding:10px 14px;border-radius:16px}
+.me{align-self:flex-end;background:var(--teal);color:#fff;border-bottom-right-radius:6px;border-radius:20px}
+.bot{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:6px;border-radius:20px;box-shadow:var(--shadow)}
+.askbar{position:sticky;bottom:96px;background:var(--bg);padding:8px 0;display:flex;gap:8px}
+body.elder .askbar{bottom:112px}
+.mic{min-width:56px;background:var(--teal);color:#fff;font-size:1.3em;border-radius:14px}
+body.elder .mic{min-width:76px;font-size:1.7em}
+.mic.on{background:var(--red);animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.6}}
+.dose{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}
+.dose:last-child{border-bottom:0}
+.dose .t{font-weight:800;font-size:1.15em;min-width:64px}
+.dose .acts{display:flex;gap:6px}
+.dose .acts button{padding:10px 12px}
+body.elder .dose{flex-direction:column;align-items:stretch}
+body.elder .dose .acts{width:100%}
+body.elder .dose .acts button{flex:1;min-height:60px}
+.st-taken{color:var(--green);font-weight:700}.st-missed{color:var(--red);font-weight:700}
+.tabs{display:flex;gap:6px;overflow:auto;margin:0 0 12px;padding-bottom:2px}
+.tabs button{white-space:nowrap;background:#fff;border:1px solid var(--line);color:var(--ink);padding:8px 12px;font-size:.9em}
+.tabs button.on{background:var(--teal);color:#fff;border-color:var(--teal)}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:100px;background:#111827;color:#fff;padding:10px 16px;border-radius:12px;z-index:40;max-width:90%;display:none;font-size:.9em}
+.spinner{display:inline-block;width:18px;height:18px;border:3px solid #cbd5e1;border-top-color:var(--teal);border-radius:50%;animation:spin 1s linear infinite;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{background:#fff;border:1px solid var(--line);color:var(--ink);font-weight:500;font-size:.88em;padding:8px 12px;border-radius:999px}
+.seg{display:flex;gap:8px}.seg button{flex:1;background:#fff;border:2px solid var(--line);color:var(--ink)}.seg button.on{border-color:var(--teal);background:var(--teal-l);color:var(--teal-d)}
+.hide{display:none!important}
+.banner{background:var(--amber-l);border:1px solid #fcd34d;border-radius:14px;padding:12px;margin-bottom:12px}
+.small{font-size:.82em}
+a{color:var(--teal-d)}
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <button class="iconbtn hide" id="backBtn" aria-label="back" onclick="goBack()">←</button>
+    <h1 id="appTitle">நலம் AI<small id="tagline"></small></h1>
+    <button class="iconbtn hide" id="homeBtn" aria-label="home" onclick="go('start')">🏠</button>
+  </header>
+  <main id="main"></main>
+</div>
+<button class="sosfab" id="sosBtn" onclick="openSOS()">🆘 <span id="sosLbl"></span></button>
+
+<div class="overlay" id="sos" onclick="if(event.target===this)closeSOS()">
+  <div class="sheet" id="sosSheet"></div>
+</div>
+<div class="toast" id="toast"></div>
+<input type="file" id="filePick" accept="image/*,application/pdf" class="hide">
+
+<script>
+"use strict";
+/* ---------- text (Tamil + English, fixed) ---------- */
+const T={
+app:["நலம் AI","Nalam AI"],tagline:["உங்கள் ஆரோக்கியம், உங்கள் மொழியில்","Your health, in your language"],
+sos:["அவசரம்","SOS"],sos_title:["உதவி தேவையா?","Need help?"],sos_sub:["ஒரு பொத்தானை அழுத்துங்கள்","Press one button"],
+call_family:["குடும்பத்தினரை அழை","Call family"],call_108:["108 ஆம்புலன்ஸ்","Call 108 ambulance"],
+share_loc:["📍 என் இருப்பிடத்தை WhatsApp-இல் அனுப்பு","📍 Send my location on WhatsApp"],auto_loc:["அழைப்பு முடிந்ததும் உங்கள் இருப்பிடம் WhatsApp-இல் தயாராக இருக்கும் — அனுப்பு அழுத்தினால் போதும்.","After the call, your location will be ready in WhatsApp — just press Send."],close:["மூடு","Close"],
+no_family:["குடும்பத்தினரின் எண் இன்னும் சேர்க்கப்படவில்லை. ⚙️ அமைப்புகளில் சேர்க்கவும்.","Family number not added yet. Add it in ⚙️ Settings."],
+whatsapp_msg:["அவசரம்! எனக்கு உதவி தேவை. என் இருப்பிடம்:","Emergency! I need help. My location:"],loc_fail:["இருப்பிடம் கிடைக்கவில்லை. இருப்பிட அனுமதியை இயக்கவும்.","Could not get location. Please allow location."],
+home_report:["அறிக்கையைப் புரிந்துகொள்","Understand my report"],home_meds:["இன்றைய மருந்துகள்","Today's medicines"],
+home_ask:["கேள்வி கேளுங்கள்","Ask a question"],home_hosp:["அருகிலுள்ள மருத்துவமனை","Nearby hospital"],
+home_rx:["மருந்துச் சீட்டைப் படி","Read prescription"],home_care:["குடும்பப் பராமரிப்பு","Family care"],
+home_myth:["தவறான நம்பிக்கைகள்","Health myths"],home_scheme:["சுகாதாரத் திட்டங்கள்","Health schemes"],
+tip:["இன்றைய ஆரோக்கியக் குறிப்பு","Today's health tip"],listen_ta:["🔊 தமிழில் கேள்","🔊 Tamil"],listen_en:["🔊 ஆங்கிலத்தில் கேள்","🔊 English"],stop:["⏹ நிறுத்து","⏹ Stop"],
+ask_ph:["கேள்வியைத் தட்டச்சு செய்யுங்கள் அல்லது 🎤 அழுத்திப் பேசுங்கள்","Type your question or press 🎤 to speak"],send:["அனுப்பு","Send"],
+listening:["கேட்கிறேன்… பேசுங்கள்","Listening… speak now"],thinking:["யோசிக்கிறேன்…","Thinking…"],
+mic_unsupported:["இந்த உலாவியில் குரல் உள்ளீடு இல்லை. Chrome அல்லது Edge பயன்படுத்துங்கள்.","Voice input isn't available in this browser. Use Chrome or Edge."],
+no_ta_voice:["இந்தச் சாதனத்தில் தமிழ் குரல் இல்லை. Microsoft Edge அல்லது Android போனில் முயற்சிக்கவும்.","This device has no Tamil voice. Try Microsoft Edge or an Android phone."],
+ask_examples:["எடுத்துக்காட்டு கேள்விகள்","Try asking"],
+report_title:["இரத்தப் பரிசோதனை அறிக்கை","Blood test report"],upload_photo:["📷 அறிக்கையின் புகைப்படம்","📷 Photo of the report"],
+save_to:["யாருடைய அறிக்கை?","Whose report?"],nobody:["சேமிக்க வேண்டாம்","Don't save"],
+reading:["படிக்கிறேன்… 20 வினாடி வரை ஆகலாம்","Reading… this can take up to 20 seconds"],
+HIGH:["அதிகம்","High"],LOW:["குறைவு","Low"],NORMAL:["இயல்பு","Normal"],UNKNOWN:["தெரியவில்லை","Unsure"],
+what_it_is:["இது என்ன?","What is this?"],questions:["மருத்துவரிடம் கேட்க வேண்டியவை","Questions for your doctor"],
+summary:["{h} அதிகம் · {l} குறைவு · {n} இயல்பு","{h} high · {l} low · {n} normal"],range:["வரம்பு","Range"],
+saved_to:["சேமிக்கப்பட்டது:","Saved to:"],report_hint:["அறிக்கை முழுவதும் தெளிவாகத் தெரியும்படி புகைப்படம் எடுங்கள்.","Take a clear photo with the whole report visible."],
+rx_title:["மருந்துச் சீட்டு","Prescription"],rx_upload:["📷 மருந்துச் சீட்டின் புகைப்படம்","📷 Photo of the prescription"],
+rx_unsure:["⚠️ மருந்தாளரிடம் சரிபார்க்கவும்","⚠️ Confirm with pharmacist"],rx_save:["தேர்ந்தெடுத்த மருந்துகளைச் சேமி","Save selected medicines"],
+rx_for:["யாருக்கு?","For whom?"],saved:["சேமிக்கப்பட்டது ✅","Saved ✅"],rx_hint:["சேமிக்கும் முன் நேரங்களைச் சரிபார்க்கவும்.","Check the times before saving."],
+care_title:["குடும்பப் பராமரிப்பு","Family care"],add_person:["+ நபரைச் சேர்","+ Add person"],
+name:["பெயர்","Name"],relation:["உறவு (எ.கா. பாட்டி)","Relation (e.g. Paati)"],age:["வயது","Age"],
+today:["இன்று","Today"],medicines:["மருந்துகள்","Medicines"],appointments:["சந்திப்புகள்","Appointments"],visits:["மருத்துவர் வருகைகள்","Doctor visits"],reports:["அறிக்கைகள்","Reports"],
+taken:["✅ எடுத்தேன்","✅ Taken"],
+past_date:["கடந்த தேதியைத் தேர்ந்தெடுக்க முடியாது. இன்று அல்லது வரும் தேதியைத் தேர்ந்தெடுங்கள்.","You can't pick a past date. Choose today or a future date."],
+past_time:["இந்த நேரம் இன்று ஏற்கனவே கடந்துவிட்டது. வேறு நேரத்தைத் தேர்ந்தெடுங்கள்.","That time has already passed today. Choose a later time."],
+future_date:["வருகை தேதி எதிர்காலத்தில் இருக்க முடியாது.","A visit date can't be in the future."],
+bad_date:["சரியான தேதியைத் தேர்ந்தெடுங்கள்.","Please choose a valid date."],
+bad_time:["நேரத்தை 08:00, 20:00 போல எழுதுங்கள்.","Write times like 08:00, 20:00."],
+too_big:["கோப்பு மிகப் பெரியது.","The file is too big."],
+add_rx_photo:["📷 மருந்துச் சீட்டு / அறிக்கை படம் சேர்","📷 Add prescription / report photo"],
+photo_added:["படம் சேர்க்கப்பட்டது ✅","Photo added ✅"],view_photo:["🖼️ படத்தைப் பார்","🖼️ View photo"],missed:["❌ தவறியது","❌ Missed"],st_taken:["எடுத்தாயிற்று ✅","Taken ✅"],st_missed:["தவறியது ❌","Missed ❌"],
+before:["சாப்பாட்டுக்கு முன்","before food"],after:["சாப்பாட்டுக்குப் பின்","after food"],
+adherence:["கடந்த 7 நாட்களில் எடுத்தது","Taken in the last 7 days"],add_med:["+ மருந்தைச் சேர்","+ Add medicine"],
+med_name:["மருந்தின் பெயர்","Medicine name"],dose:["அளவு (மருத்துவர் எழுதியபடி)","Dose (as the doctor wrote)"],
+times:["நேரங்கள் (எ.கா. 08:00, 20:00)","Times (e.g. 08:00, 20:00)"],food:["உணவு","Food"],none:["—","—"],
+save:["சேமி","Save"],del:["நீக்கு","Delete"],cancel:["ரத்து","Cancel"],no_doses:["இன்று மருந்துகள் எதுவும் இல்லை","No medicines for today"],
+add_appt:["+ சந்திப்பைச் சேர்","+ Add appointment"],date:["தேதி","Date"],time:["நேரம்","Time"],where:["மருத்துவர் / மருத்துவமனை","Doctor / hospital"],note:["குறிப்பு","Note"],
+add_visit:["+ வருகையைச் சேர்","+ Add visit"],symptoms:["அறிகுறிகள்","Symptoms"],doctor_notes:["மருத்துவர் சொன்னது","What the doctor said"],
+visit_meds:["அப்போதைய மருந்துகள்","Medicines at that time"],visit_abn:["அப்போதைய அறிக்கையில் வரம்புக்கு வெளியே","Out of range in the last report"],
+visit_hint:["மருந்துகளும் கடைசி அறிக்கையின் மாறுபட்ட அளவுகளும் தானாகச் சேர்க்கப்படும்.","Current medicines and the last report's out-of-range values are added automatically."],
+no_items:["இன்னும் எதுவும் இல்லை","Nothing yet"],pick_person:["முதலில் ஒரு நபரைச் சேர்க்கவும்","Add a person first"],
+compare:["மாற்றத்தைப் பார்","See the change"],cannot_compare:["அலகுகள் வேறு; ஒப்பிட முடியாது","Units differ; cannot compare"],
+hosp_title:["மருத்துவ உதவி","Medical help"],open_map:["🗺️ வரைபடம்","🗺️ Map"],call:["📞 அழை","📞 Call"],emergency_numbers:["அவசர எண்கள்","Emergency numbers"],
+places:["அரசு மருத்துவமனைகள்","Government hospitals"],near_me:["எனக்கு அருகில்","Near me"],
+myth_title:["தவறான நம்பிக்கைகள்","Health myths"],myth_tap:["ஒரு நம்பிக்கையைத் தொடுங்கள்","Tap a belief to see the truth"],
+scheme_title:["சுகாதாரத் திட்டங்கள்","Health schemes"],rules:["யார் விண்ணப்பிக்கலாம் (விதிகள்)","Who can apply (rules)"],docs:["தேவையான ஆவணங்கள்","Documents needed"],
+where_apply:["எங்கே விண்ணப்பிப்பது","Where to apply"],official_site:["அதிகாரப்பூர்வ இணையதளம் ↗","Official website ↗"],
+settings:["அமைப்புகள்","Settings"],home_title:["🏠 முகப்பு","🏠 Home"],welcome_back:["மீண்டும் வருக! உங்கள் விவரங்கள் கீழே உள்ளன. மாற்றலாம், பிறகு தொடரவும்.","Welcome back! Your details are below. Change anything, then continue."],
+continue_btn:["தொடரவும் →","Continue →"],sign_out:["🚪 வெளியேறு (இந்த போனில் உள்ள விவரங்களை அழி)","🚪 Sign out (clear details on this phone)"],
+sign_out_q:["இந்த போனில் உள்ள அமைப்பும் குடும்ப விவரங்களும் அழிக்கப்படும். வெளியேறவா?","This clears the setup and family list on this phone. Sign out?"],
+phone_bad:["கைபேசி எண் 10 இலக்கமாக இருக்க வேண்டும் (அல்லது காலியாக விடுங்கள்).","The mobile number must be 10 digits (or leave it empty)."],
+need_person:["இந்த செயலி யாருக்காக என்று ஒரு பெயர் எழுதுங்கள் (எ.கா. பாட்டி).","Please write who this app is for (e.g. Paati)."],
+menu_title:["மெனு","Menu"],language:["மொழி","Language"],mode:["முறை","Mode"],elder_mode:["👵 பெரியவர் முறை","👵 Elder mode"],normal_mode:["👤 சாதாரண முறை","👤 Normal mode"],
+elder_desc:["பெரிய எழுத்து, குறைந்த பொத்தான்கள், குரல் முதன்மை","Large text, fewer buttons, voice first"],normal_desc:["எல்லா வசதிகளும்","All features"],
+family_contact:["அவசரத்துக்கு குடும்பத்தினர்","Family contact for SOS"],phone:["கைபேசி எண் (10 இலக்கம்)","Mobile number (10 digits)"],
+main_person:["முதன்மை நபர் (யாருக்காக இந்த செயலி?)","Main person (who is this app for?)"],welcome:["வணக்கம்! 🙏","Welcome! 🙏"],start:["தொடங்கு","Start"],
+welcome_sub:["சில விவரங்களை நிரப்பி, தொடரவும் அழுத்துங்கள். பின்னர் 🏠 முகப்பில் மாற்றலாம்.","Fill in a few details and press Continue. You can change them later on this 🏠 Home page."],
+error:["ஏதோ தவறு நடந்தது. மீண்டும் முயற்சிக்கவும்.","Something went wrong. Please try again."],too_big:["கோப்பு மிகப் பெரியது.","File is too large."],
+reminder:["💊 மருந்து நேரம்:","💊 Medicine time:"],reminder_note:["செயலி திறந்திருக்கும்போது மட்டுமே நினைவூட்டல் ஒலிக்கும்.","Reminders ring only while the app is open."],
+privacy:["உங்கள் குடும்ப விவரங்கள் இந்த போனுக்கு மட்டுமே தெரியும்; மற்றவர்களுக்குத் தெரியாது.","Your family details are visible only on this phone, not to anyone else."],
+call_14416:["📞 டெலி-மனஸ் 14416","📞 Tele-MANAS 14416"],
+home_mind:["மனம் சரியில்லையா? பேசுங்கள்","Feeling low? Talk to someone"],
+mind_intro:["மனச்சோர்வு, மன அழுத்தம் அல்லது தனிமையாக உணர்கிறீர்களா? உதவி கேட்பதில் தவறில்லை. இளையவர்கள், பெரியவர்கள் பலரும் இப்படி உணர்கிறார்கள்.","Feeling low, stressed or alone? It's okay to ask for help. Many people feel this way, young and old."],
+mind_line:["டெலி-மனஸ் 14416: அரசின் இலவச மனநல உதவி எண், 24 மணி நேரமும். தமிழில் பேசலாம்.","Tele-MANAS 14416: the government's free mental health helpline, 24x7. You can talk in Tamil."],
+mind_steps_title:["இப்போதே செய்யக்கூடியவை","Things you can do right now"],
+mind_danger:["உங்களுக்கே தீங்கு செய்துகொள்ளலாம் என்று தோன்றினால், இப்போதே 14416 அல்லது 112-ஐ அழைத்து, மற்றவர்கள் அருகில் இருங்கள்.","If you feel you might hurt yourself, call 14416 or 112 now and stay near other people."],
+call_112:["📞 112 அவசர எண்","📞 112 emergency"],for_label:["எதற்கு:","Used for:"],source:["ஆதாரம் (அதிகாரப்பூர்வ தளம்)","Source (official site)"],test_voice:["🔊 குரலைச் சோதி","🔊 Test voice"],
+general_ask:["பொதுவான தகவல் மட்டும். நோய் கண்டறிதல் அல்லது மருந்து அளவு மாற்றம் இல்லை.","General information only. No diagnosis or dose changes."],
+word_title:["சொல்லின் பொருள்","Meaning"],verdict:["உண்மை நிலை","Verdict"],scheme_short:["திட்டங்கள் பற்றி:","About the schemes:"],
+care_short:["அருகிலுள்ள மருத்துவ உதவி:","Nearby medical help:"],history_title:["முந்தைய அறிக்கைகள்","Past reports"],
+};
+const MIND_STEPS=[
+ {ta:"மெதுவாக மூச்சு விடுங்கள்: 4 எண்ணும் வரை உள்ளிழுத்து, 6 எண்ணும் வரை வெளியே விடுங்கள். 5 முறை செய்யுங்கள்.",en:"Breathe slowly: in for a count of 4, out for a count of 6. Do it 5 times."},
+ {ta:"சுற்றிப் பார்த்து, நீங்கள் பார்க்கும் 5 பொருட்களின் பெயரைச் சொல்லுங்கள்.",en:"Look around and name 5 things you can see."},
+ {ta:"கொஞ்சம் தண்ணீர் குடித்து, வசதியான இடத்தில் உட்காருங்கள்.",en:"Drink some water and sit somewhere comfortable."},
+ {ta:"உங்களுக்கு நம்பிக்கையான ஒருவருக்கு செய்தி அனுப்புங்கள் அல்லது அழையுங்கள்.",en:"Message or call one person you trust."}];
+const EX={ta:["BD என்றால் என்ன?","HbA1c என்றால் என்ன?","காய்ச்சலுக்கு எல்லாம் ஆன்டிபயாடிக் தேவையா? உண்மையா?","அருகிலுள்ள மருத்துவமனை"],
+          en:["What does BD mean?","What is HbA1c?","Is it true every fever needs antibiotics?","Nearby hospital"]};
+
+/* ---------- state ---------- */
+const store={get(k,d){try{const v=localStorage.getItem("nalam."+k);return v===null?d:JSON.parse(v)}catch(e){return d}},
+             set(k,v){try{localStorage.setItem("nalam."+k,JSON.stringify(v))}catch(e){}}};
+const S={lang:store.get("lang","ta"),mode:store.get("mode","elder"),famName:store.get("famName",""),famPhone:store.get("famPhone",""),
+         person:store.get("person",""),boot:null,chat:[],careTab:"today",profile:null,view:"start",onboarded:store.get("onboarded",false)};
+const L=()=>S.lang==="ta"?0:1;
+const t=k=>(T[k]||[k,k])[L()];
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pick=o=>o?(S.lang==="ta"?(o.ta||o.en):(o.en||o.ta)):"";
+const $=id=>document.getElementById(id);
+
+/* ---------- helpers ---------- */
+function deviceId(){let d=store.get("device","");
+  if(!/^[a-z0-9]{12,40}$/.test(d)){d=Array.from(crypto.getRandomValues(new Uint8Array(12)),b=>b.toString(16).padStart(2,"0")).join("");store.set("device",d)}
+  return d}
+async function api(path,body){
+  const r=await fetch(path,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(Object.assign({},body||{},{device:deviceId()}))});
+  const j=await r.json();
+  if(j.error==="invalid"){const e=new Error(j.detail);e.friendly=T[j.detail]?t(j.detail):t("error");throw e}
+  if(j.error) throw new Error(j.detail||j.error); return j;
+}
+const todayLocal=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`};
+const nowHM=()=>new Date().toTimeString().slice(0,5);
+const bad=k=>{toast(t(k),6000);return true};
+function toast(msg,ms){const el=$("toast");el.textContent=msg;el.style.display="block";clearTimeout(toast._t);toast._t=setTimeout(()=>el.style.display="none",ms||3500)}
+function applyTheme(){document.body.classList.toggle("elder",S.mode==="elder");document.documentElement.lang=S.lang;
+  $("appTitle").firstChild.nodeValue=t("app");$("tagline").textContent=t("tagline");$("sosLbl").textContent=t("sos")}
+
+/* ---------- voice out (browser speech, Tamil or English) ---------- */
+let VOICES=[];
+function loadVoices(){try{VOICES=speechSynthesis.getVoices()}catch(e){VOICES=[]}}
+if("speechSynthesis" in window){loadVoices();speechSynthesis.onvoiceschanged=loadVoices}
+function voiceFor(lang){
+  const vs=VOICES.filter(v=>v.lang&&v.lang.toLowerCase().startsWith(lang==="ta"?"ta":"en"));
+  if(lang==="en"){return vs.find(v=>/en-IN/i.test(v.lang))||vs.find(v=>/natural|google/i.test(v.name))||vs[0]}
+  return vs.find(v=>/natural|online|google/i.test(v.name))||vs[0];
+}
+let AUD=null;
+function speak(text,lang){
+  stopSpeak();
+  const hasSynth="speechSynthesis" in window;if(hasSynth)loadVoices();
+  const v=hasSynth?voiceFor(lang):null;
+  if(!v){serverSpeak(text,lang);return}
+  const parts=String(text).replace(/\s+/g," ").match(/[^.!?।]+[.!?।]?/g)||[text];
+  parts.forEach(p=>{const u=new SpeechSynthesisUtterance(p.trim());u.lang=lang==="ta"?"ta-IN":"en-IN";u.voice=v;u.rate=S.mode==="elder"?0.85:0.95;speechSynthesis.speak(u)});
+}
+async function serverSpeak(text,lang){
+  toast("🔊 …",1500);
+  try{const r=await api("/api/tts",{text,lang});AUD=new Audio(r.audio);AUD.playbackRate=S.mode==="elder"?0.95:1;await AUD.play()}
+  catch(e){toast(t("no_ta_voice"),5000)}
+}
+function stopSpeak(){try{speechSynthesis.cancel()}catch(e){}try{if(AUD){AUD.pause();AUD=null}}catch(e){}}
+/* listen buttons: pass {ta,en} */
+let SAY={};let sayN=0;
+function listenBtns(o){
+  const id="s"+(++sayN);SAY[id]=o;let h='<div class="listen">';
+  const order=S.lang==="ta"?["ta","en"]:["en","ta"];
+  for(const l of order){if(o[l])h+=`<button onclick="speak(SAY['${id}'].${l},'${l}')">${l==="ta"?T.listen_ta[L()]:T.listen_en[L()]}</button>`}
+  return h+`<button onclick="stopSpeak()">${t("stop")}</button></div>`;
+}
+
+/* ---------- voice in ---------- */
+let REC=null;
+function startMic(btn,onText){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){toast(t("mic_unsupported"),5000);return}
+  if(REC){REC.stop();return}
+  stopSpeak();REC=new SR();REC.lang=S.lang==="ta"?"ta-IN":"en-IN";REC.interimResults=false;REC.maxAlternatives=1;
+  btn.classList.add("on");toast(t("listening"),8000);
+  REC.onresult=e=>{const txt=e.results[0][0].transcript;onText(txt)};
+  REC.onerror=()=>toast(t("error"));
+  REC.onend=()=>{btn.classList.remove("on");REC=null;$("toast").style.display="none"};
+  REC.start();
+}
+
+/* ---------- SOS ---------- */
+let LOC="",PENDING_SHARE=false,SHARED_AT=0;
+function getLoc(){return new Promise(res=>{if(!navigator.geolocation)return res("");
+  navigator.geolocation.getCurrentPosition(p=>{LOC=`https://maps.google.com/?q=${p.coords.latitude.toFixed(5)},${p.coords.longitude.toFixed(5)}`;res(LOC)},()=>res(LOC),{enableHighAccuracy:true,timeout:10000,maximumAge:60000})})}
+function waLink(){const num=(S.famPhone||"").replace(/\D/g,"");const to=num?(num.length===10?"91"+num:num):"";
+  return `https://wa.me/${to}?text=${encodeURIComponent(t("whatsapp_msg")+" "+(LOC||"-"))}`}
+function openSOS(mode){
+  stopSpeak();getLoc();
+  const fam=S.famPhone?`<a class="btn danger bigcall" href="tel:${esc(S.famPhone)}" onclick="armShare()">👨‍👩‍👧 ${t("call_family")}${S.famName?" · "+esc(S.famName):""}</a>`
+                      :`<div class="banner small">${t("no_family")}</div>`;
+  const extra=mode==="distress"?`<a class="btn primary midcall" href="tel:14416" onclick="armShare()">${t("call_14416")}</a>`:"";
+  $("sosSheet").innerHTML=`<h2>🆘 ${t("sos_title")}</h2><div class="muted">${t("sos_sub")}</div>
+   ${fam}${extra}
+   <a class="btn plain midcall" style="border:2px solid var(--red);color:var(--red-d)" href="tel:108" onclick="armShare()">🚑 ${t("call_108")}</a>
+   ${S.famPhone?`<div class="muted small" style="margin-top:8px">📍 ${t("auto_loc")}</div>`:""}
+   <button class="ghost midcall" onclick="shareLocation()">${t("share_loc")}</button>
+   <button class="plain midcall" onclick="closeSOS()">${t("close")}</button>`;
+  $("sos").classList.add("on");
+}
+function armShare(){if(S.famPhone)PENDING_SHARE=true}
+document.addEventListener("visibilitychange",async()=>{
+  if(document.visibilityState!=="visible"||!PENDING_SHARE)return;
+  PENDING_SHARE=false;await getLoc();shareNow();
+});
+function shareNow(){if(Date.now()-SHARED_AT<5000)return;SHARED_AT=Date.now();window.location.href=waLink()}
+function closeSOS(){$("sos").classList.remove("on")}
+async function shareLocation(){await getLoc();if(!LOC)toast(t("loc_fail"));shareNow()}
+
+/* ---------- navigation ---------- */
+function go(view){if(view==="home")view="menu";if(view==="settings")view="start";S.view=view;stopSpeak();render();window.scrollTo(0,0)}
+function goBack(){go(S.view==="menu"?"start":"menu")}
+function render(){
+  applyTheme();
+  if(!S.onboarded&&S.view!=="start")S.view="start";
+  const v=S.view, m=$("main");
+  $("backBtn").classList.toggle("hide",v==="start");
+  $("homeBtn").classList.toggle("hide",v==="start"||v==="menu");
+  $("sosBtn").classList.toggle("hide",v==="start");  // setup page: keep the typing area clear
+  m.innerHTML=({start:viewStart,menu:viewHome,ask:viewAsk,report:viewReport,rx:viewRx,care:viewCare,meds:viewCare,hosp:viewHosp,myth:viewMyth,scheme:viewScheme,mind:viewMind}[v]||viewHome)();
+  if(v==="care"||v==="meds")loadProfile();
+  if(v==="ask")drawChat();
+}
+
+/* ---------- welcome ---------- */
+function viewStart(){
+  const ps=((S.boot&&S.boot.profiles)||[]).map(p=>p.name);
+  return `<div class="card"><h2>${t("home_title")}</h2>
+   <div class="muted">${S.onboarded?t("welcome_back"):t("welcome_sub")}</div>
+   <label>${t("language")}</label><div class="seg"><button class="${S.lang==="ta"?"on":""}" onclick="keepStart();setLang('ta')">தமிழ்</button><button class="${S.lang==="en"?"on":""}" onclick="keepStart();setLang('en')">English</button></div>
+   <label>${t("mode")}</label><div class="seg"><button class="${S.mode==="elder"?"on":""}" onclick="keepStart();setMode('elder')">${t("elder_mode")}</button><button class="${S.mode==="normal"?"on":""}" onclick="keepStart();setMode('normal')">${t("normal_mode")}</button></div>
+   <div class="muted small" style="margin-top:6px">${S.mode==="elder"?t("elder_desc"):t("normal_desc")}</div>
+   <label>${t("family_contact")} · ${t("name")}</label><input id="wFamName" value="${esc(S.draft?.famName??S.famName)}">
+   <label>${t("phone")}</label><input id="wFamPhone" inputmode="tel" maxlength="20" value="${esc(S.draft?.famPhone??S.famPhone)}">
+   <label>${t("main_person")}</label><input id="wPerson" list="wPersonList" placeholder="${S.lang==="ta"?"எ.கா. பாட்டி":"e.g. Paati"}" value="${esc(S.draft?.person??S.person)}">
+   <datalist id="wPersonList">${ps.map(n=>`<option value="${esc(n)}">`).join("")}</datalist>
+   <div class="row" style="margin-top:14px"><button class="ghost" onclick="speak('வணக்கம். நான் நலம் AI.','ta')">${t("test_voice")} (தமிழ்)</button><button class="ghost" onclick="speak('Hello. I am Nalam AI.','en')">${t("test_voice")} (English)</button></div>
+   <div class="muted small" style="margin-top:12px">${t("privacy")}</div>
+   <button class="primary block" style="margin-top:16px" onclick="finishStart()">${t("continue_btn")}</button>
+   ${S.onboarded?`<button class="plain block" style="margin-top:10px" onclick="signOut()">${t("sign_out")}</button>`:""}</div>`;
+}
+// keep what was typed when language / mode is switched (those re-draw the page)
+function keepStart(){if($("wFamName"))S.draft={famName:$("wFamName").value,famPhone:$("wFamPhone").value,person:$("wPerson").value}}
+async function finishStart(){
+  const famName=$("wFamName").value.trim(), person=$("wPerson").value.trim();
+  let digits=$("wFamPhone").value.replace(/\D/g,""); if(digits.length===12&&digits.startsWith("91"))digits=digits.slice(2);
+  if(digits.length&&digits.length!==10){toast(t("phone_bad"),5000);$("wFamPhone").focus();return}
+  if(!person){toast(t("need_person"),5000);$("wPerson").focus();return}
+  S.famName=famName;S.famPhone=digits;store.set("famName",famName);store.set("famPhone",digits);
+  try{await api("/api/profile/add",{name:person,relation:person,age:0})}catch(e){toast(t("error"));return}
+  S.person=person;store.set("person",person);S.onboarded=true;store.set("onboarded",true);S.draft=null;
+  await boot();go("menu");
+}
+function signOut(){
+  if(!confirm(t("sign_out_q")))return;
+  try{Object.keys(localStorage).filter(k=>k.startsWith("nalam.")).forEach(k=>localStorage.removeItem(k))}catch(e){}
+  location.reload();
+}
+function setLang(l){S.lang=l;store.set("lang",l);render()}
+function setMode(m){S.mode=m;store.set("mode",m);render()}
+
+/* ---------- home ---------- */
+function hello(){
+  const d=new Date(), who=S.person||"";
+  const day=d.toLocaleDateString(S.lang==="ta"?"ta-IN":"en-IN",{weekday:"long",day:"numeric",month:"long"});
+  const greet=S.lang==="ta"?`வணக்கம்${who?" "+who:""} 🙏`:`Hello${who?" "+who:""} 🙏`;
+  return `<div class="hello"><b>${esc(greet)}</b><span>${esc(day)}</span></div>`;
+}
+const NEXT_T={next:["அடுத்த மருந்து","Next medicine"],later:["பிறகு","Later"],all_done:["இன்றைய மருந்துகள் எல்லாம் எடுத்தாயிற்று 👏","All of today's medicines are done 👏"],
+  add_first:["மருந்துகளைச் சேர்த்தால், அடுத்த மருந்து இங்கே தெரியும்.","Add medicines and the next one will show here."],add:["+ மருந்தைச் சேர்","+ Add medicine"],
+  snoozed:["சரி. 15 நிமிடத்தில் மீண்டும் நினைவூட்டுகிறேன். மருந்தைத் தவற விடாதீர்கள்; நேரத்துக்கு எடுத்தால்தான் மருந்து சரியாக வேலை செய்யும்.",
+            "Okay. I'll remind you again in 15 minutes. Please don't skip it; medicines work properly only when taken on time."],
+  remind_again:["நினைவூட்டல்: இப்போது இந்த மருந்தை எடுங்கள்","Reminder: please take this medicine now"],
+  morning:["காலை","morning"],afternoon:["மதியம்","afternoon"],evening:["மாலை","evening"],night:["இரவு","night"]};
+const nt=k=>NEXT_T[k][S.lang==="ta"?0:1];
+function partOfDay(hm){const h=+hm.split(":")[0];return nt(h<12?"morning":h<16?"afternoon":h<19?"evening":"night")}
+async function drawNext(){
+  const el=$("nextDose"); if(!el)return;
+  if(!S.person){el.innerHTML="";return}
+  try{
+    const p=await api("/api/profile/get",{profile:S.person});
+    const today=(p.today||[]).slice().sort((a,b)=>a.time.localeCompare(b.time));
+    if(!today.length){el.innerHTML=`<div class="next"><small>${nt("next")}</small><b style="font-size:1.05em">💊 ${nt("add_first")}</b><div class="row"><button class="ok" onclick="go('meds')">${nt("add")}</button></div></div>`;return}
+    const pend=today.filter(x=>x.status==="pending"&&!S.snoozed?.[x.medicine+x.time]);
+    if(!pend.length){el.innerHTML=`<div class="next done"><small>${nt("next")}</small><b>✅ ${nt("all_done")}</b></div>`;return}
+    const hm=new Date().toTimeString().slice(0,5);
+    const x=pend.find(d=>d.time>=hm)||pend[0];
+    el.innerHTML=`<div class="next"><small>${nt("next")} · ${esc(partOfDay(x.time))} ${esc(x.time)}</small>
+      <b>💊 ${esc(x.medicine)} ${esc(x.dose_text||"")}</b>
+      <div class="row"><button class="ok" onclick="homeDose('${esc(x.medicine)}','${x.time}')">${t("taken")}</button>
+      <button class="later" onclick="snoozeDose('${esc(x.medicine)}','${x.time}','${esc(x.dose_text||"")}')">${nt("later")}</button></div></div>`;
+  }catch(e){el.innerHTML=""}
+}
+function snoozeDose(name,time,dose){
+  const k=name+time;(S.snoozed=S.snoozed||{})[k]=1;
+  const el=$("nextDose");
+  if(el)el.innerHTML=`<div class="next"><small>⏰ ${esc(name)} ${esc(dose)} · ${esc(time)}</small><b style="font-size:1.05em">${esc(nt("snoozed"))}</b>
+    <div class="row"><button class="ok" onclick="homeDose('${esc(name)}','${time}')">${t("taken")}</button></div></div>`;
+  speak(nt("snoozed"),S.lang);
+  setTimeout(()=>{delete S.snoozed[k];const msg=`${nt("remind_again")}: ${name} ${dose}`;beep();toast(msg,10000);speak(msg,S.lang);
+    try{if(Notification.permission==="granted")new Notification("Nalam AI",{body:msg})}catch(e){}
+    if(S.view==="home")drawNext()},15*60*1000);
+}
+async function homeDose(name,time){try{await api("/api/dose",{profile:S.person,name,time,taken:true});toast(t("st_taken"));drawNext()}catch(e){toast(t("error"))}}
+function viewHome(){
+  const tip=S.boot?S.boot.tip:null;
+  const tipCard=tip?`<div class="card tipcard"><h2>💡 ${t("tip")}</h2><div>${esc(pick(tip))}</div>${listenBtns(tip)}</div>`:"";
+  setTimeout(drawNext,0);
+  const top=hello()+`<div id="nextDose"></div>`;
+  if(S.mode==="elder"){
+    return top+`<div class="tiles">
+      <button class="tile" onclick="go('report')"><span class="ic">📄</span>${t("home_report")}</button>
+      <button class="tile" onclick="go('ask')"><span class="ic">🎤</span>${t("home_ask")}</button>
+      <button class="tile" onclick="go('meds')"><span class="ic">💊</span>${t("home_meds")}</button>
+      <button class="tile" onclick="go('hosp')"><span class="ic">🏥</span>${t("home_hosp")}</button>
+      <button class="tile wide" onclick="go('rx')"><span class="ic">🧾</span>${t("home_rx")}</button></div>${tipCard}`;
+  }
+  return top+`<div class="tiles">
+    <button class="tile" onclick="go('report')"><span class="ic">📄</span>${t("home_report")}</button>
+    <button class="tile" onclick="go('rx')"><span class="ic">🧾</span>${t("home_rx")}</button>
+    <button class="tile" onclick="go('ask')"><span class="ic">💬</span>${t("home_ask")}</button>
+    <button class="tile" onclick="go('care')"><span class="ic">💊</span>${t("home_care")}</button>
+    <button class="tile" onclick="go('hosp')"><span class="ic">🏥</span>${t("home_hosp")}</button>
+    <button class="tile" onclick="go('myth')"><span class="ic">🧐</span>${t("home_myth")}</button>
+    <button class="tile" onclick="go('scheme')"><span class="ic">🛡️</span>${t("home_scheme")}</button>
+    <button class="tile" onclick="go('mind')"><span class="ic">💙</span>${t("home_mind")}</button></div>${tipCard}`;
+}
+
+/* ---------- ask ---------- */
+function viewAsk(){
+  return `<div class="card"><div class="muted small">${t("general_ask")}</div>
+   <div class="muted small" style="margin-top:8px">${t("ask_examples")}</div><div class="chips" style="margin-top:6px">
+   ${EX[S.lang].map(q=>`<button onclick="ask(${esc(JSON.stringify(q))})">${esc(q)}</button>`).join("")}</div></div>
+   <div class="chat" id="chat"></div>
+   <div class="askbar"><button class="mic" id="micBtn" onclick="startMic(this,txt=>{$('askIn').value=txt;ask(txt)})">🎤</button>
+   <input id="askIn" placeholder="${t("ask_ph")}" onkeydown="if(event.key==='Enter')ask(this.value)">
+   <button class="primary" onclick="ask($('askIn').value)">${t("send")}</button></div>`;
+}
+function drawChat(){
+  const c=$("chat");if(!c)return;
+  c.innerHTML=S.chat.map(m=>m.me?`<div class="msg me">${esc(m.text)}</div>`:`<div class="msg bot">${m.html}</div>`).join("");
+  c.lastElementChild&&c.lastElementChild.scrollIntoView({block:"end",behavior:"smooth"});
+}
+async function ask(text){
+  text=(text||"").trim();if(!text)return;$("askIn")&&($("askIn").value="");
+  S.chat.push({me:1,text});S.chat.push({html:`<span class="spinner"></span> ${t("thinking")}`});drawChat();
+  let html;
+  try{const r=await api("/api/chat",{text,lang:S.lang,profile:S.person});html=renderAnswer(r)}catch(e){html=esc(t("error"))}
+  S.chat[S.chat.length-1]={html};drawChat();
+}
+function renderAnswer(r){
+  const body=renderAnswer0(r);
+  if(!r.warn) return body;
+  const w=r.warn;
+  return `<div class="card alert" style="margin:0 0 10px 0"><b>⚠️ ${esc(pick(w))}</b>
+    <div class="row" style="margin-top:10px">${S.famPhone?`<a class="btn danger" href="tel:${esc(S.famPhone)}" onclick="getLoc();armShare()">👨‍👩‍👧 ${t("call_family")}</a>`:""}
+    <button class="ghost" onclick="go('hosp')">🏥 ${t("home_hosp")}</button>
+    <a class="btn plain" href="tel:108" onclick="getLoc();armShare()">🚑 108</a></div>${listenBtns(w)}</div>`+body;
+}
+function renderAnswer0(r){
+  if(r.type==="emergency"||r.type==="distress"){
+    setTimeout(()=>openSOS(r.type),400);
+    const o={ta:r.ta,en:r.en};
+    return `<div class="card ${r.type==="emergency"?"alert":"calm"}" style="margin:0"><b>${r.type==="emergency"?"⚠️ ":"💙 "}${esc(pick(o))}</b>
+      <div class="row" style="margin-top:10px">${S.famPhone?`<a class="btn danger" href="tel:${esc(S.famPhone)}" onclick="getLoc();armShare()">👨‍👩‍👧 ${t("call_family")}</a>`:""}
+      ${r.type==="distress"?`<a class="btn primary" href="tel:14416">${t("call_14416")}</a>`:`<a class="btn plain" href="tel:108" onclick="getLoc();armShare()">🚑 108</a>`}</div>${listenBtns(o)}</div>`;
+  }
+  if(r.type==="medicine"){
+    const o={ta:`${r.name}: ${r.use_ta} ${r.how_ta}`,en:`${r.name}: ${r.use_en} ${r.how_en}`};
+    return `<div style="font-size:1.1em"><b>${esc(r.name)}</b> = ${esc(pick({ta:r.use_ta,en:r.use_en}))}</div>
+      <div style="margin-top:6px">${r.saved?"💊 <b>":"<span class='muted small'>"}${esc(pick({ta:r.how_ta,en:r.how_en}))}${r.saved?"</b>":"</span>"}</div>
+      ${r.source?`<div class="muted small" style="margin-top:4px">📚 <a href="${esc(r.source)}" target="_blank" rel="noopener">${t("source")}</a></div>`:""}${listenBtns(o)}`}
+  if(r.type==="support"){const o={ta:r.ta,en:r.en};
+    return `<div class="card calm" style="margin:0">💙 ${esc(pick(o))}<div class="row" style="margin-top:10px"><button class="primary" onclick="go('mind')">🌿 ${t("mind_steps_title")}</button>
+      ${S.famPhone?`<a class="btn plain" href="tel:${esc(S.famPhone)}">👨‍👩‍👧 ${t("call_family")}</a>`:""}<a class="btn plain" href="tel:14416">${t("call_14416")}</a></div>${listenBtns(o)}</div>`}
+  if(r.type==="refuse"){const o={ta:r.ta,en:r.en};return `🙏 ${esc(pick(o))}${listenBtns(o)}`}
+  if(r.type==="word"){
+    const showHow=r.how_en&&r.how_en.toLowerCase().indexOf(r.en.toLowerCase())===-1;
+    const line={ta:`${r.term} = ${r.how_ta||r.ta}`,en:`${r.term} = ${r.how_en||r.en}`};
+    if(!r.how_en){line.ta=`${r.term} = ${r.ta}`;line.en=`${r.term} = ${r.en}`}
+    return `<div style="font-size:1.1em"><b>${esc(pick(line))}</b></div>${listenBtns(line)}`}
+  if(r.type==="myth"){const o={ta:`${r.myth_ta} ${t("verdict")}: ${r.verdict_ta}. ${r.ta}`,en:`${r.myth_en} Verdict: ${r.verdict_en}. ${r.en}`};
+    return `<div class="muted small">${T.myth_title[L()]}</div><b>“${esc(pick({ta:r.myth_ta,en:r.myth_en}))}”</b><div style="margin:6px 0"><span class="pill p-HIGH">${esc(pick({ta:r.verdict_ta,en:r.verdict_en}))}</span></div>${esc(pick({ta:r.ta,en:r.en}))}${r.source?`<div class="muted small" style="margin-top:4px">📚 <a href="${esc(r.source)}" target="_blank" rel="noopener">${t("source")}</a></div>`:""}${listenBtns(o)}`}
+  if(r.type==="care"){return `${t("care_short")}<div style="margin-top:8px"><button class="ghost" onclick="go('hosp')">🏥 ${t("home_hosp")}</button></div>`}
+  if(r.type==="scheme"){const o={ta:r.ta||"",en:r.en||""};
+    return `${(r.schemes||[]).map(x=>`<div style="margin-bottom:8px">🛡️ ${esc(pick(x))}${x.url?` <a href="${esc(x.url)}" target="_blank" rel="noopener">${t("source")}</a>`:""}</div>`).join("")||t("scheme_short")}
+      <div class="muted small">${esc(pick({ta:"நீங்கள் தகுதியானவரா என்பதை அரசு அலுவலகம் மட்டுமே உறுதிப்படுத்த முடியும்.",en:"Only the official office can confirm if you qualify."}))}</div>
+      <div style="margin-top:8px"><button class="ghost" onclick="go('scheme')">🛡️ ${t("home_scheme")}</button></div>${o.en?listenBtns(o):""}`}
+  if(r.type==="answer"){const steps=(r.steps||[]).length?`<ul>${r.steps.map(s=>`<li>${esc(s)}</li>`).join("")}</ul>`:"";
+    const full=[r.answer,...(r.steps||[])].join(". ");const o={};o[r.lang==="ta"?"ta":"en"]=full;
+    return `${esc(r.answer)}${steps}<div class="muted small" style="margin-top:6px">${esc(pick({ta:r.note_ta,en:r.note_en}))}</div>${listenBtns(o)}`}
+  return esc(t("error"));
+}
+
+/* ---------- photo upload (report + prescription) ---------- */
+function pickFile(cb){const f=$("filePick");f.value="";f.onchange=()=>{if(f.files[0])prepFile(f.files[0]).then(cb).catch(()=>toast(t("error")))};f.click()}
+function prepFile(file){
+  return new Promise((res,rej)=>{
+    if(file.type==="application/pdf"){if(file.size>4.5e6){toast(t("too_big"));return rej()}const r=new FileReader();r.onload=()=>res({filename:file.name,data:r.result,preview:""});r.onerror=rej;r.readAsDataURL(file);return}
+    const img=new Image();const url=URL.createObjectURL(file);
+    img.onload=()=>{const max=1800;let w=img.width,h=img.height;const s=Math.min(1,max/Math.max(w,h));w=Math.round(w*s);h=Math.round(h*s);
+      const c=document.createElement("canvas");c.width=w;c.height=h;c.getContext("2d").drawImage(img,0,0,w,h);
+      const data=c.toDataURL("image/jpeg",0.85);URL.revokeObjectURL(url);res({filename:"photo.jpg",data,preview:data})};
+    img.onerror=rej;img.src=url;
+  });
+}
+function personSelect(id,withNone){
+  const ps=(S.boot&&S.boot.profiles)||[];
+  return `<select id="${id}">${withNone?`<option value="">${t("nobody")}</option>`:""}${ps.map(p=>`<option ${p.name===S.person?"selected":""}>${esc(p.name)}</option>`).join("")}<option value="__add">${S.lang==="ta"?"+ நபரைச் சேர்…":"+ Add person…"}</option></select>`;
+}
+
+/* ---------- report ---------- */
+function viewReport(){
+  return `<div class="card"><h2>📄 ${t("report_title")}</h2><div class="muted small">${t("report_hint")}</div>
+   <label>${t("save_to")}</label>${personSelect("repPerson",true)}
+   <button class="primary block bigcall" onclick="pickFile(doReport)">${t("upload_photo")}</button></div><div id="repOut"></div>`;
+}
+async function doReport(f){
+  const profile=$("repPerson").value;
+  $("repOut").innerHTML=`<div class="card">${f.preview?`<img src="${f.preview}" style="width:100%;border-radius:12px;max-height:220px;object-fit:cover">`:""}<p><span class="spinner"></span> ${t("reading")}</p></div>`;
+  try{const r=await api("/api/report",{filename:f.filename,data:f.data,profile});$("repOut").innerHTML=renderReport(r);if(profile)boot()}
+  catch(e){$("repOut").innerHTML=`<div class="card">${t("error")}</div>`}
+}
+function renderReport(r){
+  const c=r.counts;const sum=t("summary").replace("{h}",c.HIGH).replace("{l}",c.LOW).replace("{n}",c.NORMAL);
+  const sumO={ta:T.summary[0].replace("{h}",c.HIGH).replace("{l}",c.LOW).replace("{n}",c.NORMAL)+". "+r.rows.filter(x=>x.status!=="NORMAL").map(x=>`${x.test} ${x.status_ta}`).join(". "),
+              en:T.summary[1].replace("{h}",c.HIGH).replace("{l}",c.LOW).replace("{n}",c.NORMAL)+". "+r.rows.filter(x=>x.status!=="NORMAL").map(x=>`${x.test} is ${x.status_en}`).join(". ")};
+  let h=`<div class="card"><h2>${sum}</h2>${r.saved_to?`<div class="muted small">${t("saved_to")} ${esc(r.saved_to)}</div>`:""}${listenBtns(sumO)}</div>`;
+  for(const x of r.rows){
+    const o={ta:`${x.test}: ${x.value} ${x.unit}. ${x.status_ta}. ${x.what_ta} ${x.warn?x.warn.ta:""}`,en:`${x.test}: ${x.value} ${x.unit}. ${x.status_en}. ${x.what_en} ${x.warn?x.warn.en:""}`};
+    h+=`<div class="card res ${x.status}"><div class="row" style="justify-content:space-between"><b>${esc(x.test)}</b><span class="pill p-${x.status}">${t(x.status)}</span></div>
+     <div class="val">${esc(x.value)} <span class="muted small">${esc(x.unit)}</span></div>
+     <div class="muted small">${t("range")}: ${esc(x.range||"—")}</div>
+     ${x.note_en?`<div class="muted small">ℹ️ ${esc(pick({ta:x.note_ta,en:x.note_en}))}</div>`:""}
+     <div style="margin-top:6px"><b class="small">${t("what_it_is")}</b> ${esc(pick({ta:x.what_ta,en:x.what_en}))}</div>
+     ${x.warn?`<div class="warn">⚠️ ${esc(pick(x.warn))}</div>`:""}${x.source?`<div class="muted small" style="margin-top:4px">📚 <a href="${esc(x.source)}" target="_blank" rel="noopener">${t("source")}</a></div>`:""}${listenBtns(o)}</div>`;
+  }
+  if(r.questions&&r.questions.length){const qo={ta:r.questions.map(q=>q.ta).join(". "),en:r.questions.map(q=>q.en).join(". ")};
+    h+=`<div class="card"><h2>🩺 ${t("questions")}</h2><ol>${r.questions.map(q=>`<li>${esc(pick(q))}</li>`).join("")}</ol>${listenBtns(qo)}</div>`}
+  h+=`<div class="card muted small">${esc(pick(r.disclaimer))}</div>`;
+  return h;
+}
+
+/* ---------- prescription ---------- */
+let RX=null;
+function viewRx(){
+  return `<div class="card"><h2>🧾 ${t("rx_title")}</h2><div class="muted" style="margin-bottom:8px">💡 ${S.lang==="ta"?"சிறந்த முடிவுக்கு, மருந்தகத்தில் கொடுக்கும் அச்சிட்ட (typed) பில்லைப் பதிவேற்றுங்கள்.":"For best results, upload the typed pharmacy bill."}</div><button class="primary block bigcall" onclick="pickFile(doRx)">${t("rx_upload")}</button></div><div id="rxOut"></div>`;
+}
+async function doRx(f){
+  $("rxOut").innerHTML=`<div class="card"><span class="spinner"></span> ${t("reading")}</div>`;
+  try{RX=await api("/api/prescription",{filename:f.filename,data:f.data});$("rxOut").innerHTML=renderRx(RX)}
+  catch(e){$("rxOut").innerHTML=`<div class="card">${t("error")}</div>`}
+}
+function renderRx(r){
+  let h="";
+  r.rows.forEach((x,i)=>{const o={ta:(x.use_ta?x.use_ta+" ":"")+x.ta,en:(x.use_en?x.use_en+" ":"")+x.en};
+    h+=`<div class="card ${x.unsure?"res HIGH":"res NORMAL"}"><b>${i+1}. ${esc(x.name)} ${esc(x.dose)}</b>
+      ${x.use_en?`<div class="muted" style="margin-top:4px">💊 ${t("for_label")} ${esc(pick({ta:x.use_ta,en:x.use_en}))}</div>`:""}
+      <div style="margin-top:4px">${esc(pick(o))}</div>${x.unsure?`<div class="warn">${t("rx_unsure")}</div>`:""}${listenBtns(o)}
+      <label class="row" style="color:var(--ink);margin-top:10px"><input type="checkbox" id="rxc${i}" style="width:auto" ${x.unsure||!x.times.length?"":"checked"}> ${t("save")}</label>
+      <div class="row"><input id="rxt${i}" value="${esc(x.times.join(", "))}" placeholder="08:00, 20:00" style="flex:1">
+      <select id="rxf${i}" style="flex:1"><option value="">${t("none")}</option><option value="before" ${x.food==="before"?"selected":""}>${t("before")}</option><option value="after" ${x.food==="after"?"selected":""}>${t("after")}</option></select></div></div>`});
+  const all={ta:r.rows.map(x=>x.ta).join(". ")+". "+r.disclaimer.ta,en:r.rows.map(x=>x.en).join(". ")+". "+r.disclaimer.en};
+  h+=`<div class="card"><div class="muted small">${esc(pick(r.disclaimer))}</div>${listenBtns(all)}
+     <label>${t("rx_for")}</label>${personSelect("rxPerson",false)}<div class="muted small">${t("rx_hint")}</div>
+     <button class="primary block" style="margin-top:10px" onclick="saveRx()">${t("rx_save")}</button></div>`;
+  return h;
+}
+async function saveRx(){
+  const p=$("rxPerson")&&$("rxPerson").value;if(!p){toast(t("pick_person"));return}
+  const okT=s=>{const m=s.match(/^(\d{1,2}):(\d{2})$/);return m&&+m[1]<=23&&+m[2]<=59};
+  for(let i=0;i<RX.rows.length;i++){if(!$("rxc"+i).checked)continue;
+    const raw=$("rxt"+i).value.split(/[,\s]+/).filter(Boolean);if(!raw.length||!raw.every(okT)){$("rxt"+i).focus();return bad("bad_time")}}
+  for(let i=0;i<RX.rows.length;i++){if(!$("rxc"+i).checked)continue;const x=RX.rows[i];
+    const times=$("rxt"+i).value.split(/[,\s]+/).filter(Boolean);
+    try{await api("/api/med/add",{profile:p,name:x.name,dose:x.dose,times,food:$("rxf"+i).value})}catch(e){return toast(e.friendly||t("error"))}}
+  toast(t("saved"));
+}
+
+/* ---------- family care ---------- */
+function viewCare(){
+  const ps=(S.boot&&S.boot.profiles)||[];
+  const tabs=["today","medicines","appointments","visits","reports"];
+  const pickH=ps.length?`<div class="row">${personSelect("carePerson",false)}</div>`:"";
+  return `<div class="card"><h2>💊 ${S.view==="meds"?t("home_meds"):t("care_title")}</h2>${pickH}
+   <details style="margin-top:8px"><summary class="muted">${t("add_person")}</summary>
+   <label>${t("name")}</label><input id="npName"><label>${t("relation")}</label><input id="npRel"><label>${t("age")}</label><input id="npAge" inputmode="numeric">
+   <button class="primary" style="margin-top:10px" onclick="addPerson()">${t("save")}</button></details></div>
+   ${S.view==="meds"&&S.mode==="elder"?"":`<div class="tabs">${tabs.map(x=>`<button class="${S.careTab===x?"on":""}" onclick="S.careTab='${x}';drawCare()">${t(x)}</button>`).join("")}</div>`}
+   <div id="careOut"><div class="card"><span class="spinner"></span></div></div>`;
+}
+async function addPerson(){
+  const name=$("npName").value.trim();if(!name)return;
+  await api("/api/profile/add",{name,relation:$("npRel").value.trim(),age:$("npAge").value});
+  if(!S.person){S.person=name;store.set("person",name)}S.person=name;await boot();render();
+}
+async function loadProfile(){
+  const sel=$("carePerson");if(sel)sel.onchange=()=>{if(sel.value==="__add")return;S.person=sel.value;store.set("person",S.person);loadProfile()};
+  const p=sel?sel.value:"";if(!p){$("careOut").innerHTML=`<div class="card muted">${t("pick_person")}</div>`;return}
+  try{S.profile=await api("/api/profile/get",{profile:p});drawCare()}catch(e){$("careOut").innerHTML=`<div class="card">${t("error")}</div>`}
+}
+function foodTxt(f){return f==="before"?t("before"):f==="after"?t("after"):""}
+function drawCare(){
+  const P=S.profile;if(!P)return;const tab=(S.view==="meds"&&S.mode==="elder")?"today":S.careTab;
+  document.querySelectorAll(".tabs button").forEach(b=>b.classList.toggle("on",b.textContent===t(tab)));
+  let h="";const who=esc(P.profile.name);
+  if(tab==="today"){
+    const d=P.today;const a=P.adherence;
+    h=`<div class="card"><h2>${who} · ${t("today")}</h2>${d.length?d.map(x=>{const o={ta:`${x.time}. ${x.medicine} ${x.dose_text}. ${foodTxtL(x.food,"ta")}`,en:`${x.time}. ${x.medicine} ${x.dose_text}. ${foodTxtL(x.food,"en")}`};
+      return `<div class="dose"><div><div class="t">${esc(x.time)}</div><b>${esc(x.medicine)}</b> <span class="muted small">${esc(x.dose_text)} ${foodTxt(x.food)}</span>
+       ${x.status!=="pending"?`<div class="st-${x.status}">${t("st_"+x.status)}</div>`:""}</div>
+       <div class="acts"><button class="ghost" onclick="setDose('${esc(x.medicine)}','${x.time}',true)">${t("taken")}</button><button class="plain" onclick="setDose('${esc(x.medicine)}','${x.time}',false)">${S.mode==="elder"?"❌":t("missed")}</button>
+       <button class="plain" onclick='speak(${JSON.stringify(S.lang==="ta"?o.ta:o.en)},"${S.lang}")'>🔊</button></div></div>`}).join(""):`<div class="muted">${t("no_doses")}</div>`}
+      ${a.total?`<div class="muted" style="margin-top:8px">${t("adherence")}: <b>${a.adherence}%</b> (${a.taken}/${a.total})</div>`:""}
+      <div class="muted small" style="margin-top:6px">${t("reminder_note")}</div></div>`;
+    if(S.view==="meds"&&S.mode==="elder")h+=`<button class="ghost block" onclick="S.careTab='medicines';S.view='care';render()">${t("add_med")}</button>`;
+  }
+  if(tab==="medicines"){
+    h=`<div class="card"><h2>${t("medicines")}</h2>${P.medicines.length?P.medicines.map(m=>`<div class="dose"><div><b>${esc(m.name)}</b> <span class="muted small">${esc(m.dose_text)}</span><div class="muted small">${esc((m.times||[]).join(", "))} ${foodTxt(m.food)}</div></div>
+      <button class="plain" onclick="delMed('${esc(m.name)}')">${t("del")}</button></div>`).join(""):`<div class="muted">${t("no_items")}</div>`}</div>
+      <div class="card"><h2>${t("add_med")}</h2><label>${t("med_name")}</label><input id="mName"><label>${t("dose")}</label><input id="mDose" placeholder="500 mg">
+      <label>${t("times")}</label><input id="mTimes" placeholder="08:00, 20:00"><label>${t("food")}</label>
+      <select id="mFood"><option value="">${t("none")}</option><option value="before">${t("before")}</option><option value="after">${t("after")}</option></select>
+      <button class="primary block" style="margin-top:12px" onclick="addMed()">${t("save")}</button></div>`;
+  }
+  if(tab==="appointments"){
+    const ap=[...P.appointments].sort((a,b)=>a.date.localeCompare(b.date));
+    h=`<div class="card"><h2>${t("appointments")}</h2>${ap.length?ap.map((x,i)=>`<div class="dose"><div><b>${esc(x.date)} ${esc(x.time)}</b><div>${esc(x.doctor_or_hospital)}</div><div class="muted small">${esc(x.note)}</div></div><button class="plain" onclick="delAppt(${i})">${t("del")}</button></div>`).join(""):`<div class="muted">${t("no_items")}</div>`}</div>
+     <div class="card"><h2>${t("add_appt")}</h2><label>${t("date")}</label><input type="date" id="aDate" min="${todayLocal()}"><label>${t("time")}</label><input type="time" id="aTime">
+     <label>${t("where")}</label><input id="aWhere"><label>${t("note")}</label><input id="aNote"><button class="primary block" style="margin-top:12px" onclick="addAppt()">${t("save")}</button></div>`;
+  }
+  if(tab==="visits"){
+    h=`<div class="card"><h2>${t("add_visit")}</h2><div class="muted small">${t("visit_hint")}</div><label>${t("date")}</label><input type="date" id="vDate" max="${todayLocal()}" value="${todayLocal()}">
+     <label>${t("where")}</label><input id="vWhere"><label>${t("symptoms")}</label><textarea id="vSym" rows="2"></textarea><label>${t("doctor_notes")}</label><textarea id="vNotes" rows="3"></textarea>
+     <button class="ghost block" style="margin-top:12px" onclick="pickVisitPhoto()">${t("add_rx_photo")}</button><div id="vPhotoPrev"></div>
+     <button class="primary block" style="margin-top:12px" onclick="addVisit()">${t("save")}</button></div>`+
+     (P.visits.length?P.visits.map(v=>`<div class="card"><h2>🩺 ${esc(v.date)} · ${esc(v.doctor_or_hospital)}</h2>
+       ${v.symptoms?`<div><b class="small">${t("symptoms")}:</b> ${esc(v.symptoms)}</div>`:""}${v.doctor_notes?`<div><b class="small">${t("doctor_notes")}:</b> ${esc(v.doctor_notes)}</div>`:""}
+       ${v.medicines.length?`<div style="margin-top:6px"><b class="small">${t("visit_meds")}:</b> ${v.medicines.map(m=>esc(m.name+" "+m.dose_text)).join(", ")}</div>`:""}
+       ${v.abnormal_results.length?`<div style="margin-top:6px"><b class="small">${t("visit_abn")} (${esc(v.report_date)}):</b> ${v.abnormal_results.map(r=>`${esc(r.test)} ${esc(r.value)} <span class="pill p-${r.status}">${t(r.status)}</span>`).join(" ")}</div>`:""}
+       ${v.photo?(v.photo.endsWith(".pdf")?`<a class="btn ghost" style="margin-top:8px" href="/photo/${esc(v.photo)}" target="_blank">${t("view_photo")}</a>`:`<a href="/photo/${esc(v.photo)}" target="_blank"><img src="/photo/${esc(v.photo)}" alt="" style="width:100%;max-height:260px;object-fit:cover;border-radius:14px;margin-top:8px;border:1px solid var(--line)"></a>`):""}
+       <button class="ghost" style="margin-top:8px" onclick="window.print()">🖨️</button></div>`).join(""):`<div class="card muted">${t("no_items")}</div>`);
+  }
+  if(tab==="reports"){
+    const hist=P.lab_history;
+    const tests=[...new Set(hist.flatMap(r=>r.results.map(x=>x.test)))];
+    h=`<div class="card"><h2>${t("history_title")}</h2>${hist.length?hist.map(r=>`<div style="margin-bottom:10px"><b>${esc(r.date)}</b><div>${r.results.map(x=>`${esc(x.test)} ${esc(x.value)} <span class="pill p-${x.status}">${t(x.status)}</span>`).join(" · ")}</div></div>`).join(""):`<div class="muted">${t("no_items")}</div>`}</div>
+      ${tests.length?`<div class="card"><h2>${t("compare")}</h2><select id="hTest">${tests.map(x=>`<option>${esc(x)}</option>`).join("")}</select><button class="ghost block" style="margin-top:8px" onclick="compareTest()">${t("compare")}</button><div id="hOut"></div></div>`:""}`;
+  }
+  $("careOut").innerHTML=h;
+}
+function foodTxtL(f,l){return f==="before"?T.before[l==="ta"?0:1]:f==="after"?T.after[l==="ta"?0:1]:""}
+const P=()=>S.profile.profile.name;
+async function setDose(name,time,taken){S.profile=await api("/api/dose",{profile:P(),name,time,taken});drawCare()}
+async function delMed(name){if(!confirm(t("del")+"?"))return;S.profile=await api("/api/med/delete",{profile:P(),name});drawCare()}
+async function addMed(){const name=$("mName").value.trim();if(!name)return;
+  const raw=$("mTimes").value.split(/[,\s]+/).filter(Boolean);
+  if(!raw.length||raw.some(s=>{const m=s.match(/^(\d{1,2}):(\d{2})$/);return !m||+m[1]>23||+m[2]>59}))return bad("bad_time");
+  try{S.profile=await api("/api/med/add",{profile:P(),name,dose:$("mDose").value.trim(),times:raw,food:$("mFood").value});toast(t("saved"));drawCare()}catch(e){toast(e.friendly||t("error"))}}
+async function addAppt(){const d=$("aDate").value,tm=$("aTime").value;if(!d)return bad("bad_date");
+  if(d<todayLocal())return bad("past_date");if(d===todayLocal()&&tm&&tm<nowHM())return bad("past_time");
+  try{S.profile=await api("/api/appt/add",{profile:P(),date:d,time:tm,where:$("aWhere").value,note:$("aNote").value});toast(t("saved"));drawCare()}catch(e){toast(e.friendly||t("error"))}}
+async function delAppt(i){S.profile=await api("/api/appt/delete",{profile:P(),index:i});drawCare()}
+function pickVisitPhoto(){pickFile(f=>{S.visitPhoto=f;const el=$("vPhotoPrev");if(!el)return;
+  el.innerHTML=(f.preview?`<img src="${f.preview}" alt="" style="max-width:100%;border-radius:14px;margin-top:8px">`:"📄 PDF")+`<div class="muted small">${t("photo_added")}</div>`})}
+async function addVisit(){const d=$("vDate").value||todayLocal();if(d>todayLocal())return bad("future_date");
+  try{S.profile=await api("/api/visit/add",{profile:P(),date:d,where:$("vWhere").value,symptoms:$("vSym").value,notes:$("vNotes").value,photo:S.visitPhoto?S.visitPhoto.data:""});
+    S.visitPhoto=null;toast(t("saved"));drawCare()}catch(e){toast(e.friendly||t("error"))}}
+async function compareTest(){const r=await api("/api/history",{profile:P(),test:$("hTest").value});
+  $("hOut").innerHTML=r.can_compare?`<div style="margin-top:8px">${r.history.map(x=>`${esc(x.date)}: <b>${esc(x.value)} ${esc(r.unit)}</b> <span class="pill p-${x.status}">${t(x.status)}</span>`).join("<br>")}</div>`:`<div class="muted" style="margin-top:8px">${t("cannot_compare")}</div>`}
+
+/* ---------- hospitals ---------- */
+function viewHosp(){
+  const c=S.boot?S.boot.care:{emergency:[],places:[],near_me:[]};
+  return `<div class="card"><h2>🚨 ${t("emergency_numbers")}</h2>${c.emergency.map(e=>`<div class="dose"><div><b>${esc(e.number)}</b><div class="muted small">${esc(pick(e))}</div></div><a class="btn danger" href="tel:${esc(e.number)}">${t("call")}</a></div>`).join("")}</div>
+   <div class="card"><h2>📍 ${t("near_me")}</h2>${c.near_me.map(n=>`<div class="dose"><div>${esc(pick(n))}</div><a class="btn ghost" target="_blank" rel="noopener" href="${esc(n.maps)}">${t("open_map")}</a></div>`).join("")}</div>
+   <div class="card"><h2>🏥 ${t("places")}</h2>${c.places.map(p=>`<div class="dose"><div><b>${esc(p.name)}</b><div class="muted small">${esc(p.city)}</div></div><a class="btn ghost" target="_blank" rel="noopener" href="${esc(p.maps)}">${t("open_map")}</a></div>`).join("")}</div>`;
+}
+
+/* ---------- myths ---------- */
+function viewMyth(){
+  const ms=S.boot?S.boot.myths:[];
+  return `<div class="card"><h2>🧐 ${t("myth_title")}</h2><div class="muted small">${t("myth_tap")}</div></div>`+
+   ms.map(m=>{const o={ta:`${m.myth_ta} ${T.verdict[0]}: ${m.verdict_ta}. ${m.ta}`,en:`${m.myth_en} Verdict: ${m.verdict_en}. ${m.en}`};
+    return `<details class="card"><summary><b>“${esc(pick({ta:m.myth_ta,en:m.myth_en}))}”</b></summary><div style="margin:8px 0"><span class="pill p-HIGH">${esc(pick({ta:m.verdict_ta,en:m.verdict_en}))}</span></div>${esc(pick(m))}${m.source?`<div class="muted small" style="margin-top:4px">📚 <a href="${esc(m.source)}" target="_blank" rel="noopener">${t("source")}</a></div>`:""}${listenBtns(o)}</details>`}).join("");
+}
+
+/* ---------- schemes ---------- */
+function viewScheme(){
+  const sc=S.boot?S.boot.schemes:[];const f=S.boot?S.boot.scheme_footer:{};
+  return sc.map(s=>{const o={ta:`${s.name_ta}. ${s.ta} ${T.rules[0]}: ${s.rules.map(r=>r.ta).join(" ")} ${T.docs[0]}: ${s.documents.map(d=>d.ta).join(", ")}. ${s.where.ta}`,
+                           en:`${s.name_en}. ${s.en} Rules: ${s.rules.map(r=>r.en).join(" ")} Documents: ${s.documents.map(d=>d.en).join(", ")}. ${s.where.en}`};
+    return `<div class="card"><h2>🛡️ ${esc(pick({ta:s.name_ta,en:s.name_en}))}</h2><div>${esc(pick(s))}</div>
+     <h2 style="margin-top:12px">${t("rules")}</h2><ul>${s.rules.map(r=>`<li>${esc(pick(r))}</li>`).join("")}</ul>
+     <h2>${t("docs")}</h2><ul>${s.documents.map(d=>`<li>${esc(pick(d))}</li>`).join("")}</ul>
+     <h2>${t("where_apply")}</h2><div>${esc(pick(s.where))}</div><a class="btn ghost" style="margin-top:8px" target="_blank" rel="noopener" href="${esc(s.url)}">${t("official_site")}</a>${listenBtns(o)}</div>`}).join("")+
+   `<div class="card muted small">${esc(pick(f))}</div>`;
+}
+
+/* ---------- mental health ---------- */
+function viewMind(){
+  const all={ta:[T.mind_intro[0],T.mind_line[0],...MIND_STEPS.map(x=>x.ta),T.mind_danger[0]].join(" "),en:[T.mind_intro[1],T.mind_line[1],...MIND_STEPS.map(x=>x.en),T.mind_danger[1]].join(" ")};
+  return `<div class="card calm"><h2>💙 ${t("home_mind")}</h2><div>${t("mind_intro")}</div>${listenBtns(all)}</div>
+   <div class="card"><div>${t("mind_line")}</div><a class="btn primary bigcall" href="tel:14416">${t("call_14416")}</a>
+   ${S.famPhone?`<a class="btn plain midcall" href="tel:${esc(S.famPhone)}">👨‍👩‍👧 ${t("call_family")}${S.famName?" · "+esc(S.famName):""}</a>`:""}</div>
+   <div class="card"><h2>🌿 ${t("mind_steps_title")}</h2><ol>${MIND_STEPS.map(x=>`<li style="margin-bottom:6px">${esc(pick(x))}</li>`).join("")}</ol></div>
+   <div class="card alert"><b>${t("mind_danger")}</b><div class="row" style="margin-top:10px"><a class="btn primary" href="tel:14416">${t("call_14416")}</a><a class="btn danger" href="tel:112">${t("call_112")}</a></div></div>`;
+}
+
+/* ---------- settings ---------- */
+async function addPersonFromSelect(sel){
+  const name=(prompt(S.lang==="ta"?"பெயர் (எ.கா. பாட்டி)":"Name (e.g. Paati)")||"").trim();
+  if(!name){sel.value=S.person||"";return null}
+  try{await api("/api/profile/add",{name,relation:name,age:0});await boot();toast(t("saved"));return name}catch(e){toast(t("error"));return null}
+}
+document.addEventListener("change",async e=>{
+  const el=e.target; if(!el||el.tagName!=="SELECT"||el.value!=="__add")return;
+  const name=await addPersonFromSelect(el); if(!name)return;
+  // refresh this dropdown in place (keeps any report / prescription results on screen)
+  const hadNone=!!el.querySelector('option[value=""]');
+  el.innerHTML=personSelect(el.id,hadNone).replace(/^<select[^>]*>|<\/select>$/g,"");
+  el.value=name;
+  if(el.id==="sPerson"||el.id==="carePerson"){S.person=name;store.set("person",name)}
+  if(el.id==="carePerson")loadProfile();
+});
+document.addEventListener("change",e=>{if(e.target.id==="sPerson"&&e.target.value!=="__add"){S.person=e.target.value;store.set("person",S.person)}});
+
+/* ---------- reminders (only while the app is open) ---------- */
+let RANG={};
+async function checkReminders(){
+  if(!S.person||!S.onboarded)return;
+  try{const p=await api("/api/profile/get",{profile:S.person});const now=new Date();const hm=now.toTimeString().slice(0,5);
+    for(const d of p.today){const key=now.toDateString()+d.medicine+d.time;
+      if(d.status==="pending"&&d.time<=hm&&!RANG[key]){const [hh,mm]=d.time.split(":").map(Number);const mins=(now.getHours()*60+now.getMinutes())-(hh*60+mm);
+        if(mins>=0&&mins<=2){RANG[key]=1;beep();const msg=`${t("reminder")} ${d.medicine} ${d.dose_text} (${d.time})`;toast(msg,10000);speak(msg,S.lang);
+          try{if(Notification.permission==="granted")new Notification("Nalam AI",{body:msg})}catch(e){}}}}}catch(e){}
+}
+function beep(){try{const a=new (window.AudioContext||window.webkitAudioContext)();[0,0.35,0.7].forEach(s=>{const o=a.createOscillator(),g=a.createGain();o.frequency.value=880;o.connect(g);g.connect(a.destination);g.gain.value=.2;o.start(a.currentTime+s);o.stop(a.currentTime+s+.2)})}catch(e){}}
+
+/* ---------- start ---------- */
+async function boot(){try{S.boot=await api("/api/bootstrap",{})}catch(e){S.boot=null}}
+(async()=>{await boot();render();setInterval(checkReminders,30000);
+  try{if("Notification" in window&&Notification.permission==="default")document.addEventListener("click",()=>Notification.requestPermission(),{once:true})}catch(e){}})();
+</script>
+</body>
+</html>
